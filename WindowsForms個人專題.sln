@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsForms個人專題", "WindowsForms個人專題\WindowsForms個人專題.csproj", "{57C44E00-F6C8-4D64-937C-5D8648275A84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57C44E00-F6C8-4D64-937C-5D8648275A84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57C44E00-F6C8-4D64-937C-5D8648275A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57C44E00-F6C8-4D64-937C-5D8648275A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57C44E00-F6C8-4D64-937C-5D8648275A84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {913BD808-C70A-425F-8640-12A49ABB11A4}
+	EndGlobalSection
+EndGlobal
