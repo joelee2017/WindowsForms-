@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsForms個人專題
 {
-    public partial class Form1 : Form
+    public partial class SearchForm : Form
     {
-        public Form1()
+        public SearchForm()
         {
             InitializeComponent();
+        }
+
+        private void SearchForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
