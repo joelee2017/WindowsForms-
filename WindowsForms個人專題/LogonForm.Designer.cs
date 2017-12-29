@@ -128,7 +128,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(121, 86);
+            this.btnCancel.Location = new System.Drawing.Point(125, 86);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 50);
             this.btnCancel.TabIndex = 1;
@@ -144,6 +144,7 @@
             this.btnLogon.TabIndex = 0;
             this.btnLogon.Text = "Logon";
             this.btnLogon.UseVisualStyleBackColor = true;
+            this.btnLogon.Click += new System.EventHandler(this.btnLogon_Click);
             // 
             // LogonForm
             // 

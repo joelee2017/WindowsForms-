@@ -155,6 +155,7 @@
       <DependentUpon>DrModel.edmx</DependentUpon>
       <LastGenOutput>DrModel.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="DrModel.edmx.sql" />
     <Content Include="DrModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DrModel.edmx</DependentUpon>
