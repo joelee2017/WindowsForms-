@@ -16,5 +16,12 @@ namespace WindowsForms個人專題
         {
             InitializeComponent();
         }
+        
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            CreateForm create = new CreateForm();
+            create.ShowDialog();
+        }
     }
 }
