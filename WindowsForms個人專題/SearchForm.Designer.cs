@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -40,8 +40,8 @@
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.ModifydataGridView = new System.Windows.Forms.DataGridView();
             this.textGender = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioMfFemale = new System.Windows.Forms.RadioButton();
+            this.radioMfMan = new System.Windows.Forms.RadioButton();
             this.btnUpdata = new System.Windows.Forms.Button();
             this.btnModifyFind = new System.Windows.Forms.Button();
             this.UserPhoto = new System.Windows.Forms.PictureBox();
@@ -228,8 +228,8 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.textGender);
-            this.splitContainer4.Panel2.Controls.Add(this.radioButton1);
-            this.splitContainer4.Panel2.Controls.Add(this.radioButton2);
+            this.splitContainer4.Panel2.Controls.Add(this.radioMfFemale);
+            this.splitContainer4.Panel2.Controls.Add(this.radioMfMan);
             this.splitContainer4.Panel2.Controls.Add(this.btnUpdata);
             this.splitContainer4.Panel2.Controls.Add(this.btnModifyFind);
             this.splitContainer4.Panel2.Controls.Add(this.UserPhoto);
@@ -256,8 +256,8 @@
             this.ModifydataGridView.Location = new System.Drawing.Point(0, 0);
             this.ModifydataGridView.Name = "ModifydataGridView";
             this.ModifydataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            this.ModifydataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(1);
+            this.ModifydataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.ModifydataGridView.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(1);
             this.ModifydataGridView.RowTemplate.DividerHeight = 2;
             this.ModifydataGridView.RowTemplate.Height = 75;
@@ -275,29 +275,31 @@
             this.textGender.Size = new System.Drawing.Size(159, 31);
             this.textGender.TabIndex = 43;
             // 
-            // radioButton1
+            // radioMfFemale
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.radioButton1.Location = new System.Drawing.Point(100, 452);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(88, 26);
-            this.radioButton1.TabIndex = 42;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Female";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioMfFemale.AutoSize = true;
+            this.radioMfFemale.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.radioMfFemale.Location = new System.Drawing.Point(100, 452);
+            this.radioMfFemale.Name = "radioMfFemale";
+            this.radioMfFemale.Size = new System.Drawing.Size(88, 26);
+            this.radioMfFemale.TabIndex = 42;
+            this.radioMfFemale.TabStop = true;
+            this.radioMfFemale.Text = "Female";
+            this.radioMfFemale.UseVisualStyleBackColor = true;
+            this.radioMfFemale.CheckedChanged += new System.EventHandler(this.radioMfFemale_CheckedChanged);
             // 
-            // radioButton2
+            // radioMfMan
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.radioButton2.Location = new System.Drawing.Point(36, 452);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(58, 26);
-            this.radioButton2.TabIndex = 41;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Man";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioMfMan.AutoSize = true;
+            this.radioMfMan.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.radioMfMan.Location = new System.Drawing.Point(36, 452);
+            this.radioMfMan.Name = "radioMfMan";
+            this.radioMfMan.Size = new System.Drawing.Size(58, 26);
+            this.radioMfMan.TabIndex = 41;
+            this.radioMfMan.TabStop = true;
+            this.radioMfMan.Text = "Man";
+            this.radioMfMan.UseVisualStyleBackColor = true;
+            this.radioMfMan.CheckedChanged += new System.EventHandler(this.radioMfMan_CheckedChanged);
             // 
             // btnUpdata
             // 
@@ -538,7 +540,7 @@
             this.UserPhoto2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.UserPhoto2.TabIndex = 37;
             this.UserPhoto2.TabStop = false;
-            this.UserPhoto2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.UserPhoto2.Click += new System.EventHandler(this.Modify_Click);
             // 
             // label11
             // 
@@ -749,8 +751,8 @@
         private System.Windows.Forms.RadioButton radioFemale;
         private System.Windows.Forms.RadioButton radioMan;
         private System.Windows.Forms.TextBox textGender;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioMfFemale;
+        private System.Windows.Forms.RadioButton radioMfMan;
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView5;

@@ -17,7 +17,7 @@ namespace WindowsForms個人專題
 
         }
 
-        //登出
+        //Logout登出
         private void btnLogOut_Click(object sender, EventArgs e)
         {
 
@@ -27,7 +27,7 @@ namespace WindowsForms個人專題
         DrEntities1 dr = new DrEntities1();
         User NwUser = new User();//資料表建立實體  
 
-        //查詢
+        //Search查詢=========================================================================
         private void btnFind_Click(object sender, EventArgs e)
         {           
             
@@ -55,67 +55,11 @@ namespace WindowsForms個人專題
             }
 
         }
+        //====================================================================================
+        
 
-        //加入圖片
-        OpenFileDialog od = new OpenFileDialog();
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            if (od.ShowDialog() == DialogResult.OK)
-            {
-                UserPhoto2.Image = Image.FromStream(od.OpenFile());
-            }
-        }
 
-        //新增帳號資料
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            using (var ms = new MemoryStream())
-            {
-                UserPhoto2.Image.Save(ms, ImageFormat.Jpeg);
-                NwUser.Photo = ms.ToArray();
-            }
-
-            NwUser.Email = textEmail1.Text;
-            NwUser.PassWord = textPassWord1.Text;
-            NwUser.Gender = textGender1.Text;
-            NwUser.FirstName = textFirstName.Text;
-            NwUser.LastName = textLastName.Text;
-            NwUser.LineID = textLineID1.Text;
-
-            dr.User.Add(NwUser);
-            dr.SaveChanges();
-            MessageBox.Show("ok");
-            btnFind_Click(sender, e);
-        }
-
-        //性別男
-        private void radioMan_CheckedChanged(object sender, EventArgs e)
-        {
-
-            if (radioMan.Checked == true)
-            {
-                textGender1.Text = "M";
-            }
-            else
-            {
-                textGender1.Text = null;
-            }
-        }
-
-        //性別女
-        private void radioFemale_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioFemale.Checked == true)
-            {
-                textGender1.Text = "F";
-            }
-            else
-            {
-                textGender1.Text = null;
-            }
-        }
-
-        //修改資料查詢
+        //Modify修改資料查詢===================================================================
         private void btnModifyFind_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
@@ -140,7 +84,7 @@ namespace WindowsForms個人專題
             }
         }
 
-        //修改圖片
+        //Modify修改圖片
         private void UserPhoto_Click(object sender, EventArgs e)
         {
             if (od.ShowDialog() == DialogResult.OK)
@@ -150,7 +94,7 @@ namespace WindowsForms個人專題
         }
 
 
-        //聯動查詢資料
+        //Modify聯動查詢資料
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -175,7 +119,7 @@ namespace WindowsForms個人專題
             }
         }
 
-        //修改上傳
+        //Modify修改上傳
         private void btnUpdata_Click(object sender, EventArgs e)
         {
             using (var ms = new MemoryStream())
@@ -195,7 +139,94 @@ namespace WindowsForms個人專題
             MessageBox.Show("ok");
             btnFind_Click(sender, e);
         }
-        
+        //Modify性別男
+        private void radioMfMan_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioMan.Checked == true)
+            {
+                textGender.Text = "M";
+            }
+            else
+            {
+                textGender.Text = null;
+            }
+        }
+        //Modify性別女
+        private void radioMfFemale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioFemale.Checked == true)
+            {
+                textGender.Text = "F";
+            }
+            else
+            {
+                textGender.Text = null;
+            }
+        }
 
+
+
+
+        //Add&Delete加入圖片==========================================================
+        OpenFileDialog od = new OpenFileDialog();
+        private void Modify_Click(object sender, EventArgs e)
+        {
+            if (od.ShowDialog() == DialogResult.OK)
+            {
+                UserPhoto2.Image = Image.FromStream(od.OpenFile());
+            }
+        }
+        //Add&Delete=================================================================
+
+        //Add&Delete新增帳號資料
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            using (var ms = new MemoryStream())
+            {
+                UserPhoto2.Image.Save(ms, ImageFormat.Jpeg);
+                NwUser.Photo = ms.ToArray();
+            }
+
+            NwUser.Email = textEmail1.Text;
+            NwUser.PassWord = textPassWord1.Text;
+            NwUser.Gender = textGender1.Text;
+            NwUser.FirstName = textFirstName.Text;
+            NwUser.LastName = textLastName.Text;
+            NwUser.LineID = textLineID1.Text;
+
+            dr.User.Add(NwUser);
+            dr.SaveChanges();
+            MessageBox.Show("ok");
+            btnFind_Click(sender, e);
+        }
+
+        //Add&Delete性別男
+        private void radioMan_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (radioMan.Checked == true)
+            {
+                textGender1.Text = "M";
+            }
+            else
+            {
+                textGender1.Text = null;
+            }
+        }
+
+        //Add&Delete性別女
+        private void radioFemale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioFemale.Checked == true)
+            {
+                textGender1.Text = "F";
+            }
+            else
+            {
+                textGender1.Text = null;
+            }
+        }
+        
+        //==========================================================================
     }
 }
