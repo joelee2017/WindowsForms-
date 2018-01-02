@@ -118,7 +118,7 @@
             this.btnreturn.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreturn.Location = new System.Drawing.Point(282, 21);
             this.btnreturn.Name = "btnreturn";
-            this.btnreturn.Size = new System.Drawing.Size(106, 50);
+            this.btnreturn.Size = new System.Drawing.Size(90, 39);
             this.btnreturn.TabIndex = 9;
             this.btnreturn.Text = "return";
             this.btnreturn.UseVisualStyleBackColor = true;
@@ -129,7 +129,7 @@
             this.button4.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(30, 21);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(106, 50);
+            this.button4.Size = new System.Drawing.Size(90, 39);
             this.button4.TabIndex = 8;
             this.button4.Text = "Forget";
             this.button4.UseVisualStyleBackColor = true;
@@ -139,7 +139,7 @@
             this.button2.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(160, 75);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 50);
+            this.button2.Size = new System.Drawing.Size(90, 39);
             this.button2.TabIndex = 7;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;

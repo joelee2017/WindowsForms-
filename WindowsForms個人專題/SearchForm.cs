@@ -31,10 +31,10 @@ namespace WindowsForms個人專題
         private void btnFind_Click(object sender, EventArgs e)
         {           
             
-            dataGridView1.DataSource = null;
+            dataGridViewSearch.DataSource = null;
             try
             {
-                dataGridView1.DataSource = dr.User.Select(user => new
+                dataGridViewSearch.DataSource = dr.User.Select(user => new
                 {
                     
                     會員編號 = user.UserID,
@@ -62,10 +62,10 @@ namespace WindowsForms個人專題
         //Modify修改資料查詢===================================================================
         private void btnModifyFind_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = null;
+            dataGridViewSearch.DataSource = null;
             try
             {
-                ModifydataGridView.DataSource = dr.User.Select(user => new
+                dataGridViewModify.DataSource = dr.User.Select(user => new
                 {
                     會員編號 = user.UserID,
                     Email = user.Email,
@@ -93,19 +93,18 @@ namespace WindowsForms個人專題
             }
         }
 
-
-        //Modify聯動查詢資料
-        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //Modify聯動欄位資料顯示
+        private void dataGridViewModify_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                byte[] g = (byte[])(ModifydataGridView.Rows[e.RowIndex].Cells["照片"].Value);
-                textEmail.Text = Convert.ToString(ModifydataGridView.Rows[e.RowIndex].Cells["Email"].Value);
-                textPassWord.Text = Convert.ToString(ModifydataGridView.Rows[e.RowIndex].Cells["密碼"].Value);
-                textFirstName.Text = Convert.ToString(ModifydataGridView.Rows[e.RowIndex].Cells["姓"].Value);
-                textLastName.Text = Convert.ToString(ModifydataGridView.Rows[e.RowIndex].Cells["名"].Value);
-                textLineID.Text = Convert.ToString(ModifydataGridView.Rows[e.RowIndex].Cells["LineID"].Value);
-                textGender.Text = Convert.ToString(ModifydataGridView.Rows[e.RowIndex].Cells["性別"].Value);
+                byte[] g = (byte[])(dataGridViewModify.Rows[e.RowIndex].Cells["照片"].Value);
+                textEmail.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["Email"].Value);
+                textPassWord.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["密碼"].Value);
+                textFirstName.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["姓"].Value);
+                textLastName.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["名"].Value);
+                textLineID.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["LineID"].Value);
+                textGender.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["性別"].Value);
 
                 using (MemoryStream ms = new MemoryStream(g))//圖片取出
                 {
@@ -139,6 +138,7 @@ namespace WindowsForms個人專題
             MessageBox.Show("ok");
             btnFind_Click(sender, e);
         }
+
         //Modify性別男
         private void radioMfMan_CheckedChanged(object sender, EventArgs e)
         {
@@ -151,6 +151,7 @@ namespace WindowsForms個人專題
                 textGender.Text = null;
             }
         }
+
         //Modify性別女
         private void radioMfFemale_CheckedChanged(object sender, EventArgs e)
         {
@@ -163,9 +164,7 @@ namespace WindowsForms個人專題
                 textGender.Text = null;
             }
         }
-
-
-
+        //===============================================================================
 
         //Add&Delete加入圖片==========================================================
         OpenFileDialog od = new OpenFileDialog();
@@ -177,6 +176,31 @@ namespace WindowsForms個人專題
             }
         }
         //Add&Delete=================================================================
+
+        //Add&Delete查詢
+        private void btnADFind_Click(object sender, EventArgs e)
+        {
+            dataGridViewSearch.DataSource = null;
+            try
+            {
+                dataGridViewAD.DataSource = dr.User.Select(user => new
+                {
+                    會員編號 = user.UserID,
+                    Email = user.Email,
+                    密碼 = user.PassWord,
+                    性別 = user.Gender,
+                    姓 = user.FirstName,
+                    名 = user.LastName,
+                    照片 = user.Photo,
+                    LineID = user.LineID,
+                }).ToList();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
         //Add&Delete新增帳號資料
         private void btnAdd_Click(object sender, EventArgs e)
@@ -226,6 +250,65 @@ namespace WindowsForms個人專題
                 textGender1.Text = null;
             }
         }
+
+        //Add&Delete清空欄位值
+        private void btnADCanel_Click(object sender, EventArgs e)
+        {
+            textEmail1.Text = null;
+            textPassWord1.Text = null;
+            textGender1.Text = null;
+            textFirstName1.Text = null;
+            textLastName1.Text = null;
+            textLineID1.Text = null;
+            UserPhoto2.Image = null;
+        }
+
+        //Add&Delete聯動欄位資料顯示
+        private void dataGridViewAD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                byte[] g = (byte[])(dataGridViewModify.Rows[e.RowIndex].Cells["照片"].Value);
+                textEmail1.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["Email"].Value);
+                textPassWord1.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["密碼"].Value);
+                textFirstName1.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["姓"].Value);
+                textLastName1.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["名"].Value);
+                textLineID1.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["LineID"].Value);
+                textGender1.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["性別"].Value);
+
+                using (MemoryStream ms = new MemoryStream(g))//圖片取出
+                {
+                    UserPhoto2.Image = Image.FromStream(ms);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //Add&Delete刪除
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            //if (MessageBox.Show("確定刪除嗎?", "刪除確認", 
+            //            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //{
+            //        .Find(Convert.ToInt32(txtEmployeeID.Text));
+            //    if (empDeleted == null)
+            //    {
+            //        MessageBox.Show($"  {txtEmployeeID.Text}  員工記錄");
+            //    }
+            //    else
+            //    {
+            //        dc.Employees.Remove(empDeleted);
+            //        dc.SaveChanges();
+            //        MessageBox.Show("刪除成功");
+            //        btnQuery_Click(sender, e);
+            //    }
+            //}
+        }
+
         
         //==========================================================================
     }

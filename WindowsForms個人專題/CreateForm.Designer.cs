@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.PWMlabel = new System.Windows.Forms.Label();
             this.Gendertext = new System.Windows.Forms.TextBox();
             this.radioFemale = new System.Windows.Forms.RadioButton();
             this.radioMan = new System.Windows.Forms.RadioButton();
@@ -46,7 +47,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.PWMlabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -87,6 +87,16 @@
             this.splitContainer1.Size = new System.Drawing.Size(635, 493);
             this.splitContainer1.SplitterDistance = 341;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // PWMlabel
+            // 
+            this.PWMlabel.AutoSize = true;
+            this.PWMlabel.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PWMlabel.ForeColor = System.Drawing.Color.Red;
+            this.PWMlabel.Location = new System.Drawing.Point(182, 103);
+            this.PWMlabel.Name = "PWMlabel";
+            this.PWMlabel.Size = new System.Drawing.Size(0, 22);
+            this.PWMlabel.TabIndex = 19;
             // 
             // Gendertext
             // 
@@ -235,7 +245,7 @@
             this.button1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(246, 18);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 50);
+            this.button1.Size = new System.Drawing.Size(90, 39);
             this.button1.TabIndex = 5;
             this.button1.Text = "return";
             this.button1.UseVisualStyleBackColor = true;
@@ -246,7 +256,7 @@
             this.button3.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(21, 18);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 50);
+            this.button3.Size = new System.Drawing.Size(90, 39);
             this.button3.TabIndex = 4;
             this.button3.Text = "Create";
             this.button3.UseVisualStyleBackColor = true;
@@ -257,21 +267,11 @@
             this.button2.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(130, 74);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 50);
+            this.button2.Size = new System.Drawing.Size(90, 39);
             this.button2.TabIndex = 3;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // PWMlabel
-            // 
-            this.PWMlabel.AutoSize = true;
-            this.PWMlabel.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PWMlabel.ForeColor = System.Drawing.Color.Red;
-            this.PWMlabel.Location = new System.Drawing.Point(182, 103);
-            this.PWMlabel.Name = "PWMlabel";
-            this.PWMlabel.Size = new System.Drawing.Size(0, 22);
-            this.PWMlabel.TabIndex = 19;
             // 
             // CreateForm
             // 

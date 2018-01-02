@@ -109,7 +109,7 @@
             this.btnForget.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnForget.Location = new System.Drawing.Point(355, 86);
             this.btnForget.Name = "btnForget";
-            this.btnForget.Size = new System.Drawing.Size(106, 50);
+            this.btnForget.Size = new System.Drawing.Size(90, 39);
             this.btnForget.TabIndex = 3;
             this.btnForget.Text = "Forget";
             this.btnForget.UseVisualStyleBackColor = true;
@@ -120,7 +120,7 @@
             this.btnCreate.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.Location = new System.Drawing.Point(243, 25);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(106, 50);
+            this.btnCreate.Size = new System.Drawing.Size(90, 39);
             this.btnCreate.TabIndex = 2;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -131,7 +131,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(125, 86);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(106, 50);
+            this.btnCancel.Size = new System.Drawing.Size(90, 39);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -142,7 +142,7 @@
             this.btnLogon.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogon.Location = new System.Drawing.Point(12, 25);
             this.btnLogon.Name = "btnLogon";
-            this.btnLogon.Size = new System.Drawing.Size(106, 50);
+            this.btnLogon.Size = new System.Drawing.Size(90, 39);
             this.btnLogon.TabIndex = 0;
             this.btnLogon.Text = "Logon";
             this.btnLogon.UseVisualStyleBackColor = true;
