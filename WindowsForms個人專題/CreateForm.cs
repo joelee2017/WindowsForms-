@@ -22,16 +22,12 @@ namespace WindowsForms個人專題
         }
 
         DrEntities1 dr = new DrEntities1();//資料庫建立實體
-        User NwUser = new User();//資料表建立實體
-        
+        User NwUser = new User();//資料表建立實體       
 
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            LogonForm lgf = new LogonForm();
-            lgf.ShowDialog();
-
-            
+                     
             
         }
 
@@ -79,7 +75,7 @@ namespace WindowsForms個人專題
         }
 
         
-        private void btnCreate_Click(object sender, EventArgs e)
+        private void btnCreate_Click(object sender, EventArgs e)//新增帳號
         {
 
                 using (var ms = new MemoryStream())

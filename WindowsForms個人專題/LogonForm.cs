@@ -17,22 +17,29 @@ namespace WindowsForms個人專題
             InitializeComponent();
         }
 
-        DrEntities1 dr = new DrEntities1();
+        SearchForm sf = new SearchForm();
 
-        private void btnCreate_Click(object sender, EventArgs e)
+        DrEntities1 dr = new DrEntities1();
+        private void btnCreate_Click(object sender, EventArgs e)//創建帳號
         {
-            CreateForm create = new CreateForm();
-            create.ShowDialog();
+
         }
 
-        private void btnLogon_Click(object sender, EventArgs e)
+
+        private void btnForget_Click(object sender, EventArgs e)//忘記密碼
+        {
+
+        }
+
+
+        private void btnLogon_Click(object sender, EventArgs e)//登入
         {
             
-
-            if(dr.User.Any(us => us.Email == Emailtext.Text && us.PassWord == Passwordtext.Text))
+            if(dr.User.Any
+              (us => us.Email == Emailtext.Text && us.PassWord == Passwordtext.Text))
             {
-                SearchForm sf = new SearchForm();
-                sf.ShowDialog();
+                
+                sf.ShowDialog(); sf.FormClosed += Sf_FormClosed; sf.Hide();
             }
             else
             {
@@ -40,6 +47,17 @@ namespace WindowsForms個人專題
             }
 
               
+        }
+
+        private void Sf_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)//關閉
+        {
+
+            this.Close();
         }
     }
 }

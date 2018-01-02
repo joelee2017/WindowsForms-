@@ -113,6 +113,7 @@
             this.btnForget.TabIndex = 3;
             this.btnForget.Text = "Forget";
             this.btnForget.UseVisualStyleBackColor = true;
+            this.btnForget.Click += new System.EventHandler(this.btnForget_Click);
             // 
             // btnCreate
             // 
@@ -134,6 +135,7 @@
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnLogon
             // 
