@@ -27,7 +27,6 @@ namespace WindowsForms個人專題
             cf.FormClosed += Cf_FormClosed; 
             cf.Show(); this.Hide();
         }
-
         private void Cf_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
@@ -39,7 +38,6 @@ namespace WindowsForms個人專題
             ff.FormClosed += Ff_FormClosed;
              ff.Show(); this.Hide(); 
         }
-
         private void Ff_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();            
@@ -49,6 +47,7 @@ namespace WindowsForms個人專題
         {
             SearchForm sf = new SearchForm();
 
+            
             if (dr.User.Any
               (us => us.Email == Emailtext.Text && us.PassWord == Passwordtext.Text))
             {
@@ -57,6 +56,7 @@ namespace WindowsForms個人專題
             }
             else
             {
+                
                 MessageBox.Show("請確認帳號密碼");
             }
 

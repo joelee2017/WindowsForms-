@@ -37,7 +37,7 @@ namespace WindowsForms個人專題
         //Search查詢=========================================================================
         private void btnFind_Click(object sender, EventArgs e)
         {
-
+            
             dataGridViewSearch.DataSource = null;
             try
             {
