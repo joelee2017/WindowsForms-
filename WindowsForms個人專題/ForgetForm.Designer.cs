@@ -71,7 +71,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(176, 283);
+            this.label3.Location = new System.Drawing.Point(171, 282);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 22);
             this.label3.TabIndex = 7;
@@ -81,11 +81,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(50, 194);
+            this.label2.Location = new System.Drawing.Point(74, 203);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 22);
+            this.label2.Size = new System.Drawing.Size(70, 22);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Safety tips";
+            this.label2.Text = "LINEID";
             // 
             // textBox2
             // 
@@ -116,7 +116,7 @@
             // btnreturn
             // 
             this.btnreturn.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreturn.Location = new System.Drawing.Point(282, 21);
+            this.btnreturn.Location = new System.Drawing.Point(309, 35);
             this.btnreturn.Name = "btnreturn";
             this.btnreturn.Size = new System.Drawing.Size(90, 39);
             this.btnreturn.TabIndex = 9;
@@ -127,7 +127,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(30, 21);
+            this.button4.Location = new System.Drawing.Point(54, 35);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(90, 39);
             this.button4.TabIndex = 8;
@@ -137,7 +137,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(160, 75);
+            this.button2.Location = new System.Drawing.Point(175, 102);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 39);
             this.button2.TabIndex = 7;
@@ -152,7 +152,7 @@
             this.ClientSize = new System.Drawing.Size(471, 490);
             this.Controls.Add(this.splitContainer1);
             this.Name = "ForgetForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ForgetForm";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
