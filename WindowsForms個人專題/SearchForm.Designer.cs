@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -39,6 +38,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.dataGridViewModify = new System.Windows.Forms.DataGridView();
+            this.labelNMfID = new System.Windows.Forms.Label();
             this.textGender = new System.Windows.Forms.TextBox();
             this.radioMfFemale = new System.Windows.Forms.RadioButton();
             this.radioMfMan = new System.Windows.Forms.RadioButton();
@@ -58,6 +58,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.dataGridViewAD = new System.Windows.Forms.DataGridView();
+            this.labelNADID = new System.Windows.Forms.Label();
             this.btnADCanel = new System.Windows.Forms.Button();
             this.btnADFind = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -78,8 +79,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.labelNADID = new System.Windows.Forms.Label();
-            this.labelNMfID = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -260,15 +259,23 @@
             this.dataGridViewModify.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewModify.Name = "dataGridViewModify";
             this.dataGridViewModify.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            this.dataGridViewModify.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewModify.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(1);
             this.dataGridViewModify.RowTemplate.DividerHeight = 2;
-            this.dataGridViewModify.RowTemplate.Height = 75;
+            this.dataGridViewModify.RowTemplate.Height = 24;
             this.dataGridViewModify.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewModify.Size = new System.Drawing.Size(659, 558);
             this.dataGridViewModify.TabIndex = 3;
-            this.dataGridViewModify.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewModify_CellContentClick);
+            this.dataGridViewModify.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewModify_RowEnter);
+            // 
+            // labelNMfID
+            // 
+            this.labelNMfID.AutoSize = true;
+            this.labelNMfID.ForeColor = System.Drawing.Color.AliceBlue;
+            this.labelNMfID.Location = new System.Drawing.Point(301, 164);
+            this.labelNMfID.Name = "labelNMfID";
+            this.labelNMfID.Size = new System.Drawing.Size(18, 19);
+            this.labelNMfID.TabIndex = 44;
+            this.labelNMfID.Text = "#";
             // 
             // textGender
             // 
@@ -483,7 +490,17 @@
             this.dataGridViewAD.RowTemplate.Height = 24;
             this.dataGridViewAD.Size = new System.Drawing.Size(715, 568);
             this.dataGridViewAD.TabIndex = 3;
-            this.dataGridViewAD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAD_CellContentClick);
+            this.dataGridViewAD.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAD_RowEnter);
+            // 
+            // labelNADID
+            // 
+            this.labelNADID.AutoSize = true;
+            this.labelNADID.ForeColor = System.Drawing.Color.AliceBlue;
+            this.labelNADID.Location = new System.Drawing.Point(279, 168);
+            this.labelNADID.Name = "labelNADID";
+            this.labelNADID.Size = new System.Drawing.Size(18, 19);
+            this.labelNADID.TabIndex = 44;
+            this.labelNADID.Text = "#";
             // 
             // btnADCanel
             // 
@@ -685,24 +702,6 @@
             this.btnLogOut.Text = "LogOut";
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
-            // labelNADID
-            // 
-            this.labelNADID.AutoSize = true;
-            this.labelNADID.Location = new System.Drawing.Point(279, 168);
-            this.labelNADID.Name = "labelNADID";
-            this.labelNADID.Size = new System.Drawing.Size(18, 19);
-            this.labelNADID.TabIndex = 44;
-            this.labelNADID.Text = "#";
-            // 
-            // labelNMfID
-            // 
-            this.labelNMfID.AutoSize = true;
-            this.labelNMfID.Location = new System.Drawing.Point(301, 164);
-            this.labelNMfID.Name = "labelNMfID";
-            this.labelNMfID.Size = new System.Drawing.Size(18, 19);
-            this.labelNMfID.TabIndex = 44;
-            this.labelNMfID.Text = "#";
             // 
             // SearchForm
             // 

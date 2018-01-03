@@ -53,7 +53,7 @@ namespace WindowsForms個人專題
               (us => us.Email == Emailtext.Text && us.PassWord == Passwordtext.Text))
             {
                 
-                sf.ShowDialog(); sf.FormClosed += Sf_FormClosed; sf.Hide();
+                sf.Show(); sf.FormClosed += Sf_FormClosed; this.Hide();
             }
             else
             {
