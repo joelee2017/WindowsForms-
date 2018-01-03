@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace WindowsForms個人專題
 {
@@ -46,10 +47,13 @@ namespace WindowsForms個人專題
         private void btnLogon_Click(object sender, EventArgs e)//登入
         {
             SearchForm sf = new SearchForm();
-
+            SHA256 sha256 = new SHA256CryptoServiceProvider();//建立SHA256
+            byte[] source = Encoding.Default.GetBytes(Passwordtext.Text);//轉成byte[] 
+            byte[] crypto = sha256.ComputeHash(source);//加到雜湊byte[]中
+            string resultpw = Convert.ToBase64String(crypto);//雜湊byte[]轉字串
             
             if (dr.User.Any
-              (us => us.Email == Emailtext.Text && us.PassWord == Passwordtext.Text))
+              (us => us.Email == Emailtext.Text && us.PassWord == resultpw))
             {
                 
                 sf.Show(); sf.FormClosed += Sf_FormClosed; this.Hide();

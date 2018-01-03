@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Imaging;
+using System.Security.Cryptography;
 
 namespace WindowsForms個人專題
 {
@@ -24,7 +25,7 @@ namespace WindowsForms個人專題
         DrEntities1 dr = new DrEntities1();//資料庫建立實體
         User NwUser = new User();//資料表建立實體       
 
-
+        //Return返迴logon
         private void btnReturn_Click(object sender, EventArgs e)
         {
             LogonForm lf1 = new LogonForm();
@@ -32,14 +33,14 @@ namespace WindowsForms個人專題
             lf1.Show(); this.Hide();
             
         }
-
         private void Lf1_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
         }
 
+        //打開檔案(圖片)
         OpenFileDialog od = new OpenFileDialog();
-        private void UserPhoto_Click(object sender, EventArgs e)//打開檔案(圖片)
+        private void UserPhoto_Click(object sender, EventArgs e)
         {
             if (od.ShowDialog() == DialogResult.OK)
             {
@@ -47,7 +48,8 @@ namespace WindowsForms個人專題
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)//清除所有欄位值
+        //清除所有欄位值
+        private void button2_Click(object sender, EventArgs e)
         {
             Emailtext.Text = null;
             PassWordtext.Text = null;
@@ -57,6 +59,7 @@ namespace WindowsForms個人專題
             UserPhoto.Image = null;
         }
 
+        //性別男
         private void radioMan_CheckedChanged(object sender, EventArgs e)
         {
             if (radioMan.Checked == true)
@@ -69,6 +72,7 @@ namespace WindowsForms個人專題
             }
         }
 
+        //性別女
         private void radioFemale_CheckedChanged(object sender, EventArgs e)
         {
             if (radioFemale.Checked == true)
@@ -81,18 +85,23 @@ namespace WindowsForms個人專題
             }
         }
 
-        
-        private void btnCreate_Click(object sender, EventArgs e)//新增帳號
+        //新增帳號
+        private void btnCreate_Click(object sender, EventArgs e)
         {
 
-                using (var ms = new MemoryStream())
-                {
-                    UserPhoto.Image.Save(ms, ImageFormat.Jpeg);
-                    NwUser.Photo = ms.ToArray();
-                }
+            SHA256 sha256 = new SHA256CryptoServiceProvider();//建立SHA256
+            byte[] source = Encoding.Default.GetBytes(PassWordtext.Text);//字串轉為byte[]
+            byte[] crypto = sha256.ComputeHash(source);//進行SHA256加密
+            string resultpa = Convert.ToBase64String(crypto);//把加密後的字串從Byte[]轉為字串
+
+            using (var ms = new MemoryStream())
+            {
+                UserPhoto.Image.Save(ms, ImageFormat.Jpeg);
+                NwUser.Photo = ms.ToArray();
+            }
 
                 NwUser.Email = Emailtext.Text;
-                NwUser.PassWord = PassWordtext.Text;
+                NwUser.PassWord = resultpa;//已加密過後
                 NwUser.Gender = Gendertext.Text;
                 NwUser.FirstName = FirstNametext.Text;
                 NwUser.LastName = LastNametext.Text;
@@ -102,10 +111,6 @@ namespace WindowsForms個人專題
                 dr.SaveChanges();
                 MessageBox.Show("ok");
         }
-
-
-        
-
-
+      
     }
 }
