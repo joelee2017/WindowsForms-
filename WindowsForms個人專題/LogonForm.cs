@@ -24,7 +24,8 @@ namespace WindowsForms個人專題
         private void btnCreate_Click(object sender, EventArgs e)//創建帳號
         {
             CreateForm cf = new CreateForm();
-            cf.FormClosed += Cf_FormClosed; this.Hide();
+            cf.FormClosed += Cf_FormClosed; 
+            cf.Show(); this.Hide();
         }
 
         private void Cf_FormClosed(object sender, FormClosedEventArgs e)

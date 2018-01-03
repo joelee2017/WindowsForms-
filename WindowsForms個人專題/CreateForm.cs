@@ -27,8 +27,15 @@ namespace WindowsForms個人專題
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-                    
+            LogonForm lf1 = new LogonForm();
+            lf1.FormClosed += Lf1_FormClosed;
+            lf1.Show(); this.Hide();
             
+        }
+
+        private void Lf1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
 
         OpenFileDialog od = new OpenFileDialog();
