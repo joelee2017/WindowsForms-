@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -62,8 +62,8 @@
             this.btnADFind = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.textGender1 = new System.Windows.Forms.TextBox();
-            this.radioFemale = new System.Windows.Forms.RadioButton();
-            this.radioMan = new System.Windows.Forms.RadioButton();
+            this.radioADFemale = new System.Windows.Forms.RadioButton();
+            this.radioADMan = new System.Windows.Forms.RadioButton();
             this.UserPhoto2 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textLineID1 = new System.Windows.Forms.TextBox();
@@ -78,6 +78,8 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.labelNADID = new System.Windows.Forms.Label();
+            this.labelNMfID = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -228,6 +230,7 @@
             // 
             // splitContainer4.Panel2
             // 
+            this.splitContainer4.Panel2.Controls.Add(this.labelNMfID);
             this.splitContainer4.Panel2.Controls.Add(this.textGender);
             this.splitContainer4.Panel2.Controls.Add(this.radioMfFemale);
             this.splitContainer4.Panel2.Controls.Add(this.radioMfMan);
@@ -257,8 +260,8 @@
             this.dataGridViewModify.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewModify.Name = "dataGridViewModify";
             this.dataGridViewModify.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1);
-            this.dataGridViewModify.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
+            this.dataGridViewModify.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewModify.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(1);
             this.dataGridViewModify.RowTemplate.DividerHeight = 2;
             this.dataGridViewModify.RowTemplate.Height = 75;
@@ -327,7 +330,7 @@
             // UserPhoto
             // 
             this.UserPhoto.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.UserPhoto.Location = new System.Drawing.Point(111, 13);
+            this.UserPhoto.Location = new System.Drawing.Point(70, 13);
             this.UserPhoto.Name = "UserPhoto";
             this.UserPhoto.Size = new System.Drawing.Size(195, 178);
             this.UserPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -447,12 +450,13 @@
             // 
             // splitContainer3.Panel2
             // 
+            this.splitContainer3.Panel2.Controls.Add(this.labelNADID);
             this.splitContainer3.Panel2.Controls.Add(this.btnADCanel);
             this.splitContainer3.Panel2.Controls.Add(this.btnADFind);
             this.splitContainer3.Panel2.Controls.Add(this.btnDelete);
             this.splitContainer3.Panel2.Controls.Add(this.textGender1);
-            this.splitContainer3.Panel2.Controls.Add(this.radioFemale);
-            this.splitContainer3.Panel2.Controls.Add(this.radioMan);
+            this.splitContainer3.Panel2.Controls.Add(this.radioADFemale);
+            this.splitContainer3.Panel2.Controls.Add(this.radioADMan);
             this.splitContainer3.Panel2.Controls.Add(this.UserPhoto2);
             this.splitContainer3.Panel2.Controls.Add(this.label11);
             this.splitContainer3.Panel2.Controls.Add(this.textLineID1);
@@ -523,29 +527,31 @@
             this.textGender1.Size = new System.Drawing.Size(159, 31);
             this.textGender1.TabIndex = 40;
             // 
-            // radioFemale
+            // radioADFemale
             // 
-            this.radioFemale.AutoSize = true;
-            this.radioFemale.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.radioFemale.Location = new System.Drawing.Point(73, 430);
-            this.radioFemale.Name = "radioFemale";
-            this.radioFemale.Size = new System.Drawing.Size(88, 26);
-            this.radioFemale.TabIndex = 39;
-            this.radioFemale.TabStop = true;
-            this.radioFemale.Text = "Female";
-            this.radioFemale.UseVisualStyleBackColor = true;
+            this.radioADFemale.AutoSize = true;
+            this.radioADFemale.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.radioADFemale.Location = new System.Drawing.Point(73, 430);
+            this.radioADFemale.Name = "radioADFemale";
+            this.radioADFemale.Size = new System.Drawing.Size(88, 26);
+            this.radioADFemale.TabIndex = 39;
+            this.radioADFemale.TabStop = true;
+            this.radioADFemale.Text = "Female";
+            this.radioADFemale.UseVisualStyleBackColor = true;
+            this.radioADFemale.CheckedChanged += new System.EventHandler(this.radioADFemale_CheckedChanged);
             // 
-            // radioMan
+            // radioADMan
             // 
-            this.radioMan.AutoSize = true;
-            this.radioMan.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.radioMan.Location = new System.Drawing.Point(9, 430);
-            this.radioMan.Name = "radioMan";
-            this.radioMan.Size = new System.Drawing.Size(58, 26);
-            this.radioMan.TabIndex = 38;
-            this.radioMan.TabStop = true;
-            this.radioMan.Text = "Man";
-            this.radioMan.UseVisualStyleBackColor = true;
+            this.radioADMan.AutoSize = true;
+            this.radioADMan.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.radioADMan.Location = new System.Drawing.Point(9, 430);
+            this.radioADMan.Name = "radioADMan";
+            this.radioADMan.Size = new System.Drawing.Size(58, 26);
+            this.radioADMan.TabIndex = 38;
+            this.radioADMan.TabStop = true;
+            this.radioADMan.Text = "Man";
+            this.radioADMan.UseVisualStyleBackColor = true;
+            this.radioADMan.CheckedChanged += new System.EventHandler(this.radioADMan_CheckedChanged);
             // 
             // UserPhoto2
             // 
@@ -642,7 +648,7 @@
             // 
             // textEmail1
             // 
-            this.textEmail1.Location = new System.Drawing.Point(171, 202);
+            this.textEmail1.Location = new System.Drawing.Point(171, 210);
             this.textEmail1.Multiline = true;
             this.textEmail1.Name = "textEmail1";
             this.textEmail1.Size = new System.Drawing.Size(159, 31);
@@ -679,6 +685,24 @@
             this.btnLogOut.Text = "LogOut";
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
+            // labelNADID
+            // 
+            this.labelNADID.AutoSize = true;
+            this.labelNADID.Location = new System.Drawing.Point(279, 168);
+            this.labelNADID.Name = "labelNADID";
+            this.labelNADID.Size = new System.Drawing.Size(18, 19);
+            this.labelNADID.TabIndex = 44;
+            this.labelNADID.Text = "#";
+            // 
+            // labelNMfID
+            // 
+            this.labelNMfID.AutoSize = true;
+            this.labelNMfID.Location = new System.Drawing.Point(301, 164);
+            this.labelNMfID.Name = "labelNMfID";
+            this.labelNMfID.Size = new System.Drawing.Size(18, 19);
+            this.labelNMfID.TabIndex = 44;
+            this.labelNMfID.Text = "#";
             // 
             // SearchForm
             // 
@@ -764,8 +788,8 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnModifyFind;
         private System.Windows.Forms.TextBox textGender1;
-        private System.Windows.Forms.RadioButton radioFemale;
-        private System.Windows.Forms.RadioButton radioMan;
+        private System.Windows.Forms.RadioButton radioADFemale;
+        private System.Windows.Forms.RadioButton radioADMan;
         private System.Windows.Forms.TextBox textGender;
         private System.Windows.Forms.RadioButton radioMfFemale;
         private System.Windows.Forms.RadioButton radioMfMan;
@@ -776,6 +800,8 @@
         private System.Windows.Forms.Button btnSeaFind;
         private System.Windows.Forms.Button btnADFind;
         private System.Windows.Forms.Button btnADCanel;
+        private System.Windows.Forms.Label labelNADID;
+        private System.Windows.Forms.Label labelNMfID;
     }
 }
 

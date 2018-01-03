@@ -105,6 +105,7 @@ namespace WindowsForms個人專題
                 textLastName.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["名"].Value);
                 textLineID.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["LineID"].Value);
                 textGender.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["性別"].Value);
+                labelNMfID.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["會員編號"].Value);
 
                 using (MemoryStream ms = new MemoryStream(g))//圖片取出
                 {
@@ -121,29 +122,39 @@ namespace WindowsForms個人專題
         //Modify修改上傳
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            using (var ms = new MemoryStream())
+            try
             {
+                User userUpdate = dr.User.Find(int.Parse(labelNMfID.Text));
+                
+                    userUpdate.Email = textEmail.Text;
+                    userUpdate.PassWord = textPassWord.Text;
+                    userUpdate.Gender = textGender.Text;
+                    userUpdate.FirstName = textFirstName.Text;
+                    userUpdate.LastName = textLastName.Text;
+                    userUpdate.LineID = textLineID.Text;
 
-                UserPhoto.Image.Save(ms, ImageFormat.Jpeg);
-                NwUser.Photo = ms.ToArray();
+                    using (var ms = new MemoryStream())
+                    {
+                        UserPhoto.Image.Save(ms, ImageFormat.Jpeg);
+                        userUpdate.Photo = ms.ToArray();
+                    }
+                    dr.Entry(userUpdate).State = System.Data.Entity.EntityState.Modified;//修改記錄
+                    dr.SaveChanges();
+
+                    MessageBox.Show("ok");
+                
             }
-
-            NwUser.Email = textEmail.Text;
-            NwUser.PassWord = textPassWord.Text;
-            NwUser.Gender = textGender.Text;
-            NwUser.FirstName = textFirstName.Text;
-            NwUser.LastName = textLastName.Text;
-            NwUser.LineID = textLineID.Text;
-            dr.Entry(NwUser).State = System.Data.Entity.EntityState.Modified;//修改記錄
-            dr.SaveChanges();
-            MessageBox.Show("ok");
-            btnModifyFind_Click(sender, e);
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         //Modify性別男
         private void radioMfMan_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioMan.Checked == true)
+            if (radioMfMan.Checked == true)
             {
                 textGender.Text = "M";
             }
@@ -156,7 +167,7 @@ namespace WindowsForms個人專題
         //Modify性別女
         private void radioMfFemale_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioFemale.Checked == true)
+            if (radioMfFemale.Checked == true)
             {
                 textGender.Text = "F";
             }
@@ -199,7 +210,7 @@ namespace WindowsForms個人專題
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -215,8 +226,8 @@ namespace WindowsForms個人專題
             NwUser.Email = textEmail1.Text;
             NwUser.PassWord = textPassWord1.Text;
             NwUser.Gender = textGender1.Text;
-            NwUser.FirstName = textFirstName.Text;
-            NwUser.LastName = textLastName.Text;
+            NwUser.FirstName = textFirstName1.Text;
+            NwUser.LastName = textLastName1.Text;
             NwUser.LineID = textLineID1.Text;
 
             dr.User.Add(NwUser);
@@ -226,10 +237,9 @@ namespace WindowsForms個人專題
         }
 
         //Add&Delete性別男
-        private void radioMan_CheckedChanged(object sender, EventArgs e)
+        private void radioADMan_CheckedChanged(object sender, EventArgs e)
         {
-
-            if (radioMan.Checked == true)
+            if (radioADMan.Checked == true)
             {
                 textGender1.Text = "M";
             }
@@ -240,9 +250,9 @@ namespace WindowsForms個人專題
         }
 
         //Add&Delete性別女
-        private void radioFemale_CheckedChanged(object sender, EventArgs e)
+        private void radioADFemale_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioFemale.Checked == true)
+            if (radioADFemale.Checked == true)
             {
                 textGender1.Text = "F";
             }
@@ -269,13 +279,14 @@ namespace WindowsForms個人專題
         {
             try
             {
-                byte[] g = (byte[])(dataGridViewModify.Rows[e.RowIndex].Cells["照片"].Value);
-                textEmail1.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["Email"].Value);
-                textPassWord1.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["密碼"].Value);
-                textFirstName1.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["姓"].Value);
-                textLastName1.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["名"].Value);
-                textLineID1.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["LineID"].Value);
-                textGender1.Text = Convert.ToString(dataGridViewModify.Rows[e.RowIndex].Cells["性別"].Value);
+                byte[] g = (byte[])(dataGridViewAD.Rows[e.RowIndex].Cells["照片"].Value);
+                textEmail1.Text = Convert.ToString(dataGridViewAD.Rows[e.RowIndex].Cells["Email"].Value);
+                textPassWord1.Text = Convert.ToString(dataGridViewAD.Rows[e.RowIndex].Cells["密碼"].Value);
+                textFirstName1.Text = Convert.ToString(dataGridViewAD.Rows[e.RowIndex].Cells["姓"].Value);
+                textLastName1.Text = Convert.ToString(dataGridViewAD.Rows[e.RowIndex].Cells["名"].Value);
+                textLineID1.Text = Convert.ToString(dataGridViewAD.Rows[e.RowIndex].Cells["LineID"].Value);
+                textGender1.Text = Convert.ToString(dataGridViewAD.Rows[e.RowIndex].Cells["性別"].Value);
+                labelNADID.Text = Convert.ToString(dataGridViewAD.Rows[e.RowIndex].Cells["會員編號"].Value);
 
                 using (MemoryStream ms = new MemoryStream(g))//圖片取出
                 {
@@ -295,18 +306,8 @@ namespace WindowsForms個人專題
             if (MessageBox.Show("確定刪除嗎?", "刪除確認",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                using (var ms = new MemoryStream())
-                {
-                    UserPhoto2.Image.Save(ms, ImageFormat.Jpeg);
-                    NwUser.Photo = ms.ToArray();
-                }
-                NwUser.Email = textEmail1.Text;
-                NwUser.PassWord = textPassWord1.Text;
-                NwUser.Gender = textGender1.Text;
-                NwUser.FirstName = textFirstName.Text;
-                NwUser.LastName = textLastName.Text;
-                NwUser.LineID = textLineID1.Text;
-                User UserDelete = dr.User.Find(Convert.ToInt32(textEmail.Text));
+
+                User UserDelete = dr.User.Find(int.Parse(labelNADID.Text));
                 if (UserDelete == null)
                 {
                     MessageBox.Show($"無  {textEmail.Text}  記錄");
@@ -320,7 +321,6 @@ namespace WindowsForms個人專題
                 }
             }
         }
-
         
         //==========================================================================
     }

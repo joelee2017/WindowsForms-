@@ -22,7 +22,8 @@ namespace WindowsForms個人專題
         DrEntities1 dr = new DrEntities1();
         private void btnCreate_Click(object sender, EventArgs e)//創建帳號
         {
-
+            CreateForm cf = new CreateForm();
+            cf.ShowDialog();
         }
 
 
