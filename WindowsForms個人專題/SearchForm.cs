@@ -119,10 +119,11 @@ namespace WindowsForms個人專題
         }
 
         //Modify修改上傳
-        private void btnUpdata_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
             using (var ms = new MemoryStream())
             {
+
                 UserPhoto.Image.Save(ms, ImageFormat.Jpeg);
                 NwUser.Photo = ms.ToArray();
             }
@@ -136,7 +137,7 @@ namespace WindowsForms個人專題
             dr.Entry(NwUser).State = System.Data.Entity.EntityState.Modified;//修改記錄
             dr.SaveChanges();
             MessageBox.Show("ok");
-            btnFind_Click(sender, e);
+            btnModifyFind_Click(sender, e);
         }
 
         //Modify性別男
@@ -291,22 +292,33 @@ namespace WindowsForms個人專題
         //Add&Delete刪除
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //if (MessageBox.Show("確定刪除嗎?", "刪除確認", 
-            //            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            //{
-            //        .Find(Convert.ToInt32(txtEmployeeID.Text));
-            //    if (empDeleted == null)
-            //    {
-            //        MessageBox.Show($"  {txtEmployeeID.Text}  員工記錄");
-            //    }
-            //    else
-            //    {
-            //        dc.Employees.Remove(empDeleted);
-            //        dc.SaveChanges();
-            //        MessageBox.Show("刪除成功");
-            //        btnQuery_Click(sender, e);
-            //    }
-            //}
+            if (MessageBox.Show("確定刪除嗎?", "刪除確認",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                using (var ms = new MemoryStream())
+                {
+                    UserPhoto2.Image.Save(ms, ImageFormat.Jpeg);
+                    NwUser.Photo = ms.ToArray();
+                }
+                NwUser.Email = textEmail1.Text;
+                NwUser.PassWord = textPassWord1.Text;
+                NwUser.Gender = textGender1.Text;
+                NwUser.FirstName = textFirstName.Text;
+                NwUser.LastName = textLastName.Text;
+                NwUser.LineID = textLineID1.Text;
+                User UserDelete = dr.User.Find(Convert.ToInt32(textEmail.Text));
+                if (UserDelete == null)
+                {
+                    MessageBox.Show($"無  {textEmail.Text}  記錄");
+                }
+                else
+                {
+                    dr.User.Remove(UserDelete);
+                    dr.SaveChanges();
+                    MessageBox.Show("刪除成功");
+                    btnADFind_Click(sender, e);
+                }
+            }
         }
 
         

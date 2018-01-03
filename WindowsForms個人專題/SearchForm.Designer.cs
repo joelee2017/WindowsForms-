@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -42,7 +42,7 @@
             this.textGender = new System.Windows.Forms.TextBox();
             this.radioMfFemale = new System.Windows.Forms.RadioButton();
             this.radioMfMan = new System.Windows.Forms.RadioButton();
-            this.btnUpdata = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnModifyFind = new System.Windows.Forms.Button();
             this.UserPhoto = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -58,6 +58,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.dataGridViewAD = new System.Windows.Forms.DataGridView();
+            this.btnADCanel = new System.Windows.Forms.Button();
             this.btnADFind = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.textGender1 = new System.Windows.Forms.TextBox();
@@ -77,7 +78,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.btnADCanel = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -231,7 +231,7 @@
             this.splitContainer4.Panel2.Controls.Add(this.textGender);
             this.splitContainer4.Panel2.Controls.Add(this.radioMfFemale);
             this.splitContainer4.Panel2.Controls.Add(this.radioMfMan);
-            this.splitContainer4.Panel2.Controls.Add(this.btnUpdata);
+            this.splitContainer4.Panel2.Controls.Add(this.btnUpdate);
             this.splitContainer4.Panel2.Controls.Add(this.btnModifyFind);
             this.splitContainer4.Panel2.Controls.Add(this.UserPhoto);
             this.splitContainer4.Panel2.Controls.Add(this.label6);
@@ -257,8 +257,8 @@
             this.dataGridViewModify.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewModify.Name = "dataGridViewModify";
             this.dataGridViewModify.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(1);
-            this.dataGridViewModify.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1);
+            this.dataGridViewModify.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewModify.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(1);
             this.dataGridViewModify.RowTemplate.DividerHeight = 2;
             this.dataGridViewModify.RowTemplate.Height = 75;
@@ -302,16 +302,16 @@
             this.radioMfMan.UseVisualStyleBackColor = true;
             this.radioMfMan.CheckedChanged += new System.EventHandler(this.radioMfMan_CheckedChanged);
             // 
-            // btnUpdata
+            // btnUpdate
             // 
-            this.btnUpdata.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdata.Location = new System.Drawing.Point(239, 503);
-            this.btnUpdata.Name = "btnUpdata";
-            this.btnUpdata.Size = new System.Drawing.Size(90, 39);
-            this.btnUpdata.TabIndex = 28;
-            this.btnUpdata.Text = "Updata";
-            this.btnUpdata.UseVisualStyleBackColor = true;
-            this.btnUpdata.Click += new System.EventHandler(this.btnUpdata_Click);
+            this.btnUpdate.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(239, 503);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(90, 39);
+            this.btnUpdate.TabIndex = 28;
+            this.btnUpdate.Text = "Updata";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnModifyFind
             // 
@@ -480,6 +480,17 @@
             this.dataGridViewAD.Size = new System.Drawing.Size(715, 568);
             this.dataGridViewAD.TabIndex = 3;
             this.dataGridViewAD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAD_CellContentClick);
+            // 
+            // btnADCanel
+            // 
+            this.btnADCanel.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnADCanel.Location = new System.Drawing.Point(119, 462);
+            this.btnADCanel.Name = "btnADCanel";
+            this.btnADCanel.Size = new System.Drawing.Size(90, 39);
+            this.btnADCanel.TabIndex = 43;
+            this.btnADCanel.Text = "Canel";
+            this.btnADCanel.UseVisualStyleBackColor = true;
+            this.btnADCanel.Click += new System.EventHandler(this.btnADCanel_Click);
             // 
             // btnADFind
             // 
@@ -669,17 +680,6 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // btnADCanel
-            // 
-            this.btnADCanel.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnADCanel.Location = new System.Drawing.Point(119, 462);
-            this.btnADCanel.Name = "btnADCanel";
-            this.btnADCanel.Size = new System.Drawing.Size(90, 39);
-            this.btnADCanel.TabIndex = 43;
-            this.btnADCanel.Text = "Canel";
-            this.btnADCanel.UseVisualStyleBackColor = true;
-            this.btnADCanel.Click += new System.EventHandler(this.btnADCanel_Click);
-            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -761,7 +761,7 @@
         private System.Windows.Forms.TextBox textEmail1;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Button btnLogOut;
-        private System.Windows.Forms.Button btnUpdata;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnModifyFind;
         private System.Windows.Forms.TextBox textGender1;
         private System.Windows.Forms.RadioButton radioFemale;
