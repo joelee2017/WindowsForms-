@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RecipeAdmin
+namespace WindowsForms個人專題
 {
     static class Program
     {

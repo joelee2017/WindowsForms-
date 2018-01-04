@@ -79,6 +79,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnRC = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -148,6 +149,7 @@
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.btnRC);
             this.splitContainer2.Panel2.Controls.Add(this.btnSeaFind);
             this.splitContainer2.Size = new System.Drawing.Size(1049, 558);
             this.splitContainer2.SplitterDistance = 897;
@@ -704,6 +706,17 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // btnRC
+            // 
+            this.btnRC.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRC.Location = new System.Drawing.Point(18, 495);
+            this.btnRC.Name = "btnRC";
+            this.btnRC.Size = new System.Drawing.Size(116, 39);
+            this.btnRC.TabIndex = 2;
+            this.btnRC.Text = "RecipeC";
+            this.btnRC.UseVisualStyleBackColor = true;
+            this.btnRC.Click += new System.EventHandler(this.btnRC_Click);
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -802,6 +815,7 @@
         private System.Windows.Forms.Button btnADCanel;
         private System.Windows.Forms.Label labelNADID;
         private System.Windows.Forms.Label labelNMfID;
+        private System.Windows.Forms.Button btnRC;
     }
 }
 

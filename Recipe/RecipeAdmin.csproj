@@ -49,16 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Recipe.cs">
+    <Compile Include="RecipeC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Recipe.Designer.cs">
-      <DependentUpon>Recipe.cs</DependentUpon>
+    <Compile Include="RecipeC.Designer.cs">
+      <DependentUpon>RecipeC.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Recipe.resx">
-      <DependentUpon>Recipe.cs</DependentUpon>
+    <EmbeddedResource Include="RecipeC.resx">
+      <DependentUpon>RecipeC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

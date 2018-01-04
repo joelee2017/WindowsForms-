@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using WindowsForms個人專題;
 using System.Drawing.Imaging;
 
-namespace RecipeAdmin
+namespace WindowsForms個人專題
 {
-    public partial class RecipeAdmin : Form
+    public partial class RecipeC : Form
     {
-        public RecipeAdmin()
+        public RecipeC()
         {
             InitializeComponent();
         }

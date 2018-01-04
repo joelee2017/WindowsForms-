@@ -7,6 +7,8 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
+
+
 namespace WindowsForms個人專題
 {
     public partial class SearchForm : Form
@@ -331,11 +333,15 @@ namespace WindowsForms個人專題
             }
         }
 
-
-
-
         #endregion
 
-
+        #region RecipeCreate
+        //RecipeCreate轉至建立食譜畫面
+        private void btnRC_Click(object sender, EventArgs e)
+        {
+            RecipeC rc = new RecipeC();
+            rc.Show();
+        }
+        #endregion
     }
 }

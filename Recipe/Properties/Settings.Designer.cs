@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RecipeAdmin.Properties
+namespace WindowsForms個人專題.Properties
 {
 
 

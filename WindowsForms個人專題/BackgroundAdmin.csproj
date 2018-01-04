@@ -90,6 +90,12 @@
     <Compile Include="Recipe.cs">
       <DependentUpon>DrModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="RecipeC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecipeC.Designer.cs">
+      <DependentUpon>RecipeC.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LogonForm.resx">
       <DependentUpon>LogonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecipeC.resx">
+      <DependentUpon>RecipeC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchForm.resx">
       <DependentUpon>SearchForm.cs</DependentUpon>

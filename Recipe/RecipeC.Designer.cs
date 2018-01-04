@@ -1,4 +1,4 @@
-﻿namespace RecipeAdmin
+﻿namespace WindowsForms個人專題
 {
     partial class RecipeAdmin
     {
