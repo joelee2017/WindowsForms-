@@ -44,7 +44,8 @@ namespace WindowsForms個人專題
         private void btnRC_Click(object sender, EventArgs e)
         {
             RecipeC rc = new RecipeC();
-            rc.FormClosed += Rc_FormClosed; this.Hide();
+            rc.FormClosed += Rc_FormClosed;
+            rc.ShowDialog(); this.Hide();
         }
 
         private void Rc_FormClosed(object sender, FormClosedEventArgs e)
