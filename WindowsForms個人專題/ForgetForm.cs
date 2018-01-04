@@ -31,7 +31,7 @@ namespace WindowsForms個人專題
         {
             this.Close();
         }
-        //========================================================================
+
 
         //Cancel清除輸入內容值
         private void btnCancel_Click(object sender, EventArgs e)
@@ -39,17 +39,14 @@ namespace WindowsForms個人專題
             textemail.Text = null;
             textlineid.Text = null;
         }
-        //=========================================================================
 
         //Forget查詢密碼
         private void btnForget_Click(object sender, EventArgs e)
         {
             try
-            {
-                
+            {                
                 if (dr.User.Any(u => u.Email == textemail.Text && u.LineID == textlineid.Text))
                 {
-
                     labelpassword.Text =(Convert.ToString(dr.User.Where
                      (u => u.Email == textemail.Text && u.LineID == textlineid.Text).Select(s => s.PassWord).First()));
                 }
@@ -64,10 +61,6 @@ namespace WindowsForms個人專題
             }
             
         }
-        //======================================================================
-
-
-
 
     }
 }

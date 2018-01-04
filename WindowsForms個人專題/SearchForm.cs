@@ -18,7 +18,7 @@ namespace WindowsForms個人專題
 
         }
 
-        //Logout登出
+        #region Logout登出
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             LogonForm lf3 = new LogonForm();
@@ -30,11 +30,12 @@ namespace WindowsForms個人專題
         {
             this.Close();
         }
+        #endregion
 
         DrEntities1 dr = new DrEntities1();
         User NwUser = new User();//資料表建立實體  
 
-        //Search查詢=========================================================================
+        #region Search查詢
         private void btnFind_Click(object sender, EventArgs e)
         {
             
@@ -62,11 +63,9 @@ namespace WindowsForms個人專題
             }
 
         }
-        //====================================================================================
+        #endregion
 
-
-
-        //Modify修改資料查詢===================================================================
+        #region Modify修改資料查詢
         private void btnModifyFind_Click(object sender, EventArgs e)
         {
             dataGridViewSearch.DataSource = null;
@@ -99,7 +98,7 @@ namespace WindowsForms個人專題
                 UserPhoto.Image = Image.FromStream(od.OpenFile());
             }
         }
-
+        
         //Modify聯動欄位資料顯示
         private void dataGridViewModify_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -118,20 +117,17 @@ namespace WindowsForms個人專題
                 {
                     UserPhoto.Image = Image.FromStream(ms);
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
+        
         //Modify修改上傳
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
                 User userUpdate = dr.User.Find(int.Parse(labelNMfID.Text));
-
                 userUpdate.Email = textEmail.Text;
                 userUpdate.PassWord = textPassWord.Text;
                 userUpdate.Gender = textGender.Text;
@@ -151,7 +147,7 @@ namespace WindowsForms個人專題
                 dr.Entry(userUpdate).State = EntityState.Modified;//修改記錄
                 dr.SaveChanges();
                 MessageBox.Show("ok");
-            btnModifyFind_Click(sender, e);
+                btnModifyFind_Click(sender, e);
 
         }
 
@@ -180,18 +176,17 @@ namespace WindowsForms個人專題
                 textGender.Text = null;
             }
         }
-        //===============================================================================
+        #endregion
 
-        //Add&Delete加入圖片==========================================================
+        #region Add&Delete加入圖片
         OpenFileDialog od = new OpenFileDialog();
-        private void Modify_Click(object sender, EventArgs e)
+        private void UserPhoto2_Click(object sender, EventArgs e)
         {
             if (od.ShowDialog() == DialogResult.OK)
             {
                 UserPhoto2.Image = Image.FromStream(od.OpenFile());
             }
         }
-        //Add&Delete=================================================================
 
         //Add&Delete查詢
         private void btnADFind_Click(object sender, EventArgs e)
@@ -326,11 +321,11 @@ namespace WindowsForms個人專題
                 }
             }
         }
+        #endregion
 
 
 
 
 
-        //==========================================================================
     }
 }

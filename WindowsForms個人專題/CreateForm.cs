@@ -25,6 +25,7 @@ namespace WindowsForms個人專題
         DrEntities1 dr = new DrEntities1();//資料庫建立實體
         User NwUser = new User();//資料表建立實體       
 
+
         //Return返迴logon
         private void btnReturn_Click(object sender, EventArgs e)
         {
@@ -59,6 +60,7 @@ namespace WindowsForms個人專題
             UserPhoto.Image = null;
         }
 
+        #region 性別
         //性別男
         private void radioMan_CheckedChanged(object sender, EventArgs e)
         {
@@ -84,15 +86,27 @@ namespace WindowsForms個人專題
                 Gendertext.Text = null;
             }
         }
+        #endregion
 
-        //新增帳號
+        #region 新增帳號
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            #region 雜湊方法(一)
+            //SHA256 sha256 = new SHA256CryptoServiceProvider();//建立SHA256
+            //byte[] source = Encoding.Default.GetBytes(PassWordtext.Text);//字串轉為byte[]
+            //byte[] crypto = sha256.ComputeHash(source);//進行SHA256加密
+            //string resultpa = Convert.ToBase64String(crypto);//把加密後的字串從Byte[]轉為字串
+            #endregion
 
-            SHA256 sha256 = new SHA256CryptoServiceProvider();//建立SHA256
-            byte[] source = Encoding.Default.GetBytes(PassWordtext.Text);//字串轉為byte[]
-            byte[] crypto = sha256.ComputeHash(source);//進行SHA256加密
-            string resultpa = Convert.ToBase64String(crypto);//把加密後的字串從Byte[]轉為字串
+            #region 雜湊方法(二)
+            SHA256 sHA256 = SHA256.Create();
+            byte[] data = sHA256.ComputeHash(Encoding.UTF8.GetBytes(PassWordtext.Text));
+            string hashString = "";
+            for (int i = 0; i < data.Length; i++)
+            {
+                hashString += data[i].ToString("x2").ToUpperInvariant();
+            }
+            #endregion
 
             using (var ms = new MemoryStream())
             {
@@ -101,7 +115,7 @@ namespace WindowsForms個人專題
             }
 
                 NwUser.Email = Emailtext.Text;
-                NwUser.PassWord = resultpa;//已加密過後
+                NwUser.PassWord = hashString;//已加密過後
                 NwUser.Gender = Gendertext.Text;
                 NwUser.FirstName = FirstNametext.Text;
                 NwUser.LastName = LastNametext.Text;
@@ -111,6 +125,7 @@ namespace WindowsForms個人專題
                 dr.SaveChanges();
                 MessageBox.Show("ok");
         }
-      
+        #endregion
+
     }
 }

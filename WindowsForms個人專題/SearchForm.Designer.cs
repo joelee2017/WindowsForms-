@@ -579,7 +579,7 @@
             this.UserPhoto2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.UserPhoto2.TabIndex = 37;
             this.UserPhoto2.TabStop = false;
-            this.UserPhoto2.Click += new System.EventHandler(this.Modify_Click);
+            this.UserPhoto2.Click += new System.EventHandler(this.UserPhoto2_Click);
             // 
             // label11
             // 
@@ -714,7 +714,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SearchForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "後臺管理";
+            this.Text = "後臺管理 v1.0";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
