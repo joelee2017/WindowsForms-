@@ -30,7 +30,7 @@ namespace WindowsForms個人專題
             if (of1.ShowDialog() == DialogResult.OK)
             {
                string file = of1.FileName;
-               pBRecipe.Image = Image.FromFile(file);
+               pBRecipemd.Image = Image.FromFile(file);
             }
         }
         #endregion
@@ -38,26 +38,39 @@ namespace WindowsForms個人專題
         //建立食譜
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            var query = dr.User.Where(d => d.Email == textEmail.Text).Select(s => s.UserID).First();
+            var query = dr.User.Where(d => d.Email == textEmailmd.Text).Select(s => s.UserID).First();
 
             using (MemoryStream ms = new MemoryStream())
-            using(Bitmap pic =new Bitmap(pBRecipe.Image))
+            using(Bitmap pic =new Bitmap(pBRecipemd.Image))
             {
                 pic.Save(ms, ImageFormat.Jpeg);
                 rp.Photo = pic.ToString();
             }
 
             rp.UserID = query;
-            rp.FoodName = textFoodName.Text;
-            rp.Description = textDescription.Text;
-            rp.CookingTime_minute_ = int.Parse(textCookingTime.Text);
-            rp.Amount = int.Parse(textAmount.Text);
-            rp.Tips = textTips.Text;
+            rp.FoodName = textFoodNamemd.Text;
+            rp.Description = textDescriptionmd.Text;
+            rp.CookingTime_minute_ = int.Parse(textCookingTimemd.Text);
+            rp.Amount = int.Parse(textAmountmd.Text);
+            rp.Tips = textTipsmd.Text;
 
             dr.Recipe.Add(rp);
             dr.SaveChanges();
             MessageBox.Show("OK");
             
+        }
+
+        //Return返迴
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            SearchForm sf = new SearchForm();
+            sf.FormClosed += Sf_FormClosed;
+            sf.Show(); this.Hide();
+        }
+
+        private void Sf_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
