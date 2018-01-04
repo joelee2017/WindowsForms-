@@ -32,8 +32,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.dataGridViewSearch = new System.Windows.Forms.DataGridView();
-            this.dataGridViewSearch1 = new System.Windows.Forms.DataGridView();
+            this.dGridViewSearchUser = new System.Windows.Forms.DataGridView();
+            this.dGridViewSearchRecipe = new System.Windows.Forms.DataGridView();
             this.btnSeaFind = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
@@ -89,8 +89,8 @@
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearch1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridViewSearchUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridViewSearchRecipe)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
@@ -162,37 +162,38 @@
             // 
             // splitContainer5.Panel1
             // 
-            this.splitContainer5.Panel1.Controls.Add(this.dataGridViewSearch);
+            this.splitContainer5.Panel1.Controls.Add(this.dGridViewSearchUser);
             // 
             // splitContainer5.Panel2
             // 
-            this.splitContainer5.Panel2.Controls.Add(this.dataGridViewSearch1);
+            this.splitContainer5.Panel2.Controls.Add(this.dGridViewSearchRecipe);
             this.splitContainer5.Size = new System.Drawing.Size(897, 558);
             this.splitContainer5.SplitterDistance = 328;
             this.splitContainer5.TabIndex = 0;
             // 
-            // dataGridViewSearch
+            // dGridViewSearchUser
             // 
-            this.dataGridViewSearch.AllowUserToOrderColumns = true;
-            this.dataGridViewSearch.BackgroundColor = System.Drawing.Color.Moccasin;
-            this.dataGridViewSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewSearch.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewSearch.Name = "dataGridViewSearch";
-            this.dataGridViewSearch.RowTemplate.Height = 24;
-            this.dataGridViewSearch.Size = new System.Drawing.Size(897, 328);
-            this.dataGridViewSearch.TabIndex = 3;
+            this.dGridViewSearchUser.AllowUserToOrderColumns = true;
+            this.dGridViewSearchUser.BackgroundColor = System.Drawing.Color.Moccasin;
+            this.dGridViewSearchUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGridViewSearchUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dGridViewSearchUser.Location = new System.Drawing.Point(0, 0);
+            this.dGridViewSearchUser.Name = "dGridViewSearchUser";
+            this.dGridViewSearchUser.RowTemplate.Height = 24;
+            this.dGridViewSearchUser.Size = new System.Drawing.Size(897, 328);
+            this.dGridViewSearchUser.TabIndex = 3;
+            this.dGridViewSearchUser.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridViewSearchUser_RowEnter);
             // 
-            // dataGridViewSearch1
+            // dGridViewSearchRecipe
             // 
-            this.dataGridViewSearch1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridViewSearch1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSearch1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewSearch1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewSearch1.Name = "dataGridViewSearch1";
-            this.dataGridViewSearch1.RowTemplate.Height = 24;
-            this.dataGridViewSearch1.Size = new System.Drawing.Size(897, 226);
-            this.dataGridViewSearch1.TabIndex = 0;
+            this.dGridViewSearchRecipe.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dGridViewSearchRecipe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGridViewSearchRecipe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dGridViewSearchRecipe.Location = new System.Drawing.Point(0, 0);
+            this.dGridViewSearchRecipe.Name = "dGridViewSearchRecipe";
+            this.dGridViewSearchRecipe.RowTemplate.Height = 24;
+            this.dGridViewSearchRecipe.Size = new System.Drawing.Size(897, 226);
+            this.dGridViewSearchRecipe.TabIndex = 0;
             // 
             // btnSeaFind
             // 
@@ -725,8 +726,8 @@
             this.splitContainer5.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
             this.splitContainer5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearch1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridViewSearchUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridViewSearchRecipe)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel2.ResumeLayout(false);
@@ -793,8 +794,8 @@
         private System.Windows.Forms.RadioButton radioMfFemale;
         private System.Windows.Forms.RadioButton radioMfMan;
         private System.Windows.Forms.SplitContainer splitContainer5;
-        private System.Windows.Forms.DataGridView dataGridViewSearch;
-        private System.Windows.Forms.DataGridView dataGridViewSearch1;
+        private System.Windows.Forms.DataGridView dGridViewSearchUser;
+        private System.Windows.Forms.DataGridView dGridViewSearchRecipe;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSeaFind;
         private System.Windows.Forms.Button btnADFind;

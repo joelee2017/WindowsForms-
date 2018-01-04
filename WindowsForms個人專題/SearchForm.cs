@@ -33,16 +33,17 @@ namespace WindowsForms個人專題
         #endregion
 
         DrEntities1 dr = new DrEntities1();
-        User NwUser = new User();//資料表建立實體  
+        User NwUser = new User();// user資料表建立實體  
+        Recipe rp = new Recipe();// recipe資料表建立實體
 
         #region Search查詢
         private void btnFind_Click(object sender, EventArgs e)
         {
             
-            dataGridViewSearch.DataSource = null;
+            dGridViewSearchUser.DataSource = null;
             try
             {
-                dataGridViewSearch.DataSource = dr.User.Select(user => new
+                dGridViewSearchUser.DataSource = dr.User.Select(user => new
                 {
 
                     編號 = user.UserID,
@@ -63,12 +64,19 @@ namespace WindowsForms個人專題
             }
 
         }
+        //Search資料聯動 User &  Recipe
+        private void dGridViewSearchUser_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            int userid = Convert.ToInt32(dGridViewSearchUser.Rows[e.RowIndex].Cells[0].Value);
+            dGridViewSearchRecipe.DataSource = dr.Recipe.Where(u => u.UserID == userid).ToArray();
+
+        }
         #endregion
 
         #region Modify修改資料查詢
         private void btnModifyFind_Click(object sender, EventArgs e)
         {
-            dataGridViewSearch.DataSource = null;
+            dGridViewSearchUser.DataSource = null;
             try
             {
                 dataGridViewModify.DataSource = dr.User.Select(user => new
@@ -191,7 +199,7 @@ namespace WindowsForms個人專題
         //Add&Delete查詢
         private void btnADFind_Click(object sender, EventArgs e)
         {
-            dataGridViewSearch.DataSource = null;
+            dGridViewSearchUser.DataSource = null;
             try
             {
                 dataGridViewAD.DataSource = dr.User.Select(user => new
@@ -321,10 +329,11 @@ namespace WindowsForms個人專題
                 }
             }
         }
+
+
+
+
         #endregion
-
-
-
 
 
     }

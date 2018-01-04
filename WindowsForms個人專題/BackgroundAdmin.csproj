@@ -87,6 +87,9 @@
     <Compile Include="LogonForm.Designer.cs">
       <DependentUpon>LogonForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Recipe.cs">
+      <DependentUpon>DrModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="SearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,12 +147,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj">
-      <Project>{51d3c17c-6a42-48fb-8759-63b1f58f119a}</Project>
-      <Name>ClassLibrary1</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="DrModel.Context.tt">

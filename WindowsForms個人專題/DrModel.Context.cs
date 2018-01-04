@@ -26,5 +26,6 @@ namespace WindowsForms個人專題
         }
     
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Recipe> Recipe { get; set; }
     }
 }
