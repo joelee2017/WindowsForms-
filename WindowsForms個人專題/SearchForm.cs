@@ -20,6 +20,11 @@ namespace WindowsForms個人專題
 
         }
 
+        DrEntities1 dr = new DrEntities1();
+        User NwUser = new User();// user資料表建立實體  
+        Recipe rp = new Recipe();// recipe資料表建立實體
+        OpenFileDialog od = new OpenFileDialog();
+
         #region Logout登出
         private void btnLogOut_Click(object sender, EventArgs e)
         {
@@ -34,10 +39,19 @@ namespace WindowsForms個人專題
         }
         #endregion
 
-        DrEntities1 dr = new DrEntities1();
-        User NwUser = new User();// user資料表建立實體  
-        Recipe rp = new Recipe();// recipe資料表建立實體
-        OpenFileDialog od = new OpenFileDialog();
+        #region RecipeCreate
+        //RecipeCreate轉至建立食譜畫面
+        private void btnRC_Click(object sender, EventArgs e)
+        {
+            RecipeC rc = new RecipeC();
+            rc.FormClosed += Rc_FormClosed; this.Hide();
+        }
+
+        private void Rc_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
 
         #region Search查詢
         private void btnFind_Click(object sender, EventArgs e)
@@ -335,13 +349,6 @@ namespace WindowsForms個人專題
 
         #endregion
 
-        #region RecipeCreate
-        //RecipeCreate轉至建立食譜畫面
-        private void btnRC_Click(object sender, EventArgs e)
-        {
-            RecipeC rc = new RecipeC();
-            rc.Show();
-        }
-        #endregion
+        
     }
 }
