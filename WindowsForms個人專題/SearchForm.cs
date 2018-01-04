@@ -35,6 +35,7 @@ namespace WindowsForms個人專題
         DrEntities1 dr = new DrEntities1();
         User NwUser = new User();// user資料表建立實體  
         Recipe rp = new Recipe();// recipe資料表建立實體
+        OpenFileDialog od = new OpenFileDialog();
 
         #region Search查詢
         private void btnFind_Click(object sender, EventArgs e)
@@ -150,6 +151,7 @@ namespace WindowsForms個人專題
                     //UserPhoto.Image = Image.FromStream(ms);
                     //byte[] imgdata = ms.GetBuffer();
                     pic.Save(ms, ImageFormat.Jpeg);
+                    
                 }
 
                 dr.Entry(userUpdate).State = EntityState.Modified;//修改記錄
@@ -186,8 +188,7 @@ namespace WindowsForms個人專題
         }
         #endregion
 
-        #region Add&Delete加入圖片
-        OpenFileDialog od = new OpenFileDialog();
+        #region Add&Delete加入圖片        
         private void UserPhoto2_Click(object sender, EventArgs e)
         {
             if (od.ShowDialog() == DialogResult.OK)

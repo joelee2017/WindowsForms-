@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundAdmin", "WindowsForms個人專題\BackgroundAdmin.csproj", "{57C44E00-F6C8-4D64-937C-5D8648275A84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipe", "Recipe\Recipe.csproj", "{61717D17-58FB-47FD-BF5E-D1BDF5FC22D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeAdmin", "Recipe\RecipeAdmin.csproj", "{61717D17-58FB-47FD-BF5E-D1BDF5FC22D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

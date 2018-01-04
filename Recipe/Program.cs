@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Recipe
+namespace RecipeAdmin
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Recipe
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Recipe());
+            Application.Run(new RecipeAdmin());
         }
     }
 }
