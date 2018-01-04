@@ -30,36 +30,39 @@ namespace WindowsForms個人專題
             if (of1.ShowDialog() == DialogResult.OK)
             {
                string file = of1.FileName;
-               pBRecipemd.Image = Image.FromFile(file);
+               pBRecipe.Image = Image.FromFile(file);
             }
         }
         #endregion
 
+        #region 建立食譜
         //建立食譜
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            var query = dr.User.Where(d => d.Email == textEmailmd.Text).Select(s => s.UserID).First();
+            var query = dr.User.Where(d => d.Email == textEmail.Text).Select(s => s.UserID).First();
 
             using (MemoryStream ms = new MemoryStream())
-            using(Bitmap pic =new Bitmap(pBRecipemd.Image))
+            using(Bitmap pic =new Bitmap(pBRecipe.Image))
             {
                 pic.Save(ms, ImageFormat.Jpeg);
                 rp.Photo = pic.ToString();
             }
 
             rp.UserID = query;
-            rp.FoodName = textFoodNamemd.Text;
-            rp.Description = textDescriptionmd.Text;
-            rp.CookingTime_minute_ = int.Parse(textCookingTimemd.Text);
-            rp.Amount = int.Parse(textAmountmd.Text);
-            rp.Tips = textTipsmd.Text;
+            rp.FoodName = textFoodName.Text;
+            rp.Description = textDescription.Text;
+            rp.CookingTime_minute_ = int.Parse(textCookingTime.Text);
+            rp.Amount = int.Parse(textAmount.Text);
+            rp.Tips = textTips.Text;
 
             dr.Recipe.Add(rp);
             dr.SaveChanges();
             MessageBox.Show("OK");
             
         }
+        #endregion
 
+        #region Return
         //Return返迴
         private void btnReturn_Click(object sender, EventArgs e)
         {
@@ -67,10 +70,50 @@ namespace WindowsForms個人專題
             sf.FormClosed += Sf_FormClosed;
             sf.Show(); this.Hide();
         }
-
         private void Sf_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
+        }
+        #endregion
+
+        private void btnFindMd_Click(object sender, EventArgs e)
+        {
+            //if (!true)
+            if (textEmailMdFind.Text =="" && textFdNameMdFdName.Text =="")
+            {
+                MessageBox.Show("請至少選擇任一種方法搜尋");
+            }
+            else if(textEmailMdFind.Text !="" && textFdNameMdFdName.Text !="" )
+            {
+                MessageBox.Show("一次只能用一種方式搜尋");
+            }
+            else if(textEmailMdFind.Text !="")
+            {
+                dataGridViewMd.DataSource =
+                    from s in dr.User
+                    join c in dr.Recipe on s.UserID equals c.UserID
+                    where s.Email == "textEmailMdFind.Text"
+                    select new
+                    {
+                        textEmailMd = s.Email,
+                        pBPhotoMd = s.Photo,
+                        textFoodNameMd = c.FoodName,
+                        textDescriptionMd =c.Description,
+                        textAmount =c.Amount,
+                        textCookTimeMd =c.CookingTime_minute_,
+                        textTipsMd =c.Tips,
+                    };
+                     
+                     
+                    
+            }
+            else if(textFdNameMdFdName.Text !="")
+            {
+
+            }
+
+
+            
         }
     }
 }
