@@ -18,8 +18,6 @@ namespace WindowsForms個人專題
         public CreateForm()
         {
             InitializeComponent();
-
-
         }
 
         DrEntities1 dr = new DrEntities1();//資料庫建立實體
@@ -58,6 +56,7 @@ namespace WindowsForms個人專題
             LastNametext.Text = null;
             LineIDtext.Text = null;
             UserPhoto.Image = null;
+            Gendertext.Text = null;
         }
 
         #region 性別
@@ -91,39 +90,44 @@ namespace WindowsForms個人專題
         #region 新增帳號
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            #region 雜湊方法(一)
-            //SHA256 sha256 = new SHA256CryptoServiceProvider();//建立SHA256
-            //byte[] source = Encoding.Default.GetBytes(PassWordtext.Text);//字串轉為byte[]
-            //byte[] crypto = sha256.ComputeHash(source);//進行SHA256加密
-            //string resultpa = Convert.ToBase64String(crypto);//把加密後的字串從Byte[]轉為字串
-            #endregion
-
-            #region 雜湊方法(二)
-            SHA256 sHA256 = SHA256.Create();
-            byte[] data = sHA256.ComputeHash(Encoding.UTF8.GetBytes(PassWordtext.Text));
-            string hashString = "";
-            for (int i = 0; i < data.Length; i++)
+            if (dr.User.Any(u => u.Email == Emailtext.Text))
             {
-                hashString += data[i].ToString("x2").ToUpperInvariant();
+                MessageBox.Show($"{Emailtext.Text} 已註冊過。");
             }
-            #endregion
-
-            using (var ms = new MemoryStream())
+            else
             {
-                UserPhoto.Image.Save(ms, ImageFormat.Jpeg);
-                NwUser.Photo = ms.ToArray();
-            }
+                #region 雜湊方法(一)
+                //SHA256 sha256 = new SHA256CryptoServiceProvider();//建立SHA256
+                //byte[] source = Encoding.Default.GetBytes(PassWordtext.Text);//字串轉為byte[]
+                //byte[] crypto = sha256.ComputeHash(source);//進行SHA256加密
+                //string resultpa = Convert.ToBase64String(crypto);//把加密後的字串從Byte[]轉為字串
+                #endregion
 
+                #region 雜湊方法(二)
+                SHA256 sHA256 = SHA256.Create();
+                byte[] data = sHA256.ComputeHash(Encoding.UTF8.GetBytes(PassWordtext.Text));
+                string hashString = "";
+                for (int i = 0; i < data.Length; i++)
+                {
+                    hashString += data[i].ToString("x2").ToUpperInvariant();
+                }
+                #endregion
+
+                using (var ms = new MemoryStream())
+                {
+                    UserPhoto.Image.Save(ms, ImageFormat.Jpeg);
+                    NwUser.Photo = ms.ToArray();
+                }
                 NwUser.Email = Emailtext.Text;
                 NwUser.PassWord = hashString;//已加密過後
                 NwUser.Gender = Gendertext.Text;
                 NwUser.FirstName = FirstNametext.Text;
                 NwUser.LastName = LastNametext.Text;
-
                 NwUser.LineID = LineIDtext.Text;
                 dr.User.Add(NwUser);
                 dr.SaveChanges();
                 MessageBox.Show("ok");
+            }
         }
         #endregion
 

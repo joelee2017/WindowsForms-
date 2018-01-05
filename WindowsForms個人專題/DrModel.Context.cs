@@ -25,7 +25,7 @@ namespace WindowsForms個人專題
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Recipe> Recipe { get; set; }
+        public virtual DbSet<User> User { get; set; }
     }
 }
