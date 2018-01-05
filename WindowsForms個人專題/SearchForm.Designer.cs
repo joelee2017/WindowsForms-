@@ -41,6 +41,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.dataGridViewModify = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
             this.labelNMfID = new System.Windows.Forms.Label();
             this.textGender = new System.Windows.Forms.TextBox();
             this.radioMfFemale = new System.Windows.Forms.RadioButton();
@@ -61,6 +62,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.dataGridViewAD = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
             this.labelNADID = new System.Windows.Forms.Label();
             this.btnADCanel = new System.Windows.Forms.Button();
             this.btnADFind = new System.Windows.Forms.Button();
@@ -82,8 +84,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -209,7 +209,7 @@
             this.pBSearch.BackColor = System.Drawing.SystemColors.Menu;
             this.pBSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pBSearch.Image = ((System.Drawing.Image)(resources.GetObject("pBSearch.Image")));
-            this.pBSearch.Location = new System.Drawing.Point(10, 12);
+            this.pBSearch.Location = new System.Drawing.Point(8, 62);
             this.pBSearch.Name = "pBSearch";
             this.pBSearch.Size = new System.Drawing.Size(241, 236);
             this.pBSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -300,6 +300,17 @@
             this.dataGridViewModify.Size = new System.Drawing.Size(739, 599);
             this.dataGridViewModify.TabIndex = 3;
             this.dataGridViewModify.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewModify_RowEnter);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(143, 213);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 22);
+            this.label5.TabIndex = 47;
+            this.label5.Text = "UserID：";
             // 
             // labelNMfID
             // 
@@ -530,6 +541,17 @@
             this.dataGridViewAD.TabIndex = 3;
             this.dataGridViewAD.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAD_RowEnter);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(112, 236);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 22);
+            this.label3.TabIndex = 45;
+            this.label3.Text = "UserID：";
+            // 
             // labelNADID
             // 
             this.labelNADID.AutoSize = true;
@@ -736,35 +758,13 @@
             // btnLogOut
             // 
             this.btnLogOut.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(8, 30);
+            this.btnLogOut.Location = new System.Drawing.Point(44, 88);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(86, 29);
             this.btnLogOut.TabIndex = 4;
             this.btnLogOut.Text = "LogOut";
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(112, 236);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 22);
-            this.label3.TabIndex = 45;
-            this.label3.Text = "UserID：";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(143, 213);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 22);
-            this.label5.TabIndex = 47;
-            this.label5.Text = "UserID：";
             // 
             // SearchForm
             // 

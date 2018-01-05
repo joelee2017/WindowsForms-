@@ -104,9 +104,15 @@ namespace WindowsForms個人專題
             {
                 //dataGridViewMd.DataSource = dr.User.Where(s=>s.UserID ==rp.UserID).Select
             }
-
-
             
+        }
+
+        private void btnAddText_Click(object sender, EventArgs e)
+        {
+            UserControlRecipeIngredientsText uc = new UserControlRecipeIngredientsText();
+            uc.Size = new Size(150, 20);
+            //uc.BorderStyle = BorderStyle.FixedSingle;
+            fLPanelIngredients.Controls.Add(uc);
         }
     }
 }

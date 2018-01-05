@@ -107,6 +107,12 @@
     <Compile Include="User.cs">
       <DependentUpon>DrModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserControlRecipeIngredientsText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlRecipeIngredientsText.Designer.cs">
+      <DependentUpon>UserControlRecipeIngredientsText.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CreateForm.resx">
       <DependentUpon>CreateForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +137,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControlRecipeIngredientsText.resx">
+      <DependentUpon>UserControlRecipeIngredientsText.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="DrModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DrModel.Designer.cs</LastGenOutput>

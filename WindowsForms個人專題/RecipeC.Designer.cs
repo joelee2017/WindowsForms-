@@ -50,6 +50,8 @@
             this.btnCreate = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.gpBoxIngredients = new System.Windows.Forms.GroupBox();
+            this.btnAddTextMd = new System.Windows.Forms.Button();
             this.textEmailMd = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -71,9 +73,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.textEmailMdFind = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnAddText = new System.Windows.Forms.Button();
+            this.fLPanelIngredients = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -88,7 +89,6 @@
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBPhotoMd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMd)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -124,6 +124,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.fLPanelIngredients);
+            this.splitContainer1.Panel1.Controls.Add(this.btnAddText);
             this.splitContainer1.Panel1.Controls.Add(this.textEmail);
             this.splitContainer1.Panel1.Controls.Add(this.label7);
             this.splitContainer1.Panel1.Controls.Add(this.textTips);
@@ -166,7 +168,7 @@
             // 
             // textTips
             // 
-            this.textTips.Location = new System.Drawing.Point(521, 139);
+            this.textTips.Location = new System.Drawing.Point(456, 161);
             this.textTips.Multiline = true;
             this.textTips.Name = "textTips";
             this.textTips.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -225,7 +227,7 @@
             // 
             // textDescription
             // 
-            this.textDescription.Location = new System.Drawing.Point(27, 402);
+            this.textDescription.Location = new System.Drawing.Point(31, 402);
             this.textDescription.Multiline = true;
             this.textDescription.Name = "textDescription";
             this.textDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -312,8 +314,8 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.splitContainer2.Panel1.Controls.Add(this.groupBox1);
-            this.splitContainer2.Panel1.Controls.Add(this.button2);
+            this.splitContainer2.Panel1.Controls.Add(this.gpBoxIngredients);
+            this.splitContainer2.Panel1.Controls.Add(this.btnAddTextMd);
             this.splitContainer2.Panel1.Controls.Add(this.textEmailMd);
             this.splitContainer2.Panel1.Controls.Add(this.label14);
             this.splitContainer2.Panel1.Controls.Add(this.label8);
@@ -343,6 +345,26 @@
             this.splitContainer2.Size = new System.Drawing.Size(967, 656);
             this.splitContainer2.SplitterDistance = 739;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // gpBoxIngredients
+            // 
+            this.gpBoxIngredients.BackColor = System.Drawing.Color.White;
+            this.gpBoxIngredients.Location = new System.Drawing.Point(413, 231);
+            this.gpBoxIngredients.Name = "gpBoxIngredients";
+            this.gpBoxIngredients.Size = new System.Drawing.Size(309, 346);
+            this.gpBoxIngredients.TabIndex = 31;
+            this.gpBoxIngredients.TabStop = false;
+            this.gpBoxIngredients.Text = "Ingredients";
+            // 
+            // btnAddTextMd
+            // 
+            this.btnAddTextMd.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTextMd.Location = new System.Drawing.Point(526, 598);
+            this.btnAddTextMd.Name = "btnAddTextMd";
+            this.btnAddTextMd.Size = new System.Drawing.Size(96, 40);
+            this.btnAddTextMd.TabIndex = 22;
+            this.btnAddTextMd.Text = "AddText";
+            this.btnAddTextMd.UseVisualStyleBackColor = true;
             // 
             // textEmailMd
             // 
@@ -465,7 +487,7 @@
             // btnModifyUp
             // 
             this.btnModifyUp.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifyUp.Location = new System.Drawing.Point(67, 585);
+            this.btnModifyUp.Location = new System.Drawing.Point(110, 517);
             this.btnModifyUp.Name = "btnModifyUp";
             this.btnModifyUp.Size = new System.Drawing.Size(99, 40);
             this.btnModifyUp.TabIndex = 21;
@@ -527,31 +549,25 @@
             this.label15.TabIndex = 15;
             this.label15.Text = "Email：";
             // 
-            // button2
+            // btnAddText
             // 
-            this.button2.Location = new System.Drawing.Point(395, 245);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 31;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAddText.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddText.Location = new System.Drawing.Point(456, 589);
+            this.btnAddText.Name = "btnAddText";
+            this.btnAddText.Size = new System.Drawing.Size(145, 40);
+            this.btnAddText.TabIndex = 32;
+            this.btnAddText.Text = "AddIngredients";
+            this.btnAddText.UseVisualStyleBackColor = true;
+            this.btnAddText.Click += new System.EventHandler(this.btnAddText_Click);
             // 
-            // groupBox1
+            // fLPanelIngredients
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(426, 274);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(266, 310);
-            this.groupBox1.TabIndex = 32;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(22, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 26);
-            this.textBox1.TabIndex = 0;
+            this.fLPanelIngredients.AutoScroll = true;
+            this.fLPanelIngredients.BackColor = System.Drawing.Color.White;
+            this.fLPanelIngredients.Location = new System.Drawing.Point(410, 239);
+            this.fLPanelIngredients.Name = "fLPanelIngredients";
+            this.fLPanelIngredients.Size = new System.Drawing.Size(245, 275);
+            this.fLPanelIngredients.TabIndex = 33;
             // 
             // RecipeC
             // 
@@ -582,8 +598,6 @@
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pBPhotoMd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMd)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -632,9 +646,10 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnModifyUp;
         private System.Windows.Forms.Button btnFindMd;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAddTextMd;
+        private System.Windows.Forms.GroupBox gpBoxIngredients;
+        private System.Windows.Forms.FlowLayoutPanel fLPanelIngredients;
+        private System.Windows.Forms.Button btnAddText;
     }
 }
 
