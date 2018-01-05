@@ -64,7 +64,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.btnCancel);
             this.splitContainer1.Panel2.Controls.Add(this.btnLogon);
             this.splitContainer1.Size = new System.Drawing.Size(468, 319);
-            this.splitContainer1.SplitterDistance = 247;
+            this.splitContainer1.SplitterDistance = 246;
             this.splitContainer1.TabIndex = 0;
             // 
             // label2
@@ -93,6 +93,7 @@
             this.Passwordtext.MaxLength = 12;
             this.Passwordtext.Multiline = true;
             this.Passwordtext.Name = "Passwordtext";
+            this.Passwordtext.PasswordChar = '*';
             this.Passwordtext.Size = new System.Drawing.Size(191, 31);
             this.Passwordtext.TabIndex = 1;
             // 

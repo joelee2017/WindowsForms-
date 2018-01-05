@@ -82,6 +82,8 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -207,9 +209,9 @@
             this.pBSearch.BackColor = System.Drawing.SystemColors.Menu;
             this.pBSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pBSearch.Image = ((System.Drawing.Image)(resources.GetObject("pBSearch.Image")));
-            this.pBSearch.Location = new System.Drawing.Point(23, 16);
+            this.pBSearch.Location = new System.Drawing.Point(10, 12);
             this.pBSearch.Name = "pBSearch";
-            this.pBSearch.Size = new System.Drawing.Size(221, 228);
+            this.pBSearch.Size = new System.Drawing.Size(241, 236);
             this.pBSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pBSearch.TabIndex = 3;
             this.pBSearch.TabStop = false;
@@ -260,6 +262,7 @@
             // 
             // splitContainer4.Panel2
             // 
+            this.splitContainer4.Panel2.Controls.Add(this.label5);
             this.splitContainer4.Panel2.Controls.Add(this.labelNMfID);
             this.splitContainer4.Panel2.Controls.Add(this.textGender);
             this.splitContainer4.Panel2.Controls.Add(this.radioMfFemale);
@@ -301,10 +304,11 @@
             // labelNMfID
             // 
             this.labelNMfID.AutoSize = true;
-            this.labelNMfID.ForeColor = System.Drawing.Color.AliceBlue;
-            this.labelNMfID.Location = new System.Drawing.Point(301, 164);
+            this.labelNMfID.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelNMfID.ForeColor = System.Drawing.Color.Black;
+            this.labelNMfID.Location = new System.Drawing.Point(260, 213);
             this.labelNMfID.Name = "labelNMfID";
-            this.labelNMfID.Size = new System.Drawing.Size(18, 19);
+            this.labelNMfID.Size = new System.Drawing.Size(20, 22);
             this.labelNMfID.TabIndex = 44;
             this.labelNMfID.Text = "#";
             // 
@@ -399,7 +403,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(64, 380);
+            this.label4.Location = new System.Drawing.Point(64, 392);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 22);
             this.label4.TabIndex = 23;
@@ -407,7 +411,7 @@
             // 
             // textLastName
             // 
-            this.textLastName.Location = new System.Drawing.Point(220, 371);
+            this.textLastName.Location = new System.Drawing.Point(220, 383);
             this.textLastName.Multiline = true;
             this.textLastName.Name = "textLastName";
             this.textLastName.Size = new System.Drawing.Size(159, 31);
@@ -417,7 +421,7 @@
             // 
             this.FirstNametxt.AutoSize = true;
             this.FirstNametxt.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstNametxt.Location = new System.Drawing.Point(64, 332);
+            this.FirstNametxt.Location = new System.Drawing.Point(64, 344);
             this.FirstNametxt.Name = "FirstNametxt";
             this.FirstNametxt.Size = new System.Drawing.Size(100, 22);
             this.FirstNametxt.TabIndex = 21;
@@ -425,7 +429,7 @@
             // 
             // textFirstName
             // 
-            this.textFirstName.Location = new System.Drawing.Point(220, 323);
+            this.textFirstName.Location = new System.Drawing.Point(220, 335);
             this.textFirstName.Multiline = true;
             this.textFirstName.Name = "textFirstName";
             this.textFirstName.Size = new System.Drawing.Size(159, 31);
@@ -435,7 +439,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(64, 285);
+            this.label2.Location = new System.Drawing.Point(64, 297);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 22);
             this.label2.TabIndex = 19;
@@ -443,9 +447,10 @@
             // 
             // textPassWord
             // 
-            this.textPassWord.Location = new System.Drawing.Point(220, 276);
+            this.textPassWord.Location = new System.Drawing.Point(220, 288);
             this.textPassWord.Multiline = true;
             this.textPassWord.Name = "textPassWord";
+            this.textPassWord.PasswordChar = '*';
             this.textPassWord.Size = new System.Drawing.Size(159, 31);
             this.textPassWord.TabIndex = 18;
             // 
@@ -453,7 +458,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(64, 239);
+            this.label1.Location = new System.Drawing.Point(64, 251);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 22);
             this.label1.TabIndex = 17;
@@ -461,7 +466,7 @@
             // 
             // textEmail
             // 
-            this.textEmail.Location = new System.Drawing.Point(220, 230);
+            this.textEmail.Location = new System.Drawing.Point(220, 242);
             this.textEmail.Multiline = true;
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(159, 31);
@@ -489,6 +494,7 @@
             // 
             // splitContainer3.Panel2
             // 
+            this.splitContainer3.Panel2.Controls.Add(this.label3);
             this.splitContainer3.Panel2.Controls.Add(this.labelNADID);
             this.splitContainer3.Panel2.Controls.Add(this.btnADCanel);
             this.splitContainer3.Panel2.Controls.Add(this.btnADFind);
@@ -527,10 +533,11 @@
             // labelNADID
             // 
             this.labelNADID.AutoSize = true;
-            this.labelNADID.ForeColor = System.Drawing.Color.AliceBlue;
-            this.labelNADID.Location = new System.Drawing.Point(279, 168);
+            this.labelNADID.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelNADID.ForeColor = System.Drawing.Color.Black;
+            this.labelNADID.Location = new System.Drawing.Point(239, 236);
             this.labelNADID.Name = "labelNADID";
-            this.labelNADID.Size = new System.Drawing.Size(18, 19);
+            this.labelNADID.Size = new System.Drawing.Size(20, 22);
             this.labelNADID.TabIndex = 44;
             this.labelNADID.Text = "#";
             // 
@@ -606,7 +613,7 @@
             // 
             this.UserPhoto2.BackColor = System.Drawing.Color.LightSteelBlue;
             this.UserPhoto2.Image = ((System.Drawing.Image)(resources.GetObject("UserPhoto2.Image")));
-            this.UserPhoto2.Location = new System.Drawing.Point(95, 54);
+            this.UserPhoto2.Location = new System.Drawing.Point(81, 23);
             this.UserPhoto2.Name = "UserPhoto2";
             this.UserPhoto2.Size = new System.Drawing.Size(195, 187);
             this.UserPhoto2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -683,6 +690,7 @@
             this.textPassWord1.Location = new System.Drawing.Point(188, 325);
             this.textPassWord1.Multiline = true;
             this.textPassWord1.Name = "textPassWord1";
+            this.textPassWord1.PasswordChar = '*';
             this.textPassWord1.Size = new System.Drawing.Size(159, 31);
             this.textPassWord1.TabIndex = 29;
             // 
@@ -735,6 +743,28 @@
             this.btnLogOut.Text = "LogOut";
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(112, 236);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 22);
+            this.label3.TabIndex = 45;
+            this.label3.Text = "UserID：";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(143, 213);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 22);
+            this.label5.TabIndex = 47;
+            this.label5.Text = "UserID：";
             // 
             // SearchForm
             // 
@@ -837,6 +867,8 @@
         private System.Windows.Forms.Label labelNMfID;
         private System.Windows.Forms.Button btnRC;
         private System.Windows.Forms.PictureBox pBSearch;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
     }
 }
 

@@ -220,6 +220,7 @@
             this.PassWordtext.MaxLength = 12;
             this.PassWordtext.Multiline = true;
             this.PassWordtext.Name = "PassWordtext";
+            this.PassWordtext.PasswordChar = '*';
             this.PassWordtext.Size = new System.Drawing.Size(159, 31);
             this.PassWordtext.TabIndex = 5;
             // 

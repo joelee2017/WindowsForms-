@@ -93,10 +93,10 @@ namespace WindowsForms個人專題
             {
                 var query = from s in dr.User
                             join c in dr.Recipe on s.UserID equals c.UserID
-                            where s.Email == "textEmailMdFind.Text"
+                            where s.Email == textEmailMdFind.Text
                             select new
                             {
-                                 c.FoodName,
+                                  c.FoodName,
                             };
                 dataGridViewMd.DataSource = query.ToArray();
             }

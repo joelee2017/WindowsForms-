@@ -189,13 +189,17 @@ namespace WindowsForms個人專題
         //Modify修改上傳
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            try
+            {
+
+
                 SHA256 sHA256 = SHA256.Create();
                 byte[] data = sHA256.ComputeHash(Encoding.UTF8.GetBytes(textPassWord.Text));
                 string hashString = "";
-                for(int i =0; i < data.Length; i++)
-            {
-                hashString += data[i].ToString("x2").ToUpperInvariant();
-            }
+                for (int i = 0; i < data.Length; i++)
+                {
+                    hashString += data[i].ToString("x2").ToUpperInvariant();
+                }
 
                 User userUpdate = dr.User.Find(int.Parse(labelNMfID.Text));
                 userUpdate.Email = textEmail.Text;
@@ -205,20 +209,25 @@ namespace WindowsForms個人專題
                 userUpdate.LastName = textLastName.Text;
                 userUpdate.LineID = textLineID.Text;
 
-            //picturebox無法直接儲存，所以需要另建一個bitmap包起來save
-            using (MemoryStream ms = new MemoryStream())
+                //picturebox無法直接儲存，所以需要另建一個bitmap包起來save
+                using (MemoryStream ms = new MemoryStream())
                 using (var pic = new Bitmap(UserPhoto.Image))
                 {
                     //UserPhoto.Image = Image.FromStream(ms);
                     //byte[] imgdata = ms.GetBuffer();
                     pic.Save(ms, ImageFormat.Jpeg);
-                    
+
                 }
 
                 dr.Entry(userUpdate).State = EntityState.Modified;//修改記錄
                 dr.SaveChanges();
                 MessageBox.Show("ok");
                 btnModifyFind_Click(sender, e);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 

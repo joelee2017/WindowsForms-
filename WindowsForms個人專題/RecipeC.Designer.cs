@@ -71,6 +71,9 @@
             this.label16 = new System.Windows.Forms.Label();
             this.textEmailMdFind = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -85,6 +88,7 @@
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBPhotoMd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMd)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -307,6 +311,9 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.splitContainer2.Panel1.Controls.Add(this.groupBox1);
+            this.splitContainer2.Panel1.Controls.Add(this.button2);
             this.splitContainer2.Panel1.Controls.Add(this.textEmailMd);
             this.splitContainer2.Panel1.Controls.Add(this.label14);
             this.splitContainer2.Panel1.Controls.Add(this.label8);
@@ -325,6 +332,7 @@
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.splitContainer2.Panel2.Controls.Add(this.btnModifyUp);
             this.splitContainer2.Panel2.Controls.Add(this.btnFindMd);
             this.splitContainer2.Panel2.Controls.Add(this.dataGridViewMd);
@@ -355,7 +363,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(452, 139);
+            this.label8.Location = new System.Drawing.Point(444, 139);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(64, 19);
             this.label8.TabIndex = 28;
@@ -363,7 +371,7 @@
             // 
             // textTipsMd
             // 
-            this.textTipsMd.Location = new System.Drawing.Point(534, 139);
+            this.textTipsMd.Location = new System.Drawing.Point(526, 139);
             this.textTipsMd.Multiline = true;
             this.textTipsMd.Name = "textTipsMd";
             this.textTipsMd.Size = new System.Drawing.Size(196, 70);
@@ -372,7 +380,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(417, 95);
+            this.label9.Location = new System.Drawing.Point(409, 95);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(81, 19);
             this.label9.TabIndex = 26;
@@ -380,7 +388,7 @@
             // 
             // textCookTimeMd
             // 
-            this.textCookTimeMd.Location = new System.Drawing.Point(534, 76);
+            this.textCookTimeMd.Location = new System.Drawing.Point(526, 76);
             this.textCookTimeMd.Name = "textCookTimeMd";
             this.textCookTimeMd.Size = new System.Drawing.Size(100, 26);
             this.textCookTimeMd.TabIndex = 25;
@@ -388,7 +396,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(389, 76);
+            this.label10.Location = new System.Drawing.Point(381, 76);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(127, 19);
             this.label10.TabIndex = 24;
@@ -397,7 +405,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(434, 27);
+            this.label11.Location = new System.Drawing.Point(426, 27);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(82, 19);
             this.label11.TabIndex = 23;
@@ -405,7 +413,7 @@
             // 
             // textAmountMd
             // 
-            this.textAmountMd.Location = new System.Drawing.Point(534, 23);
+            this.textAmountMd.Location = new System.Drawing.Point(526, 23);
             this.textAmountMd.Name = "textAmountMd";
             this.textAmountMd.Size = new System.Drawing.Size(100, 26);
             this.textAmountMd.TabIndex = 22;
@@ -477,6 +485,7 @@
             // 
             // dataGridViewMd
             // 
+            this.dataGridViewMd.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewMd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMd.Location = new System.Drawing.Point(7, 139);
             this.dataGridViewMd.Name = "dataGridViewMd";
@@ -518,6 +527,32 @@
             this.label15.TabIndex = 15;
             this.label15.Text = "Email：";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(395, 245);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 31;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Location = new System.Drawing.Point(426, 274);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(266, 310);
+            this.groupBox1.TabIndex = 32;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(22, 26);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(135, 26);
+            this.textBox1.TabIndex = 0;
+            // 
             // RecipeC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -547,6 +582,8 @@
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pBPhotoMd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMd)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -595,6 +632,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnModifyUp;
         private System.Windows.Forms.Button btnFindMd;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
