@@ -13,7 +13,7 @@
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="FoodName" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="CookingTime(minute)" Type="int" />
+          <Property Name="CookingTime" Type="int" />
           <Property Name="Amount" Type="int" />
           <Property Name="Photo" Type="nvarchar(max)" />
           <Property Name="Tips" Type="nvarchar" MaxLength="200" />
@@ -85,7 +85,7 @@
           <Property Name="UserID" Type="Int32" Nullable="false" />
           <Property Name="FoodName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="CookingTime_minute_" Type="Int32" />
+          <Property Name="CookingTime" Type="Int32" />
           <Property Name="Amount" Type="Int32" />
           <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Tips" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
@@ -129,7 +129,7 @@
                 <ScalarProperty Name="Tips" ColumnName="Tips" />
                 <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="CookingTime_minute_" ColumnName="CookingTime(minute)" />
+                <ScalarProperty Name="CookingTime" ColumnName="CookingTime" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="FoodName" ColumnName="FoodName" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />

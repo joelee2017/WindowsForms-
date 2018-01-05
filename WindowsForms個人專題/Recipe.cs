@@ -18,7 +18,7 @@ namespace WindowsForms個人專題
         public int UserID { get; set; }
         public string FoodName { get; set; }
         public string Description { get; set; }
-        public Nullable<int> CookingTime_minute_ { get; set; }
+        public Nullable<int> CookingTime { get; set; }
         public Nullable<int> Amount { get; set; }
         public string Photo { get; set; }
         public string Tips { get; set; }

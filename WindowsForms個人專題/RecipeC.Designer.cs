@@ -331,7 +331,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.textEmailMdFind);
             this.splitContainer2.Panel2.Controls.Add(this.label15);
             this.splitContainer2.Size = new System.Drawing.Size(967, 656);
-            this.splitContainer2.SplitterDistance = 770;
+            this.splitContainer2.SplitterDistance = 739;
             this.splitContainer2.TabIndex = 0;
             // 
             // textEmailMd
@@ -478,7 +478,7 @@
             this.dataGridViewMd.Location = new System.Drawing.Point(7, 139);
             this.dataGridViewMd.Name = "dataGridViewMd";
             this.dataGridViewMd.RowTemplate.Height = 24;
-            this.dataGridViewMd.Size = new System.Drawing.Size(175, 343);
+            this.dataGridViewMd.Size = new System.Drawing.Size(202, 343);
             this.dataGridViewMd.TabIndex = 19;
             // 
             // textFdNameMdFdName

@@ -51,7 +51,7 @@ namespace WindowsForms個人專題
             rp.UserID = query;
             rp.FoodName = textFoodName.Text;
             rp.Description = textDescription.Text;
-            rp.CookingTime_minute_ = int.Parse(textCookingTime.Text);
+            rp.CookingTime = int.Parse(textCookingTime.Text);
             rp.Amount = int.Parse(textAmount.Text);
             rp.Tips = textTips.Text;
 
@@ -89,27 +89,18 @@ namespace WindowsForms個人專題
             }
             else if(textEmailMdFind.Text !="")
             {
-                dataGridViewMd.DataSource =
-                    from s in dr.User
-                    join c in dr.Recipe on s.UserID equals c.UserID
-                    where s.Email == "textEmailMdFind.Text"
-                    select new
-                    {
-                        textEmailMd = s.Email,
-                        pBPhotoMd = s.Photo,
-                        textFoodNameMd = c.FoodName,
-                        textDescriptionMd =c.Description,
-                        textAmount =c.Amount,
-                        textCookTimeMd =c.CookingTime_minute_,
-                        textTipsMd =c.Tips,
-                    };
-                     
-                     
-                    
+                var query = from s in dr.User
+                            join c in dr.Recipe on s.UserID equals c.UserID
+                            where s.Email == "textEmailMdFind.Text"
+                            select new
+                            {
+                                 c.FoodName,
+                            };
+                dataGridViewMd.DataSource = query.ToArray();
             }
             else if(textFdNameMdFdName.Text !="")
             {
-
+                //dataGridViewMd.DataSource = dr.User.Where(s=>s.UserID ==rp.UserID).Select
             }
 
 

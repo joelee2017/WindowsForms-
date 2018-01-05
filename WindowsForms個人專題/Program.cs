@@ -16,7 +16,7 @@ namespace WindowsForms個人專題
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RecipeC());
+            Application.Run(new LogonForm());
         }
     }
 }

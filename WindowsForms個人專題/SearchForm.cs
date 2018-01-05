@@ -5,6 +5,8 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 
 
@@ -153,9 +155,17 @@ namespace WindowsForms個人專題
         //Modify修改上傳
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+                SHA256 sHA256 = SHA256.Create();
+                byte[] data = sHA256.ComputeHash(Encoding.UTF8.GetBytes(textPassWord.Text));
+                string hashString = "";
+                for(int i =0; i < data.Length; i++)
+            {
+                hashString += data[i].ToString("x2").ToUpperInvariant();
+            }
+
                 User userUpdate = dr.User.Find(int.Parse(labelNMfID.Text));
                 userUpdate.Email = textEmail.Text;
-                userUpdate.PassWord = textPassWord.Text;
+                userUpdate.PassWord = hashString;
                 userUpdate.Gender = textGender.Text;
                 userUpdate.FirstName = textFirstName.Text;
                 userUpdate.LastName = textLastName.Text;
