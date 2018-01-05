@@ -63,8 +63,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.btnCreate);
             this.splitContainer1.Panel2.Controls.Add(this.btnCancel);
             this.splitContainer1.Panel2.Controls.Add(this.btnLogon);
-            this.splitContainer1.Size = new System.Drawing.Size(473, 426);
-            this.splitContainer1.SplitterDistance = 261;
+            this.splitContainer1.Size = new System.Drawing.Size(468, 319);
+            this.splitContainer1.SplitterDistance = 247;
             this.splitContainer1.TabIndex = 0;
             // 
             // label2
@@ -106,10 +106,10 @@
             // 
             // btnForget
             // 
-            this.btnForget.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnForget.Location = new System.Drawing.Point(355, 86);
+            this.btnForget.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForget.Location = new System.Drawing.Point(371, 26);
             this.btnForget.Name = "btnForget";
-            this.btnForget.Size = new System.Drawing.Size(90, 39);
+            this.btnForget.Size = new System.Drawing.Size(80, 31);
             this.btnForget.TabIndex = 3;
             this.btnForget.Text = "Forget";
             this.btnForget.UseVisualStyleBackColor = true;
@@ -117,10 +117,10 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.Location = new System.Drawing.Point(243, 25);
+            this.btnCreate.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.Location = new System.Drawing.Point(246, 26);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(90, 39);
+            this.btnCreate.Size = new System.Drawing.Size(80, 31);
             this.btnCreate.TabIndex = 2;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -128,10 +128,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(125, 86);
+            this.btnCancel.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(125, 26);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(90, 39);
+            this.btnCancel.Size = new System.Drawing.Size(80, 31);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -139,10 +139,10 @@
             // 
             // btnLogon
             // 
-            this.btnLogon.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogon.Location = new System.Drawing.Point(12, 25);
+            this.btnLogon.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogon.Location = new System.Drawing.Point(12, 26);
             this.btnLogon.Name = "btnLogon";
-            this.btnLogon.Size = new System.Drawing.Size(90, 39);
+            this.btnLogon.Size = new System.Drawing.Size(80, 31);
             this.btnLogon.TabIndex = 0;
             this.btnLogon.Text = "Logon";
             this.btnLogon.UseVisualStyleBackColor = true;
@@ -153,7 +153,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(473, 426);
+            this.ClientSize = new System.Drawing.Size(468, 319);
             this.Controls.Add(this.splitContainer1);
             this.Name = "LogonForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

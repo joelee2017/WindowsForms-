@@ -42,10 +42,12 @@ namespace WindowsForms個人專題
             var query = dr.User.Where(d => d.Email == textEmail.Text).Select(s => s.UserID).First();
 
             using (MemoryStream ms = new MemoryStream())
-            using(Bitmap pic =new Bitmap(pBRecipe.Image))
+            //using(Bitmap pic =new Bitmap(pBRecipe.Image))
             {
-                pic.Save(ms, ImageFormat.Jpeg);
-                rp.Photo = pic.ToString();
+                //pic.Save(ms, ImageFormat.Jpeg);
+                //rp.Photo = pic.ToString();
+                pBRecipe.Image.Save(ms, ImageFormat.Jpeg);
+                rp.Photo = ms.ToArray();
             }
 
             rp.UserID = query;

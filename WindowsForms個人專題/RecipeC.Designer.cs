@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecipeC));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -255,6 +256,7 @@
             // pBRecipe
             // 
             this.pBRecipe.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pBRecipe.Image = ((System.Drawing.Image)(resources.GetObject("pBRecipe.Image")));
             this.pBRecipe.Location = new System.Drawing.Point(16, 55);
             this.pBRecipe.Name = "pBRecipe";
             this.pBRecipe.Size = new System.Drawing.Size(358, 245);
@@ -444,6 +446,7 @@
             // pBPhotoMd
             // 
             this.pBPhotoMd.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pBPhotoMd.Image = ((System.Drawing.Image)(resources.GetObject("pBPhotoMd.Image")));
             this.pBPhotoMd.Location = new System.Drawing.Point(16, 55);
             this.pBPhotoMd.Name = "pBPhotoMd";
             this.pBPhotoMd.Size = new System.Drawing.Size(358, 245);

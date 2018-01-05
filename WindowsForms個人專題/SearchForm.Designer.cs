@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.dGridViewSearchUser = new System.Windows.Forms.DataGridView();
-            this.dGridViewSearchRecipe = new System.Windows.Forms.DataGridView();
+            this.DGViSearchRecipe = new System.Windows.Forms.DataGridView();
+            this.pBSearch = new System.Windows.Forms.PictureBox();
+            this.btnRC = new System.Windows.Forms.Button();
             this.btnSeaFind = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
@@ -79,7 +82,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.btnRC = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -91,7 +93,8 @@
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridViewSearchUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dGridViewSearchRecipe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGViSearchRecipe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBSearch)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
@@ -121,7 +124,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1065, 600);
+            this.tabControl1.Size = new System.Drawing.Size(1193, 641);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -133,7 +136,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage1.Size = new System.Drawing.Size(1057, 568);
+            this.tabPage1.Size = new System.Drawing.Size(1185, 609);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Search";
             // 
@@ -149,10 +152,11 @@
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.pBSearch);
             this.splitContainer2.Panel2.Controls.Add(this.btnRC);
             this.splitContainer2.Panel2.Controls.Add(this.btnSeaFind);
-            this.splitContainer2.Size = new System.Drawing.Size(1049, 558);
-            this.splitContainer2.SplitterDistance = 897;
+            this.splitContainer2.Size = new System.Drawing.Size(1177, 599);
+            this.splitContainer2.SplitterDistance = 915;
             this.splitContainer2.TabIndex = 0;
             // 
             // splitContainer5
@@ -168,9 +172,9 @@
             // 
             // splitContainer5.Panel2
             // 
-            this.splitContainer5.Panel2.Controls.Add(this.dGridViewSearchRecipe);
-            this.splitContainer5.Size = new System.Drawing.Size(897, 558);
-            this.splitContainer5.SplitterDistance = 328;
+            this.splitContainer5.Panel2.Controls.Add(this.DGViSearchRecipe);
+            this.splitContainer5.Size = new System.Drawing.Size(915, 599);
+            this.splitContainer5.SplitterDistance = 352;
             this.splitContainer5.TabIndex = 0;
             // 
             // dGridViewSearchUser
@@ -181,28 +185,52 @@
             this.dGridViewSearchUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dGridViewSearchUser.Location = new System.Drawing.Point(0, 0);
             this.dGridViewSearchUser.Name = "dGridViewSearchUser";
-            this.dGridViewSearchUser.RowTemplate.Height = 24;
-            this.dGridViewSearchUser.Size = new System.Drawing.Size(897, 328);
+            this.dGridViewSearchUser.RowTemplate.Height = 60;
+            this.dGridViewSearchUser.Size = new System.Drawing.Size(915, 352);
             this.dGridViewSearchUser.TabIndex = 3;
-            this.dGridViewSearchUser.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridViewSearchUser_RowEnter);
+            this.dGridViewSearchUser.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGViSearchRecipe_RowEnter);
             // 
-            // dGridViewSearchRecipe
+            // DGViSearchRecipe
             // 
-            this.dGridViewSearchRecipe.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dGridViewSearchRecipe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGridViewSearchRecipe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGridViewSearchRecipe.Location = new System.Drawing.Point(0, 0);
-            this.dGridViewSearchRecipe.Name = "dGridViewSearchRecipe";
-            this.dGridViewSearchRecipe.RowTemplate.Height = 24;
-            this.dGridViewSearchRecipe.Size = new System.Drawing.Size(897, 226);
-            this.dGridViewSearchRecipe.TabIndex = 0;
+            this.DGViSearchRecipe.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DGViSearchRecipe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGViSearchRecipe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGViSearchRecipe.Location = new System.Drawing.Point(0, 0);
+            this.DGViSearchRecipe.Name = "DGViSearchRecipe";
+            this.DGViSearchRecipe.RowTemplate.Height = 60;
+            this.DGViSearchRecipe.Size = new System.Drawing.Size(915, 243);
+            this.DGViSearchRecipe.TabIndex = 0;
+            this.DGViSearchRecipe.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridViewSearchRecipe_RowEnter);
+            // 
+            // pBSearch
+            // 
+            this.pBSearch.BackColor = System.Drawing.SystemColors.Menu;
+            this.pBSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pBSearch.Image = ((System.Drawing.Image)(resources.GetObject("pBSearch.Image")));
+            this.pBSearch.Location = new System.Drawing.Point(23, 16);
+            this.pBSearch.Name = "pBSearch";
+            this.pBSearch.Size = new System.Drawing.Size(221, 228);
+            this.pBSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBSearch.TabIndex = 3;
+            this.pBSearch.TabStop = false;
+            // 
+            // btnRC
+            // 
+            this.btnRC.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRC.Location = new System.Drawing.Point(128, 506);
+            this.btnRC.Name = "btnRC";
+            this.btnRC.Size = new System.Drawing.Size(104, 33);
+            this.btnRC.TabIndex = 2;
+            this.btnRC.Text = "RecipeC";
+            this.btnRC.UseVisualStyleBackColor = true;
+            this.btnRC.Click += new System.EventHandler(this.btnRC_Click);
             // 
             // btnSeaFind
             // 
-            this.btnSeaFind.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeaFind.Location = new System.Drawing.Point(28, 22);
+            this.btnSeaFind.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeaFind.Location = new System.Drawing.Point(23, 506);
             this.btnSeaFind.Name = "btnSeaFind";
-            this.btnSeaFind.Size = new System.Drawing.Size(90, 39);
+            this.btnSeaFind.Size = new System.Drawing.Size(78, 33);
             this.btnSeaFind.TabIndex = 1;
             this.btnSeaFind.Text = "Find";
             this.btnSeaFind.UseVisualStyleBackColor = true;
@@ -216,7 +244,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage2.Size = new System.Drawing.Size(1057, 568);
+            this.tabPage2.Size = new System.Drawing.Size(1185, 609);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Modify";
             // 
@@ -249,8 +277,8 @@
             this.splitContainer4.Panel2.Controls.Add(this.textPassWord);
             this.splitContainer4.Panel2.Controls.Add(this.label1);
             this.splitContainer4.Panel2.Controls.Add(this.textEmail);
-            this.splitContainer4.Size = new System.Drawing.Size(1049, 558);
-            this.splitContainer4.SplitterDistance = 659;
+            this.splitContainer4.Size = new System.Drawing.Size(1177, 599);
+            this.splitContainer4.SplitterDistance = 739;
             this.splitContainer4.TabIndex = 0;
             // 
             // dataGridViewModify
@@ -266,7 +294,7 @@
             this.dataGridViewModify.RowTemplate.DividerHeight = 2;
             this.dataGridViewModify.RowTemplate.Height = 24;
             this.dataGridViewModify.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewModify.Size = new System.Drawing.Size(659, 558);
+            this.dataGridViewModify.Size = new System.Drawing.Size(739, 599);
             this.dataGridViewModify.TabIndex = 3;
             this.dataGridViewModify.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewModify_RowEnter);
             // 
@@ -283,7 +311,7 @@
             // textGender
             // 
             this.textGender.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textGender.Location = new System.Drawing.Point(198, 447);
+            this.textGender.Location = new System.Drawing.Point(220, 480);
             this.textGender.Multiline = true;
             this.textGender.Name = "textGender";
             this.textGender.Size = new System.Drawing.Size(159, 31);
@@ -293,7 +321,7 @@
             // 
             this.radioMfFemale.AutoSize = true;
             this.radioMfFemale.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.radioMfFemale.Location = new System.Drawing.Point(100, 452);
+            this.radioMfFemale.Location = new System.Drawing.Point(122, 485);
             this.radioMfFemale.Name = "radioMfFemale";
             this.radioMfFemale.Size = new System.Drawing.Size(88, 26);
             this.radioMfFemale.TabIndex = 42;
@@ -306,7 +334,7 @@
             // 
             this.radioMfMan.AutoSize = true;
             this.radioMfMan.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.radioMfMan.Location = new System.Drawing.Point(36, 452);
+            this.radioMfMan.Location = new System.Drawing.Point(58, 485);
             this.radioMfMan.Name = "radioMfMan";
             this.radioMfMan.Size = new System.Drawing.Size(58, 26);
             this.radioMfMan.TabIndex = 41;
@@ -317,21 +345,21 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(239, 503);
+            this.btnUpdate.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(264, 539);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(90, 39);
+            this.btnUpdate.Size = new System.Drawing.Size(80, 36);
             this.btnUpdate.TabIndex = 28;
-            this.btnUpdate.Text = "Updata";
+            this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnModifyFind
             // 
-            this.btnModifyFind.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifyFind.Location = new System.Drawing.Point(70, 503);
+            this.btnModifyFind.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModifyFind.Location = new System.Drawing.Point(95, 539);
             this.btnModifyFind.Name = "btnModifyFind";
-            this.btnModifyFind.Size = new System.Drawing.Size(90, 39);
+            this.btnModifyFind.Size = new System.Drawing.Size(72, 36);
             this.btnModifyFind.TabIndex = 27;
             this.btnModifyFind.Text = "Find";
             this.btnModifyFind.UseVisualStyleBackColor = true;
@@ -340,7 +368,8 @@
             // UserPhoto
             // 
             this.UserPhoto.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.UserPhoto.Location = new System.Drawing.Point(70, 13);
+            this.UserPhoto.Image = ((System.Drawing.Image)(resources.GetObject("UserPhoto.Image")));
+            this.UserPhoto.Location = new System.Drawing.Point(122, 23);
             this.UserPhoto.Name = "UserPhoto";
             this.UserPhoto.Size = new System.Drawing.Size(195, 178);
             this.UserPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -352,7 +381,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(42, 407);
+            this.label6.Location = new System.Drawing.Point(64, 440);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 22);
             this.label6.TabIndex = 25;
@@ -360,7 +389,7 @@
             // 
             // textLineID
             // 
-            this.textLineID.Location = new System.Drawing.Point(198, 398);
+            this.textLineID.Location = new System.Drawing.Point(220, 431);
             this.textLineID.Multiline = true;
             this.textLineID.Name = "textLineID";
             this.textLineID.Size = new System.Drawing.Size(159, 31);
@@ -370,7 +399,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(42, 347);
+            this.label4.Location = new System.Drawing.Point(64, 380);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 22);
             this.label4.TabIndex = 23;
@@ -378,7 +407,7 @@
             // 
             // textLastName
             // 
-            this.textLastName.Location = new System.Drawing.Point(198, 338);
+            this.textLastName.Location = new System.Drawing.Point(220, 371);
             this.textLastName.Multiline = true;
             this.textLastName.Name = "textLastName";
             this.textLastName.Size = new System.Drawing.Size(159, 31);
@@ -388,7 +417,7 @@
             // 
             this.FirstNametxt.AutoSize = true;
             this.FirstNametxt.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstNametxt.Location = new System.Drawing.Point(42, 299);
+            this.FirstNametxt.Location = new System.Drawing.Point(64, 332);
             this.FirstNametxt.Name = "FirstNametxt";
             this.FirstNametxt.Size = new System.Drawing.Size(100, 22);
             this.FirstNametxt.TabIndex = 21;
@@ -396,7 +425,7 @@
             // 
             // textFirstName
             // 
-            this.textFirstName.Location = new System.Drawing.Point(198, 290);
+            this.textFirstName.Location = new System.Drawing.Point(220, 323);
             this.textFirstName.Multiline = true;
             this.textFirstName.Name = "textFirstName";
             this.textFirstName.Size = new System.Drawing.Size(159, 31);
@@ -406,7 +435,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 252);
+            this.label2.Location = new System.Drawing.Point(64, 285);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 22);
             this.label2.TabIndex = 19;
@@ -414,7 +443,7 @@
             // 
             // textPassWord
             // 
-            this.textPassWord.Location = new System.Drawing.Point(198, 243);
+            this.textPassWord.Location = new System.Drawing.Point(220, 276);
             this.textPassWord.Multiline = true;
             this.textPassWord.Name = "textPassWord";
             this.textPassWord.Size = new System.Drawing.Size(159, 31);
@@ -424,7 +453,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(42, 206);
+            this.label1.Location = new System.Drawing.Point(64, 239);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 22);
             this.label1.TabIndex = 17;
@@ -432,7 +461,7 @@
             // 
             // textEmail
             // 
-            this.textEmail.Location = new System.Drawing.Point(198, 197);
+            this.textEmail.Location = new System.Drawing.Point(220, 230);
             this.textEmail.Multiline = true;
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(159, 31);
@@ -444,7 +473,7 @@
             this.tabPage3.Controls.Add(this.splitContainer3);
             this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1057, 568);
+            this.tabPage3.Size = new System.Drawing.Size(1185, 609);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Add&Delete";
             // 
@@ -479,8 +508,8 @@
             this.splitContainer3.Panel2.Controls.Add(this.label15);
             this.splitContainer3.Panel2.Controls.Add(this.textEmail1);
             this.splitContainer3.Panel2.Controls.Add(this.btnAdd);
-            this.splitContainer3.Size = new System.Drawing.Size(1057, 568);
-            this.splitContainer3.SplitterDistance = 715;
+            this.splitContainer3.Size = new System.Drawing.Size(1185, 609);
+            this.splitContainer3.SplitterDistance = 801;
             this.splitContainer3.TabIndex = 0;
             // 
             // dataGridViewAD
@@ -491,7 +520,7 @@
             this.dataGridViewAD.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewAD.Name = "dataGridViewAD";
             this.dataGridViewAD.RowTemplate.Height = 24;
-            this.dataGridViewAD.Size = new System.Drawing.Size(715, 568);
+            this.dataGridViewAD.Size = new System.Drawing.Size(801, 609);
             this.dataGridViewAD.TabIndex = 3;
             this.dataGridViewAD.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAD_RowEnter);
             // 
@@ -507,21 +536,21 @@
             // 
             // btnADCanel
             // 
-            this.btnADCanel.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnADCanel.Location = new System.Drawing.Point(119, 462);
+            this.btnADCanel.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnADCanel.Location = new System.Drawing.Point(192, 562);
             this.btnADCanel.Name = "btnADCanel";
-            this.btnADCanel.Size = new System.Drawing.Size(90, 39);
+            this.btnADCanel.Size = new System.Drawing.Size(84, 31);
             this.btnADCanel.TabIndex = 43;
-            this.btnADCanel.Text = "Canel";
+            this.btnADCanel.Text = "Cancel";
             this.btnADCanel.UseVisualStyleBackColor = true;
             this.btnADCanel.Click += new System.EventHandler(this.btnADCanel_Click);
             // 
             // btnADFind
             // 
-            this.btnADFind.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnADFind.Location = new System.Drawing.Point(15, 462);
+            this.btnADFind.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnADFind.Location = new System.Drawing.Point(9, 562);
             this.btnADFind.Name = "btnADFind";
-            this.btnADFind.Size = new System.Drawing.Size(90, 39);
+            this.btnADFind.Size = new System.Drawing.Size(70, 31);
             this.btnADFind.TabIndex = 42;
             this.btnADFind.Text = "Find";
             this.btnADFind.UseVisualStyleBackColor = true;
@@ -529,10 +558,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(230, 521);
+            this.btnDelete.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(282, 562);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(90, 39);
+            this.btnDelete.Size = new System.Drawing.Size(90, 31);
             this.btnDelete.TabIndex = 41;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -541,7 +570,7 @@
             // textGender1
             // 
             this.textGender1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textGender1.Location = new System.Drawing.Point(171, 425);
+            this.textGender1.Location = new System.Drawing.Point(188, 494);
             this.textGender1.Multiline = true;
             this.textGender1.Name = "textGender1";
             this.textGender1.Size = new System.Drawing.Size(159, 31);
@@ -551,7 +580,7 @@
             // 
             this.radioADFemale.AutoSize = true;
             this.radioADFemale.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.radioADFemale.Location = new System.Drawing.Point(73, 430);
+            this.radioADFemale.Location = new System.Drawing.Point(90, 499);
             this.radioADFemale.Name = "radioADFemale";
             this.radioADFemale.Size = new System.Drawing.Size(88, 26);
             this.radioADFemale.TabIndex = 39;
@@ -564,7 +593,7 @@
             // 
             this.radioADMan.AutoSize = true;
             this.radioADMan.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.radioADMan.Location = new System.Drawing.Point(9, 430);
+            this.radioADMan.Location = new System.Drawing.Point(26, 499);
             this.radioADMan.Name = "radioADMan";
             this.radioADMan.Size = new System.Drawing.Size(58, 26);
             this.radioADMan.TabIndex = 38;
@@ -576,9 +605,10 @@
             // UserPhoto2
             // 
             this.UserPhoto2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.UserPhoto2.Location = new System.Drawing.Point(63, 12);
+            this.UserPhoto2.Image = ((System.Drawing.Image)(resources.GetObject("UserPhoto2.Image")));
+            this.UserPhoto2.Location = new System.Drawing.Point(95, 54);
             this.UserPhoto2.Name = "UserPhoto2";
-            this.UserPhoto2.Size = new System.Drawing.Size(199, 184);
+            this.UserPhoto2.Size = new System.Drawing.Size(195, 187);
             this.UserPhoto2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.UserPhoto2.TabIndex = 37;
             this.UserPhoto2.TabStop = false;
@@ -588,7 +618,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(15, 397);
+            this.label11.Location = new System.Drawing.Point(32, 466);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(70, 22);
             this.label11.TabIndex = 36;
@@ -596,7 +626,7 @@
             // 
             // textLineID1
             // 
-            this.textLineID1.Location = new System.Drawing.Point(171, 388);
+            this.textLineID1.Location = new System.Drawing.Point(188, 457);
             this.textLineID1.Multiline = true;
             this.textLineID1.Name = "textLineID1";
             this.textLineID1.Size = new System.Drawing.Size(159, 31);
@@ -606,7 +636,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(15, 352);
+            this.label12.Location = new System.Drawing.Point(32, 421);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(90, 22);
             this.label12.TabIndex = 34;
@@ -614,7 +644,7 @@
             // 
             // textLastName1
             // 
-            this.textLastName1.Location = new System.Drawing.Point(171, 343);
+            this.textLastName1.Location = new System.Drawing.Point(188, 412);
             this.textLastName1.Multiline = true;
             this.textLastName1.Name = "textLastName1";
             this.textLastName1.Size = new System.Drawing.Size(159, 31);
@@ -624,7 +654,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(15, 304);
+            this.label13.Location = new System.Drawing.Point(32, 373);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(100, 22);
             this.label13.TabIndex = 32;
@@ -632,7 +662,7 @@
             // 
             // textFirstName1
             // 
-            this.textFirstName1.Location = new System.Drawing.Point(171, 295);
+            this.textFirstName1.Location = new System.Drawing.Point(188, 364);
             this.textFirstName1.Multiline = true;
             this.textFirstName1.Name = "textFirstName1";
             this.textFirstName1.Size = new System.Drawing.Size(159, 31);
@@ -642,7 +672,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(15, 257);
+            this.label14.Location = new System.Drawing.Point(32, 326);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(90, 22);
             this.label14.TabIndex = 30;
@@ -650,7 +680,7 @@
             // 
             // textPassWord1
             // 
-            this.textPassWord1.Location = new System.Drawing.Point(171, 256);
+            this.textPassWord1.Location = new System.Drawing.Point(188, 325);
             this.textPassWord1.Multiline = true;
             this.textPassWord1.Name = "textPassWord1";
             this.textPassWord1.Size = new System.Drawing.Size(159, 31);
@@ -660,7 +690,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(15, 211);
+            this.label15.Location = new System.Drawing.Point(32, 280);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(60, 22);
             this.label15.TabIndex = 28;
@@ -668,7 +698,7 @@
             // 
             // textEmail1
             // 
-            this.textEmail1.Location = new System.Drawing.Point(171, 210);
+            this.textEmail1.Location = new System.Drawing.Point(188, 279);
             this.textEmail1.Multiline = true;
             this.textEmail1.Name = "textEmail1";
             this.textEmail1.Size = new System.Drawing.Size(159, 31);
@@ -676,10 +706,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(119, 521);
+            this.btnAdd.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(95, 562);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(90, 39);
+            this.btnAdd.Size = new System.Drawing.Size(70, 31);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -691,38 +721,27 @@
             this.tabPage5.Controls.Add(this.btnLogOut);
             this.tabPage5.Location = new System.Drawing.Point(4, 28);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1057, 568);
+            this.tabPage5.Size = new System.Drawing.Size(1185, 609);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Logout";
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(28, 17);
+            this.btnLogOut.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Location = new System.Drawing.Point(8, 30);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(90, 39);
+            this.btnLogOut.Size = new System.Drawing.Size(86, 29);
             this.btnLogOut.TabIndex = 4;
             this.btnLogOut.Text = "LogOut";
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
-            // btnRC
-            // 
-            this.btnRC.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRC.Location = new System.Drawing.Point(18, 495);
-            this.btnRC.Name = "btnRC";
-            this.btnRC.Size = new System.Drawing.Size(116, 39);
-            this.btnRC.TabIndex = 2;
-            this.btnRC.Text = "RecipeC";
-            this.btnRC.UseVisualStyleBackColor = true;
-            this.btnRC.Click += new System.EventHandler(this.btnRC_Click);
             // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1065, 600);
+            this.ClientSize = new System.Drawing.Size(1193, 641);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -740,7 +759,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
             this.splitContainer5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dGridViewSearchUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dGridViewSearchRecipe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGViSearchRecipe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBSearch)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel2.ResumeLayout(false);
@@ -808,7 +828,7 @@
         private System.Windows.Forms.RadioButton radioMfMan;
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.DataGridView dGridViewSearchUser;
-        private System.Windows.Forms.DataGridView dGridViewSearchRecipe;
+        private System.Windows.Forms.DataGridView DGViSearchRecipe;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSeaFind;
         private System.Windows.Forms.Button btnADFind;
@@ -816,6 +836,7 @@
         private System.Windows.Forms.Label labelNADID;
         private System.Windows.Forms.Label labelNMfID;
         private System.Windows.Forms.Button btnRC;
+        private System.Windows.Forms.PictureBox pBSearch;
     }
 }
 

@@ -49,7 +49,6 @@ namespace WindowsForms個人專題
             rc.FormClosed += Rc_FormClosed;
             rc.Show(); this.Hide();
         }
-
         private void Rc_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
@@ -58,39 +57,74 @@ namespace WindowsForms個人專題
 
         #region Search查詢
         private void btnFind_Click(object sender, EventArgs e)
-        {
-            
+        {            
             dGridViewSearchUser.DataSource = null;
-            try
-            {
+
                 dGridViewSearchUser.DataSource = dr.User.Select(user => new
                 {
-
                     編號 = user.UserID,
-                    Email = user.Email,
-                    密碼 = user.PassWord,
+                           user.Email,
                     性別 = user.Gender,
                     姓 = user.FirstName,
                     名 = user.LastName,
                     照片 = user.Photo,
-                    LineID = user.LineID,
+                           user.LineID,
 
                 }).ToList();
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                for(int i=0; i < dGridViewSearchUser.Columns.Count; i++)
+                if(dGridViewSearchUser.Columns[i] is DataGridViewImageColumn)
+                    {
+                        ((DataGridViewImageColumn)dGridViewSearchUser.Columns[i]).ImageLayout 
+                                            = DataGridViewImageCellLayout.Stretch;
+                        break;
+                    }
+
+
+
 
         }
         //Search資料聯動 User &  Recipe
-        private void dGridViewSearchUser_RowEnter(object sender, DataGridViewCellEventArgs e)
+        private void DGViSearchRecipe_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             int userid = Convert.ToInt32(dGridViewSearchUser.Rows[e.RowIndex].Cells[0].Value);
-            dGridViewSearchRecipe.DataSource = dr.Recipe.Where(u => u.UserID == userid).ToArray();
+            DGViSearchRecipe.DataSource = dr.Recipe.Where(u => u.UserID == userid).Select(s => new
+            {
+                s.RecipeID,
+                s.UserID,
+                s.FoodName,
+                s.Description,
+                s.CookingTime,
+                s.Amount,
+                s.Photo,
+                s.Tips
+            }).ToArray();
+
+            for (int i = 0; i < DGViSearchRecipe.Columns.Count; i++)//調整DataGridView圖片顯示
+                if (DGViSearchRecipe.Columns[i] is DataGridViewImageColumn)
+                {
+                    ((DataGridViewImageColumn)DGViSearchRecipe.Columns[6]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                    break;
+                }
 
         }
+        //Search資料聯動 Recipe Picture
+        private void dGridViewSearchRecipe_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+                if (DGViSearchRecipe.Rows[e.RowIndex].Cells[0].Value == null)
+                {
+                    return;
+                }
+                else
+                {
+                byte[] g = (byte[])(DGViSearchRecipe.Rows[e.RowIndex].Cells[6].Value);
+                using (MemoryStream ms = new MemoryStream(g))//圖片取出
+                {
+                    pBSearch.Image = Image.FromStream(ms);
+                }
+            }
+        }
+
         #endregion
 
         #region Modify修改資料查詢
@@ -358,8 +392,9 @@ namespace WindowsForms個人專題
             }
         }
 
+
         #endregion
 
-        
+
     }
 }

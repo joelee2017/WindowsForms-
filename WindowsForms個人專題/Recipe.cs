@@ -20,7 +20,7 @@ namespace WindowsForms個人專題
         public string Description { get; set; }
         public Nullable<int> CookingTime { get; set; }
         public Nullable<int> Amount { get; set; }
-        public string Photo { get; set; }
+        public byte[] Photo { get; set; }
         public string Tips { get; set; }
     
         public virtual User User { get; set; }

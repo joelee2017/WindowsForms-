@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.PWMlabel = new System.Windows.Forms.Label();
             this.Gendertext = new System.Windows.Forms.TextBox();
@@ -84,8 +85,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.button1);
             this.splitContainer1.Panel2.Controls.Add(this.button3);
             this.splitContainer1.Panel2.Controls.Add(this.button2);
-            this.splitContainer1.Size = new System.Drawing.Size(635, 493);
-            this.splitContainer1.SplitterDistance = 341;
+            this.splitContainer1.Size = new System.Drawing.Size(604, 406);
+            this.splitContainer1.SplitterDistance = 345;
             this.splitContainer1.TabIndex = 0;
             // 
             // PWMlabel
@@ -155,6 +156,7 @@
             // UserPhoto
             // 
             this.UserPhoto.BackColor = System.Drawing.Color.Wheat;
+            this.UserPhoto.Image = ((System.Drawing.Image)(resources.GetObject("UserPhoto.Image")));
             this.UserPhoto.Location = new System.Drawing.Point(381, 44);
             this.UserPhoto.Name = "UserPhoto";
             this.UserPhoto.Size = new System.Drawing.Size(217, 214);
@@ -242,8 +244,8 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(246, 18);
+            this.button1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(252, 11);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 39);
             this.button1.TabIndex = 5;
@@ -253,8 +255,8 @@
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(21, 18);
+            this.button3.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(21, 11);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 39);
             this.button3.TabIndex = 4;
@@ -264,8 +266,8 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(130, 74);
+            this.button2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(130, 11);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 39);
             this.button2.TabIndex = 3;
@@ -278,7 +280,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(635, 493);
+            this.ClientSize = new System.Drawing.Size(604, 406);
             this.Controls.Add(this.splitContainer1);
             this.Name = "CreateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

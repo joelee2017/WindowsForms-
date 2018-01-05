@@ -63,15 +63,15 @@
             this.splitContainer1.Panel2.Controls.Add(this.btnreturn);
             this.splitContainer1.Panel2.Controls.Add(this.btnForget);
             this.splitContainer1.Panel2.Controls.Add(this.btnCancel);
-            this.splitContainer1.Size = new System.Drawing.Size(471, 490);
-            this.splitContainer1.SplitterDistance = 333;
+            this.splitContainer1.Size = new System.Drawing.Size(463, 336);
+            this.splitContainer1.SplitterDistance = 273;
             this.splitContainer1.TabIndex = 0;
             // 
             // labelpassword
             // 
             this.labelpassword.AutoSize = true;
             this.labelpassword.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelpassword.Location = new System.Drawing.Point(171, 282);
+            this.labelpassword.Location = new System.Drawing.Point(183, 203);
             this.labelpassword.Name = "labelpassword";
             this.labelpassword.Size = new System.Drawing.Size(90, 22);
             this.labelpassword.TabIndex = 7;
@@ -81,7 +81,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(74, 203);
+            this.label2.Location = new System.Drawing.Point(74, 156);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 22);
             this.label2.TabIndex = 6;
@@ -89,7 +89,7 @@
             // 
             // textlineid
             // 
-            this.textlineid.Location = new System.Drawing.Point(208, 194);
+            this.textlineid.Location = new System.Drawing.Point(208, 147);
             this.textlineid.Multiline = true;
             this.textlineid.Name = "textlineid";
             this.textlineid.Size = new System.Drawing.Size(191, 31);
@@ -115,8 +115,8 @@
             // 
             // btnreturn
             // 
-            this.btnreturn.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreturn.Location = new System.Drawing.Point(309, 35);
+            this.btnreturn.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreturn.Location = new System.Drawing.Point(208, 14);
             this.btnreturn.Name = "btnreturn";
             this.btnreturn.Size = new System.Drawing.Size(90, 39);
             this.btnreturn.TabIndex = 9;
@@ -126,8 +126,8 @@
             // 
             // btnForget
             // 
-            this.btnForget.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnForget.Location = new System.Drawing.Point(54, 35);
+            this.btnForget.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForget.Location = new System.Drawing.Point(12, 14);
             this.btnForget.Name = "btnForget";
             this.btnForget.Size = new System.Drawing.Size(90, 39);
             this.btnForget.TabIndex = 8;
@@ -137,8 +137,8 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(175, 102);
+            this.btnCancel.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(110, 14);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(90, 39);
             this.btnCancel.TabIndex = 7;
@@ -151,7 +151,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(471, 490);
+            this.ClientSize = new System.Drawing.Size(463, 336);
             this.Controls.Add(this.splitContainer1);
             this.Name = "ForgetForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
