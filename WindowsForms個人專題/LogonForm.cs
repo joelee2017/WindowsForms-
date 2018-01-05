@@ -21,31 +21,41 @@ namespace WindowsForms個人專題
 
 
 
-        DrEntities1 dr = new DrEntities1();
-        private void btnCreate_Click(object sender, EventArgs e)//創建帳號
+        DrEntities1 dr = new DrEntities1();        
+
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            CreateForm cf = new CreateForm();
-            cf.FormClosed += Cf_FormClosed; 
-            cf.Show(); this.Hide();
+            Emailtext.Text = null;
+            Passwordtext.Text = null;
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            {
+                CreateForm cf = new CreateForm();
+                cf.FormClosed += Cf_FormClosed;
+                cf.Show(); this.Hide();
+            }
         }
         private void Cf_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
         }
 
-        private void btnForget_Click(object sender, EventArgs e)//忘記密碼
+        private void btnForget_Click(object sender, EventArgs e)
         {
             ForgetForm ff = new ForgetForm();
             ff.FormClosed += Ff_FormClosed;
-             ff.Show(); this.Hide(); 
+            ff.Show(); this.Hide();
         }
         private void Ff_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Close();            
+            this.Close();
         }
 
+
         #region 登入SHA256雜湊
-        private void btnLogon_Click(object sender, EventArgs e)//登入
+        private void btnLogon_Click(object sender, EventArgs e)
         {
             SearchForm sf = new SearchForm();
 
@@ -60,7 +70,7 @@ namespace WindowsForms個人專題
             SHA256 sHA256 = SHA256.Create();
             byte[] data = sHA256.ComputeHash(Encoding.UTF8.GetBytes(Passwordtext.Text));
             string hashString = "";
-            for(int i=0; i <data.Length; i++)
+            for (int i = 0; i < data.Length; i++)
             {
                 hashString += data[i].ToString("x2").ToUpperInvariant();
             }
@@ -77,19 +87,11 @@ namespace WindowsForms個人專題
             {
                 MessageBox.Show("請確認帳號密碼");
             }
-        }       
+        }
         private void Sf_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
         }
         #endregion
-
-        private void btnCancel_Click(object sender, EventArgs e)//關閉
-        {
-            Emailtext.Text = null;
-            Passwordtext.Text = null;
-
-
-        }
     }
 }

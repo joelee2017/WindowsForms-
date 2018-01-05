@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.labelpassword = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textlineid = new System.Windows.Forms.TextBox();
@@ -37,41 +36,13 @@
             this.btnreturn = new System.Windows.Forms.Button();
             this.btnForget = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.labelpassword);
-            this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.textlineid);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.textemail);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.btnreturn);
-            this.splitContainer1.Panel2.Controls.Add(this.btnForget);
-            this.splitContainer1.Panel2.Controls.Add(this.btnCancel);
-            this.splitContainer1.Size = new System.Drawing.Size(463, 336);
-            this.splitContainer1.SplitterDistance = 273;
-            this.splitContainer1.TabIndex = 0;
             // 
             // labelpassword
             // 
             this.labelpassword.AutoSize = true;
             this.labelpassword.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelpassword.Location = new System.Drawing.Point(183, 203);
+            this.labelpassword.Location = new System.Drawing.Point(162, 147);
             this.labelpassword.Name = "labelpassword";
             this.labelpassword.Size = new System.Drawing.Size(90, 22);
             this.labelpassword.TabIndex = 7;
@@ -81,7 +52,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(74, 156);
+            this.label2.Location = new System.Drawing.Point(52, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 22);
             this.label2.TabIndex = 6;
@@ -89,7 +60,7 @@
             // 
             // textlineid
             // 
-            this.textlineid.Location = new System.Drawing.Point(208, 147);
+            this.textlineid.Location = new System.Drawing.Point(186, 86);
             this.textlineid.Multiline = true;
             this.textlineid.Name = "textlineid";
             this.textlineid.Size = new System.Drawing.Size(191, 31);
@@ -99,7 +70,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 93);
+            this.label1.Location = new System.Drawing.Point(28, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 22);
             this.label1.TabIndex = 4;
@@ -107,7 +78,7 @@
             // 
             // textemail
             // 
-            this.textemail.Location = new System.Drawing.Point(208, 93);
+            this.textemail.Location = new System.Drawing.Point(186, 32);
             this.textemail.Multiline = true;
             this.textemail.Name = "textemail";
             this.textemail.Size = new System.Drawing.Size(191, 31);
@@ -116,7 +87,7 @@
             // btnreturn
             // 
             this.btnreturn.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreturn.Location = new System.Drawing.Point(208, 14);
+            this.btnreturn.Location = new System.Drawing.Point(260, 196);
             this.btnreturn.Name = "btnreturn";
             this.btnreturn.Size = new System.Drawing.Size(90, 39);
             this.btnreturn.TabIndex = 9;
@@ -127,7 +98,7 @@
             // btnForget
             // 
             this.btnForget.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnForget.Location = new System.Drawing.Point(12, 14);
+            this.btnForget.Location = new System.Drawing.Point(64, 196);
             this.btnForget.Name = "btnForget";
             this.btnForget.Size = new System.Drawing.Size(90, 39);
             this.btnForget.TabIndex = 8;
@@ -138,7 +109,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(110, 14);
+            this.btnCancel.Location = new System.Drawing.Point(162, 196);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(90, 39);
             this.btnCancel.TabIndex = 7;
@@ -151,23 +122,25 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(463, 336);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(404, 276);
+            this.Controls.Add(this.btnreturn);
+            this.Controls.Add(this.labelpassword);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnForget);
+            this.Controls.Add(this.textemail);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.textlineid);
+            this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ForgetForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ForgetForm";
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textlineid;
         private System.Windows.Forms.Label label1;

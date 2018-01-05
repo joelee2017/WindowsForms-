@@ -75,6 +75,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.btnAddText = new System.Windows.Forms.Button();
             this.fLPanelIngredients = new System.Windows.Forms.FlowLayoutPanel();
+            this.label17 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -124,6 +125,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.label17);
             this.splitContainer1.Panel1.Controls.Add(this.fLPanelIngredients);
             this.splitContainer1.Panel1.Controls.Add(this.btnAddText);
             this.splitContainer1.Panel1.Controls.Add(this.textEmail);
@@ -219,7 +221,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 369);
+            this.label3.Location = new System.Drawing.Point(27, 360);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 19);
             this.label3.TabIndex = 6;
@@ -227,7 +229,7 @@
             // 
             // textDescription
             // 
-            this.textDescription.Location = new System.Drawing.Point(31, 402);
+            this.textDescription.Location = new System.Drawing.Point(27, 399);
             this.textDescription.Multiline = true;
             this.textDescription.Name = "textDescription";
             this.textDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -238,7 +240,7 @@
             // 
             this.textFoodName.Location = new System.Drawing.Point(115, 319);
             this.textFoodName.Name = "textFoodName";
-            this.textFoodName.Size = new System.Drawing.Size(239, 26);
+            this.textFoodName.Size = new System.Drawing.Size(207, 26);
             this.textFoodName.TabIndex = 4;
             // 
             // label2
@@ -263,9 +265,9 @@
             // 
             this.pBRecipe.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pBRecipe.Image = ((System.Drawing.Image)(resources.GetObject("pBRecipe.Image")));
-            this.pBRecipe.Location = new System.Drawing.Point(16, 55);
+            this.pBRecipe.Location = new System.Drawing.Point(27, 52);
             this.pBRecipe.Name = "pBRecipe";
-            this.pBRecipe.Size = new System.Drawing.Size(358, 245);
+            this.pBRecipe.Size = new System.Drawing.Size(295, 245);
             this.pBRecipe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pBRecipe.TabIndex = 0;
             this.pBRecipe.TabStop = false;
@@ -564,10 +566,19 @@
             // 
             this.fLPanelIngredients.AutoScroll = true;
             this.fLPanelIngredients.BackColor = System.Drawing.Color.White;
-            this.fLPanelIngredients.Location = new System.Drawing.Point(410, 239);
+            this.fLPanelIngredients.Location = new System.Drawing.Point(407, 264);
             this.fLPanelIngredients.Name = "fLPanelIngredients";
             this.fLPanelIngredients.Size = new System.Drawing.Size(245, 275);
             this.fLPanelIngredients.TabIndex = 33;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(407, 242);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(127, 19);
+            this.label17.TabIndex = 34;
+            this.label17.Text = "Ingredients：";
             // 
             // RecipeC
             // 
@@ -650,6 +661,7 @@
         private System.Windows.Forms.GroupBox gpBoxIngredients;
         private System.Windows.Forms.FlowLayoutPanel fLPanelIngredients;
         private System.Windows.Forms.Button btnAddText;
+        private System.Windows.Forms.Label label17;
     }
 }
 
