@@ -32,6 +32,9 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label17 = new System.Windows.Forms.Label();
+            this.fLPanelIngredients = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnAddText = new System.Windows.Forms.Button();
             this.textEmail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textTips = new System.Windows.Forms.TextBox();
@@ -73,9 +76,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.textEmailMdFind = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.btnAddText = new System.Windows.Forms.Button();
-            this.fLPanelIngredients = new System.Windows.Forms.FlowLayoutPanel();
-            this.label17 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -151,6 +151,35 @@
             this.splitContainer1.Size = new System.Drawing.Size(967, 656);
             this.splitContainer1.SplitterDistance = 746;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(407, 242);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(127, 19);
+            this.label17.TabIndex = 34;
+            this.label17.Text = "Ingredients：";
+            // 
+            // fLPanelIngredients
+            // 
+            this.fLPanelIngredients.AutoScroll = true;
+            this.fLPanelIngredients.BackColor = System.Drawing.Color.White;
+            this.fLPanelIngredients.Location = new System.Drawing.Point(407, 264);
+            this.fLPanelIngredients.Name = "fLPanelIngredients";
+            this.fLPanelIngredients.Size = new System.Drawing.Size(245, 275);
+            this.fLPanelIngredients.TabIndex = 33;
+            // 
+            // btnAddText
+            // 
+            this.btnAddText.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddText.Location = new System.Drawing.Point(456, 589);
+            this.btnAddText.Name = "btnAddText";
+            this.btnAddText.Size = new System.Drawing.Size(145, 40);
+            this.btnAddText.TabIndex = 32;
+            this.btnAddText.Text = "AddIngredients";
+            this.btnAddText.UseVisualStyleBackColor = true;
+            this.btnAddText.Click += new System.EventHandler(this.btnAddText_Click);
             // 
             // textEmail
             // 
@@ -551,35 +580,6 @@
             this.label15.TabIndex = 15;
             this.label15.Text = "Email：";
             // 
-            // btnAddText
-            // 
-            this.btnAddText.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddText.Location = new System.Drawing.Point(456, 589);
-            this.btnAddText.Name = "btnAddText";
-            this.btnAddText.Size = new System.Drawing.Size(145, 40);
-            this.btnAddText.TabIndex = 32;
-            this.btnAddText.Text = "AddIngredients";
-            this.btnAddText.UseVisualStyleBackColor = true;
-            this.btnAddText.Click += new System.EventHandler(this.btnAddText_Click);
-            // 
-            // fLPanelIngredients
-            // 
-            this.fLPanelIngredients.AutoScroll = true;
-            this.fLPanelIngredients.BackColor = System.Drawing.Color.White;
-            this.fLPanelIngredients.Location = new System.Drawing.Point(407, 264);
-            this.fLPanelIngredients.Name = "fLPanelIngredients";
-            this.fLPanelIngredients.Size = new System.Drawing.Size(245, 275);
-            this.fLPanelIngredients.TabIndex = 33;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(407, 242);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(127, 19);
-            this.label17.TabIndex = 34;
-            this.label17.Text = "Ingredients：";
-            // 
             // RecipeC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -588,6 +588,7 @@
             this.ClientSize = new System.Drawing.Size(983, 698);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "RecipeC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
