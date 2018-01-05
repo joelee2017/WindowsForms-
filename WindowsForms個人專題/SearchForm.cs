@@ -268,7 +268,7 @@ namespace WindowsForms個人專題
             dr.User.Add(NwUser);
             dr.SaveChanges();
             MessageBox.Show("ok");
-            btnFind_Click(sender, e);
+            btnADFind_Click(sender, e);
         }
 
         //Add&Delete性別男
