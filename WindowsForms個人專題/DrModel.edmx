@@ -18,6 +18,14 @@
           <Property Name="Photo" Type="varbinary(max)" />
           <Property Name="Tips" Type="nvarchar" MaxLength="200" />
         </EntityType>
+        <EntityType Name="RecipeFoddList">
+          <Key>
+            <PropertyRef Name="RecipeFooID" />
+          </Key>
+          <Property Name="RecipeFooID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RecipeID" Type="int" Nullable="false" />
+          <Property Name="IngredientsName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="UserID" />
@@ -31,6 +39,18 @@
           <Property Name="Photo" Type="varbinary(max)" />
           <Property Name="LineID" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <Association Name="FK_RecipeFoddList_Recipe1">
+          <End Role="Recipe" Type="Self.Recipe" Multiplicity="1" />
+          <End Role="RecipeFoddList" Type="Self.RecipeFoddList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeID" />
+            </Principal>
+            <Dependent Role="RecipeFoddList">
+              <PropertyRef Name="RecipeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_食譜_user">
           <End Role="User" Type="Self.User" Multiplicity="1" />
           <End Role="Recipe" Type="Self.Recipe" Multiplicity="*" />
@@ -45,7 +65,12 @@
         </Association>
         <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="Recipe" EntityType="Self.Recipe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RecipeFoddList" EntityType="Self.RecipeFoddList" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_RecipeFoddList_Recipe1" Association="Self.FK_RecipeFoddList_Recipe1">
+            <End Role="Recipe" EntitySet="Recipe" />
+            <End Role="RecipeFoddList" EntitySet="RecipeFoddList" />
+          </AssociationSet>
           <AssociationSet Name="FK_食譜_user" Association="Self.FK_食譜_user">
             <End Role="User" EntitySet="User" />
             <End Role="Recipe" EntitySet="Recipe" />
@@ -61,6 +86,11 @@
           <AssociationSet Name="FK_食譜_user" Association="Model.FK_食譜_user">
             <End Role="User" EntitySet="User" />
             <End Role="Recipe" EntitySet="Recipe" />
+          </AssociationSet>
+          <EntitySet Name="RecipeFoddList" EntityType="Model.RecipeFoddList" />
+          <AssociationSet Name="FK_RecipeFoddList_Recipe1" Association="Model.FK_RecipeFoddList_Recipe1">
+            <End Role="Recipe" EntitySet="Recipe" />
+            <End Role="RecipeFoddList" EntitySet="RecipeFoddList" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="User">
@@ -90,6 +120,7 @@
           <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Tips" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="User" Relationship="Model.FK_食譜_user" FromRole="Recipe" ToRole="User" />
+          <NavigationProperty Name="RecipeFoddList" Relationship="Model.FK_RecipeFoddList_Recipe1" FromRole="Recipe" ToRole="RecipeFoddList" />
         </EntityType>
         <Association Name="FK_食譜_user">
           <End Type="Model.User" Role="User" Multiplicity="1" />
@@ -100,6 +131,27 @@
             </Principal>
             <Dependent Role="Recipe">
               <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RecipeFoddList">
+          <Key>
+            <PropertyRef Name="RecipeFooID" />
+          </Key>
+          <Property Name="RecipeFooID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RecipeID" Type="Int32" Nullable="false" />
+          <Property Name="IngredientsName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Recipe" Relationship="Model.FK_RecipeFoddList_Recipe1" FromRole="RecipeFoddList" ToRole="Recipe" />
+        </EntityType>
+        <Association Name="FK_RecipeFoddList_Recipe1">
+          <End Type="Model.Recipe" Role="Recipe" Multiplicity="1" />
+          <End Type="Model.RecipeFoddList" Role="RecipeFoddList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recipe">
+              <PropertyRef Name="RecipeID" />
+            </Principal>
+            <Dependent Role="RecipeFoddList">
+              <PropertyRef Name="RecipeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -134,6 +186,15 @@
                 <ScalarProperty Name="FoodName" ColumnName="FoodName" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="RecipeID" ColumnName="RecipeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RecipeFoddList">
+            <EntityTypeMapping TypeName="Model.RecipeFoddList">
+              <MappingFragment StoreEntitySet="RecipeFoddList">
+                <ScalarProperty Name="IngredientsName" ColumnName="IngredientsName" />
+                <ScalarProperty Name="RecipeID" ColumnName="RecipeID" />
+                <ScalarProperty Name="RecipeFooID" ColumnName="RecipeFooID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

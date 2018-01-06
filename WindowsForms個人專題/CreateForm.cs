@@ -43,20 +43,20 @@ namespace WindowsForms個人專題
         {
             if (od.ShowDialog() == DialogResult.OK)
             {
-                UserPhoto.Image = Image.FromStream(od.OpenFile());
+                pbUserPhoto.Image = Image.FromStream(od.OpenFile());
             }
         }
 
         //清除所有欄位值
         private void button2_Click(object sender, EventArgs e)
         {
-            Emailtext.Text = null;
-            PassWordtext.Text = null;
-            FirstNametext.Text = null;
-            LastNametext.Text = null;
-            LineIDtext.Text = null;
-            UserPhoto.Image = null;
-            Gendertext.Text = null;
+            textEmail.Text = null;
+            textPassWord.Text = null;
+            textFirstName.Text = null;
+            textLastName.Text = null;
+            textLineID.Text = null;
+            pbUserPhoto.Image = null;
+            textGender.Text = null;
         }
 
         #region 性別
@@ -65,11 +65,11 @@ namespace WindowsForms個人專題
         {
             if (radioMan.Checked == true)
             {
-                Gendertext.Text = "M";
+                textGender.Text = "M";
             }
             else
             {
-                Gendertext.Text = null;
+                textGender.Text = null;
             }
         }
 
@@ -78,11 +78,11 @@ namespace WindowsForms個人專題
         {
             if (radioFemale.Checked == true)
             {
-                Gendertext.Text = "F";
+                textGender.Text = "F";
             }
             else
             {
-                Gendertext.Text = null;
+                textGender.Text = null;
             }
         }
         #endregion
@@ -90,10 +90,13 @@ namespace WindowsForms個人專題
         #region 新增帳號
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (dr.User.Any(u => u.Email == Emailtext.Text))
+
+
+            if (dr.User.Any(u => u.Email == textEmail.Text))
             {
-                MessageBox.Show($"{Emailtext.Text} 已註冊過。");
+                MessageBox.Show($"{textEmail.Text} 已註冊過。");
             }
+                             
             else
             {
                 #region 雜湊方法(一)
@@ -105,7 +108,7 @@ namespace WindowsForms個人專題
 
                 #region 雜湊方法(二)
                 SHA256 sHA256 = SHA256.Create();
-                byte[] data = sHA256.ComputeHash(Encoding.UTF8.GetBytes(PassWordtext.Text));
+                byte[] data = sHA256.ComputeHash(Encoding.UTF8.GetBytes(textPassWord.Text));
                 string hashString = "";
                 for (int i = 0; i < data.Length; i++)
                 {
@@ -115,15 +118,15 @@ namespace WindowsForms個人專題
 
                 using (var ms = new MemoryStream())
                 {
-                    UserPhoto.Image.Save(ms, ImageFormat.Jpeg);
+                    pbUserPhoto.Image.Save(ms, ImageFormat.Jpeg);
                     NwUser.Photo = ms.ToArray();
                 }
-                NwUser.Email = Emailtext.Text;
+                NwUser.Email = textEmail.Text;
                 NwUser.PassWord = hashString;//已加密過後
-                NwUser.Gender = Gendertext.Text;
-                NwUser.FirstName = FirstNametext.Text;
-                NwUser.LastName = LastNametext.Text;
-                NwUser.LineID = LineIDtext.Text;
+                NwUser.Gender = textGender.Text;
+                NwUser.FirstName = textFirstName.Text;
+                NwUser.LastName = textLastName.Text;
+                NwUser.LineID = textLineID.Text;
                 dr.User.Add(NwUser);
                 dr.SaveChanges();
                 MessageBox.Show("ok");

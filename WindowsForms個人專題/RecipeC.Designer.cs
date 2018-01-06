@@ -76,6 +76,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.textEmailMdFind = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -90,12 +92,14 @@
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBPhotoMd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMd)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -125,6 +129,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.Control;
             this.splitContainer1.Panel1.Controls.Add(this.label17);
             this.splitContainer1.Panel1.Controls.Add(this.fLPanelIngredients);
             this.splitContainer1.Panel1.Controls.Add(this.btnAddText);
@@ -183,7 +188,7 @@
             // 
             // textEmail
             // 
-            this.textEmail.Location = new System.Drawing.Point(101, 20);
+            this.textEmail.Location = new System.Drawing.Point(170, 616);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(100, 26);
             this.textEmail.TabIndex = 14;
@@ -191,7 +196,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(452, 139);
+            this.label7.Location = new System.Drawing.Point(407, 139);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 19);
             this.label7.TabIndex = 13;
@@ -199,17 +204,17 @@
             // 
             // textTips
             // 
-            this.textTips.Location = new System.Drawing.Point(456, 161);
+            this.textTips.Location = new System.Drawing.Point(407, 161);
             this.textTips.Multiline = true;
             this.textTips.Name = "textTips";
             this.textTips.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textTips.Size = new System.Drawing.Size(196, 70);
+            this.textTips.Size = new System.Drawing.Size(245, 70);
             this.textTips.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(417, 95);
+            this.label6.Location = new System.Drawing.Point(448, 71);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 19);
             this.label6.TabIndex = 11;
@@ -217,7 +222,7 @@
             // 
             // textCookingTime
             // 
-            this.textCookingTime.Location = new System.Drawing.Point(521, 76);
+            this.textCookingTime.Location = new System.Drawing.Point(552, 52);
             this.textCookingTime.Name = "textCookingTime";
             this.textCookingTime.Size = new System.Drawing.Size(100, 26);
             this.textCookingTime.TabIndex = 10;
@@ -225,7 +230,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(389, 76);
+            this.label5.Location = new System.Drawing.Point(420, 52);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(127, 19);
             this.label5.TabIndex = 9;
@@ -234,7 +239,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(434, 27);
+            this.label4.Location = new System.Drawing.Point(465, 101);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 19);
             this.label4.TabIndex = 8;
@@ -242,7 +247,7 @@
             // 
             // textAmount
             // 
-            this.textAmount.Location = new System.Drawing.Point(521, 23);
+            this.textAmount.Location = new System.Drawing.Point(552, 97);
             this.textAmount.Name = "textAmount";
             this.textAmount.Size = new System.Drawing.Size(100, 26);
             this.textAmount.TabIndex = 7;
@@ -262,20 +267,20 @@
             this.textDescription.Multiline = true;
             this.textDescription.Name = "textDescription";
             this.textDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textDescription.Size = new System.Drawing.Size(333, 175);
+            this.textDescription.Size = new System.Drawing.Size(295, 175);
             this.textDescription.TabIndex = 5;
             // 
             // textFoodName
             // 
-            this.textFoodName.Location = new System.Drawing.Point(115, 319);
+            this.textFoodName.Location = new System.Drawing.Point(154, 15);
             this.textFoodName.Name = "textFoodName";
-            this.textFoodName.Size = new System.Drawing.Size(207, 26);
+            this.textFoodName.Size = new System.Drawing.Size(497, 26);
             this.textFoodName.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 322);
+            this.label2.Location = new System.Drawing.Point(62, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 19);
             this.label2.TabIndex = 3;
@@ -284,7 +289,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 23);
+            this.label1.Location = new System.Drawing.Point(92, 619);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 19);
             this.label1.TabIndex = 2;
@@ -305,7 +310,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(50, 553);
+            this.button1.Location = new System.Drawing.Point(50, 589);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 40);
             this.button1.TabIndex = 1;
@@ -390,7 +395,7 @@
             // btnAddTextMd
             // 
             this.btnAddTextMd.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddTextMd.Location = new System.Drawing.Point(526, 598);
+            this.btnAddTextMd.Location = new System.Drawing.Point(526, 599);
             this.btnAddTextMd.Name = "btnAddTextMd";
             this.btnAddTextMd.Size = new System.Drawing.Size(96, 40);
             this.btnAddTextMd.TabIndex = 22;
@@ -580,6 +585,28 @@
             this.label15.TabIndex = 15;
             this.label15.Text = "Email：";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.tableLayoutPanel1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 28);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(975, 666);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(975, 666);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
             // RecipeC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -610,6 +637,7 @@
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pBPhotoMd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMd)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -663,6 +691,8 @@
         private System.Windows.Forms.FlowLayoutPanel fLPanelIngredients;
         private System.Windows.Forms.Button btnAddText;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 

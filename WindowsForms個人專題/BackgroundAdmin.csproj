@@ -96,6 +96,9 @@
     <Compile Include="RecipeC.Designer.cs">
       <DependentUpon>RecipeC.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecipeFoddList.cs">
+      <DependentUpon>DrModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="SearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
