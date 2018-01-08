@@ -17,16 +17,15 @@ namespace WindowsForms個人專題
         {
             InitializeComponent();
         }
-
-
+        
 
 
         DrEntities1 dr = new DrEntities1();        
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Emailtext.Text = null;
-            Passwordtext.Text = null;
+            logonEmailtext.Text = null;
+            logonPasswordtext.Text = null;
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -56,9 +55,9 @@ namespace WindowsForms個人專題
         }
 
 
-        UserInformation userIf =new UserInformation()
+        UserInformation userIf = new UserInformation();
         private void btnLogon_Click(object sender, EventArgs e)
-        {
+        { 
             var sf = new SearchForm();
 
             //var encryptor = SHA256.Create();
@@ -70,15 +69,18 @@ namespace WindowsForms個人專題
             //    hashString += data[i].ToString("x2").ToUpperInvariant();
             //}
 
-            if (dr.User.Any(
-                us => us.Email == Emailtext.Text && us.PassWord == hashString))
+            //if (dr.User.Any(
+            //    us => us.Email == Emailtext.Text && us.PassWord == hashString))
+             var reuslt = userIf.Logon(logonEmailtext.Text, logonPasswordtext.Text);
+
+            if (reuslt == true)
             {
                 sf.Show();
                 sf.FormClosed += Sf_FormClosed;
 
                 this.Hide();
 
-                MessageBox.Show($"登入成功 {Emailtext.Text} 歡迎您!");
+                MessageBox.Show($"登入成功 {logonEmailtext.Text} 歡迎您!");
             }
             else
             {

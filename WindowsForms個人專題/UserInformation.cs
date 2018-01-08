@@ -11,9 +11,7 @@ namespace WindowsForms個人專題
     {
         DrEntities1 dr = new DrEntities1();
 
-
-        string useremail, userpassword;
-
+        
         private string userInfo;
         public string UserInfo
         {
@@ -23,15 +21,13 @@ namespace WindowsForms個人專題
             }
             set
             {
-
+                userInfo = value;
             }
         }
 
 
         public  bool Logon(string useremail,string userpassword)
-        {
-            var searchForm = new SearchForm();
-
+        {            
             var encryptor = SHA256.Create();
             var data = encryptor.ComputeHash(Encoding.UTF8.GetBytes(userpassword));
             var hashpassword = "";

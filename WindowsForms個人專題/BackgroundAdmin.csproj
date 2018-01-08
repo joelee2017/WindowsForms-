@@ -149,6 +149,7 @@
       <LastGenOutput>DrModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="DrModel.edmx.diagram">
       <DependentUpon>DrModel.edmx</DependentUpon>
     </None>

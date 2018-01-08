@@ -20,11 +20,11 @@ namespace WindowsForms個人專題
             InitializeComponent();
         }
 
-        DrEntities1 dr = new DrEntities1();//資料庫建立實體
-        User NwUser = new User();//資料表建立實體       
+        DrEntities1 dr = new DrEntities1();
+        User NwUser = new User();     
 
 
-        //Return返迴logon
+
         private void btnReturn_Click(object sender, EventArgs e)
         {
             LogonForm lf1 = new LogonForm();
@@ -37,7 +37,7 @@ namespace WindowsForms個人專題
             this.Close();
         }
 
-        //打開檔案(圖片)
+
         OpenFileDialog od = new OpenFileDialog();
         private void UserPhoto_Click(object sender, EventArgs e)
         {
@@ -47,7 +47,6 @@ namespace WindowsForms個人專題
             }
         }
 
-        //清除所有欄位值
         private void button2_Click(object sender, EventArgs e)
         {
             textEmail.Text = null;
@@ -59,35 +58,7 @@ namespace WindowsForms個人專題
             textGender.Text = null;
         }
 
-        #region 性別
-        //性別男
-        private void radioMan_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioMan.Checked == true)
-            {
-                textGender.Text = "M";
-            }
-            else
-            {
-                textGender.Text = null;
-            }
-        }
 
-        //性別女
-        private void radioFemale_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioFemale.Checked == true)
-            {
-                textGender.Text = "F";
-            }
-            else
-            {
-                textGender.Text = null;
-            }
-        }
-        #endregion
-
-        #region 新增帳號
         private void btnCreate_Click(object sender, EventArgs e)
         {
 
@@ -132,7 +103,30 @@ namespace WindowsForms個人專題
                 MessageBox.Show("ok");
             }
         }
-        #endregion
 
+
+        private void radioMan_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (radioMan.Checked == true)
+            {
+                textGender.Text = "M";
+            }
+            else
+            {
+                textGender.Text = null;
+            }
+        }
+
+        private void radioFemale_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (radioFemale.Checked == true)
+            {
+                textGender.Text = "F";
+            }
+            else
+            {
+                textGender.Text = null;
+            }
+        }
     }
 }

@@ -116,6 +116,7 @@
             this.radioFemale.TabStop = true;
             this.radioFemale.Text = "Female";
             this.radioFemale.UseVisualStyleBackColor = true;
+            this.radioFemale.CheckedChanged += new System.EventHandler(this.radioFemale_CheckedChanged_1);
             // 
             // radioMan
             // 
@@ -128,6 +129,7 @@
             this.radioMan.TabStop = true;
             this.radioMan.Text = "Man";
             this.radioMan.UseVisualStyleBackColor = true;
+            this.radioMan.CheckedChanged += new System.EventHandler(this.radioMan_CheckedChanged_1);
             // 
             // label6
             // 

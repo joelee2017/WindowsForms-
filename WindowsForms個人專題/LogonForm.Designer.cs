@@ -34,8 +34,8 @@
             this.btnLogon = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Passwordtext = new System.Windows.Forms.TextBox();
-            this.Emailtext = new System.Windows.Forms.TextBox();
+            this.logonPasswordtext = new System.Windows.Forms.TextBox();
+            this.logonEmailtext = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnForget
@@ -102,25 +102,25 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Email";
             // 
-            // Passwordtext
+            // logonPasswordtext
             // 
-            this.Passwordtext.Location = new System.Drawing.Point(197, 98);
-            this.Passwordtext.MaxLength = 12;
-            this.Passwordtext.Multiline = true;
-            this.Passwordtext.Name = "Passwordtext";
-            this.Passwordtext.PasswordChar = '*';
-            this.Passwordtext.Size = new System.Drawing.Size(191, 31);
-            this.Passwordtext.TabIndex = 9;
-            this.Passwordtext.Text = "11";
+            this.logonPasswordtext.Location = new System.Drawing.Point(197, 98);
+            this.logonPasswordtext.MaxLength = 12;
+            this.logonPasswordtext.Multiline = true;
+            this.logonPasswordtext.Name = "logonPasswordtext";
+            this.logonPasswordtext.PasswordChar = '*';
+            this.logonPasswordtext.Size = new System.Drawing.Size(191, 31);
+            this.logonPasswordtext.TabIndex = 9;
+            this.logonPasswordtext.Text = "11";
             // 
-            // Emailtext
+            // logonEmailtext
             // 
-            this.Emailtext.Location = new System.Drawing.Point(197, 24);
-            this.Emailtext.Multiline = true;
-            this.Emailtext.Name = "Emailtext";
-            this.Emailtext.Size = new System.Drawing.Size(191, 31);
-            this.Emailtext.TabIndex = 8;
-            this.Emailtext.Text = "11";
+            this.logonEmailtext.Location = new System.Drawing.Point(197, 24);
+            this.logonEmailtext.Multiline = true;
+            this.logonEmailtext.Name = "logonEmailtext";
+            this.logonEmailtext.Size = new System.Drawing.Size(191, 31);
+            this.logonEmailtext.TabIndex = 8;
+            this.logonEmailtext.Text = "11";
             // 
             // LogonForm
             // 
@@ -134,8 +134,8 @@
             this.Controls.Add(this.btnLogon);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Passwordtext);
-            this.Controls.Add(this.Emailtext);
+            this.Controls.Add(this.logonPasswordtext);
+            this.Controls.Add(this.logonEmailtext);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "LogonForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -153,7 +153,7 @@
         private System.Windows.Forms.Button btnLogon;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox Passwordtext;
-        private System.Windows.Forms.TextBox Emailtext;
+        private System.Windows.Forms.TextBox logonPasswordtext;
+        private System.Windows.Forms.TextBox logonEmailtext;
     }
 }
