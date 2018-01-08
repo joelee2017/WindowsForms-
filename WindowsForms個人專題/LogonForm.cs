@@ -60,18 +60,7 @@ namespace WindowsForms個人專題
         { 
             var sf = new SearchForm();
 
-            //var encryptor = SHA256.Create();
-            //var data = encryptor.ComputeHash(Encoding.UTF8.GetBytes(Passwordtext.Text));
-            //var hashString = "";
-
-            //for (int i = 0; i < data.Length; i++)
-            //{
-            //    hashString += data[i].ToString("x2").ToUpperInvariant();
-            //}
-
-            //if (dr.User.Any(
-            //    us => us.Email == Emailtext.Text && us.PassWord == hashString))
-             var reuslt = userIf.Logon(logonEmailtext.Text, logonPasswordtext.Text);
+            var reuslt = userIf.Logon(logonEmailtext.Text, logonPasswordtext.Text);
 
             if (reuslt == true)
             {
@@ -87,6 +76,7 @@ namespace WindowsForms個人專題
                 MessageBox.Show("請確認帳號密碼");
             }
         }
+
         private void Sf_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
