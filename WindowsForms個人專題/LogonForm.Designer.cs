@@ -111,6 +111,7 @@
             this.Passwordtext.PasswordChar = '*';
             this.Passwordtext.Size = new System.Drawing.Size(191, 31);
             this.Passwordtext.TabIndex = 9;
+            this.Passwordtext.Text = "11";
             // 
             // Emailtext
             // 
@@ -119,6 +120,7 @@
             this.Emailtext.Name = "Emailtext";
             this.Emailtext.Size = new System.Drawing.Size(191, 31);
             this.Emailtext.TabIndex = 8;
+            this.Emailtext.Text = "11";
             // 
             // LogonForm
             // 

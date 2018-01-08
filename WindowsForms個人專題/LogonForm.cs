@@ -56,18 +56,19 @@ namespace WindowsForms個人專題
         }
 
 
+        UserInformation userIf =new UserInformation()
         private void btnLogon_Click(object sender, EventArgs e)
         {
             var sf = new SearchForm();
 
-            var encryptor = SHA256.Create();
-            var data = encryptor.ComputeHash(Encoding.UTF8.GetBytes(Passwordtext.Text));
-            var hashString = "";
+            //var encryptor = SHA256.Create();
+            //var data = encryptor.ComputeHash(Encoding.UTF8.GetBytes(Passwordtext.Text));
+            //var hashString = "";
 
-            for (int i = 0; i < data.Length; i++)
-            {
-                hashString += data[i].ToString("x2").ToUpperInvariant();
-            }
+            //for (int i = 0; i < data.Length; i++)
+            //{
+            //    hashString += data[i].ToString("x2").ToUpperInvariant();
+            //}
 
             if (dr.User.Any(
                 us => us.Email == Emailtext.Text && us.PassWord == hashString))

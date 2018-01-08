@@ -116,6 +116,7 @@
     <Compile Include="UserControlRecipeIngredientsText.Designer.cs">
       <DependentUpon>UserControlRecipeIngredientsText.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserInformation.cs" />
     <EmbeddedResource Include="CreateForm.resx">
       <DependentUpon>CreateForm.cs</DependentUpon>
     </EmbeddedResource>
