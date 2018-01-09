@@ -64,10 +64,10 @@ namespace WindowsForms個人專題
         private void btnCreate_Click(object sender, EventArgs e)
         {
             var dr = new DrEntities1();
-            var NwUser = new User();
-            var userIf = new UserInformation();
+            var Usertable = new User();
+            var userInfo = new UserInformation();
 
-            var reuslt = userIf.Verifyaccount(CreateEmailtext.Text);
+            var reuslt = userInfo.Verifyaccount(CreateEmailtext.Text);
 
             if (reuslt == true)
             {
@@ -75,8 +75,7 @@ namespace WindowsForms個人專題
             }
                              
             else
-            {
-                
+            {                
 
                 SHA256 sHA256 = SHA256.Create();
                 byte[] data = sHA256.ComputeHash(Encoding.UTF8.GetBytes(CreatePassWordtext.Text));
@@ -90,15 +89,15 @@ namespace WindowsForms個人專題
                 using (var ms = new MemoryStream())
                 {
                     pbUserPhoto.Image.Save(ms, ImageFormat.Jpeg);
-                    NwUser.Photo = ms.ToArray();
+                    Usertable.Photo = ms.ToArray();
                 }
-                NwUser.Email = CreateEmailtext.Text;
-                NwUser.PassWord = hashString;//已加密過後
-                NwUser.Gender = CreateGendertext.Text;
-                NwUser.FirstName = CreateFirstNametext.Text;
-                NwUser.LastName = CreateLastNametext.Text;
-                NwUser.LineID = CreateLineIDtext.Text;
-                dr.User.Add(NwUser);
+                Usertable.Email = CreateEmailtext.Text;
+                Usertable.PassWord = hashString;//已加密過後
+                Usertable.Gender = CreateGendertext.Text;
+                Usertable.FirstName = CreateFirstNametext.Text;
+                Usertable.LastName = CreateLastNametext.Text;
+                Usertable.LineID = CreateLineIDtext.Text;
+                dr.User.Add(Usertable);
                 dr.SaveChanges();
                 MessageBox.Show("ok");
             }

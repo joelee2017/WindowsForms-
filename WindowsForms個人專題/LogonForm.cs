@@ -58,11 +58,11 @@ namespace WindowsForms個人專題
        
         private void btnLogon_Click(object sender, EventArgs e)
         {
-            var userIf = new UserInformation();
+            var userInfo = new UserInformation();
 
             var sf = new SearchForm();
 
-            var reuslt = userIf.Logon(logonEmailtext.Text, logonPasswordtext.Text);
+            var reuslt = userInfo.Logon(logonEmailtext.Text, logonPasswordtext.Text);
 
             if (reuslt == true)
             {
