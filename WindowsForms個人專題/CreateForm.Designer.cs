@@ -49,6 +49,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CreateEmailtext = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CreateNametext = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +57,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(386, 312);
+            this.button1.Location = new System.Drawing.Point(390, 386);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 39);
             this.button1.TabIndex = 5;
@@ -67,7 +68,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(155, 312);
+            this.button3.Location = new System.Drawing.Point(159, 386);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 39);
             this.button3.TabIndex = 4;
@@ -78,7 +79,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(264, 312);
+            this.button2.Location = new System.Drawing.Point(268, 386);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 39);
             this.button2.TabIndex = 3;
@@ -91,7 +92,7 @@
             this.PWMlabel.AutoSize = true;
             this.PWMlabel.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PWMlabel.ForeColor = System.Drawing.Color.Red;
-            this.PWMlabel.Location = new System.Drawing.Point(178, 80);
+            this.PWMlabel.Location = new System.Drawing.Point(185, 132);
             this.PWMlabel.Name = "PWMlabel";
             this.PWMlabel.Size = new System.Drawing.Size(0, 22);
             this.PWMlabel.TabIndex = 34;
@@ -99,7 +100,7 @@
             // CreateGendertext
             // 
             this.CreateGendertext.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.CreateGendertext.Location = new System.Drawing.Point(179, 255);
+            this.CreateGendertext.Location = new System.Drawing.Point(186, 307);
             this.CreateGendertext.Multiline = true;
             this.CreateGendertext.Name = "CreateGendertext";
             this.CreateGendertext.Size = new System.Drawing.Size(159, 31);
@@ -109,7 +110,7 @@
             // 
             this.radioFemale.AutoSize = true;
             this.radioFemale.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.radioFemale.Location = new System.Drawing.Point(81, 260);
+            this.radioFemale.Location = new System.Drawing.Point(88, 312);
             this.radioFemale.Name = "radioFemale";
             this.radioFemale.Size = new System.Drawing.Size(88, 26);
             this.radioFemale.TabIndex = 32;
@@ -122,7 +123,7 @@
             // 
             this.radioMan.AutoSize = true;
             this.radioMan.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.radioMan.Location = new System.Drawing.Point(17, 260);
+            this.radioMan.Location = new System.Drawing.Point(24, 312);
             this.radioMan.Name = "radioMan";
             this.radioMan.Size = new System.Drawing.Size(58, 26);
             this.radioMan.TabIndex = 31;
@@ -135,7 +136,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(23, 207);
+            this.label6.Location = new System.Drawing.Point(30, 259);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 22);
             this.label6.TabIndex = 30;
@@ -144,7 +145,7 @@
             // CreateLineIDtext
             // 
             this.CreateLineIDtext.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.CreateLineIDtext.Location = new System.Drawing.Point(179, 204);
+            this.CreateLineIDtext.Location = new System.Drawing.Point(186, 256);
             this.CreateLineIDtext.Multiline = true;
             this.CreateLineIDtext.Name = "CreateLineIDtext";
             this.CreateLineIDtext.Size = new System.Drawing.Size(159, 31);
@@ -160,12 +161,13 @@
             this.pbUserPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbUserPhoto.TabIndex = 28;
             this.pbUserPhoto.TabStop = false;
+            this.pbUserPhoto.Click += new System.EventHandler(this.pbUserPhoto_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 162);
+            this.label4.Location = new System.Drawing.Point(30, 214);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 22);
             this.label4.TabIndex = 27;
@@ -174,7 +176,7 @@
             // CreateLastNametext
             // 
             this.CreateLastNametext.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.CreateLastNametext.Location = new System.Drawing.Point(179, 153);
+            this.CreateLastNametext.Location = new System.Drawing.Point(186, 205);
             this.CreateLastNametext.Multiline = true;
             this.CreateLastNametext.Name = "CreateLastNametext";
             this.CreateLastNametext.Size = new System.Drawing.Size(159, 31);
@@ -184,7 +186,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 114);
+            this.label3.Location = new System.Drawing.Point(30, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 22);
             this.label3.TabIndex = 25;
@@ -193,7 +195,7 @@
             // CreateFirstNametext
             // 
             this.CreateFirstNametext.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.CreateFirstNametext.Location = new System.Drawing.Point(179, 105);
+            this.CreateFirstNametext.Location = new System.Drawing.Point(186, 157);
             this.CreateFirstNametext.Multiline = true;
             this.CreateFirstNametext.Name = "CreateFirstNametext";
             this.CreateFirstNametext.Size = new System.Drawing.Size(159, 31);
@@ -203,7 +205,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 67);
+            this.label2.Location = new System.Drawing.Point(30, 119);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 22);
             this.label2.TabIndex = 23;
@@ -212,7 +214,7 @@
             // CreatePassWordtext
             // 
             this.CreatePassWordtext.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.CreatePassWordtext.Location = new System.Drawing.Point(179, 58);
+            this.CreatePassWordtext.Location = new System.Drawing.Point(186, 110);
             this.CreatePassWordtext.MaxLength = 12;
             this.CreatePassWordtext.Multiline = true;
             this.CreatePassWordtext.Name = "CreatePassWordtext";
@@ -224,7 +226,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 21);
+            this.label1.Location = new System.Drawing.Point(30, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 22);
             this.label1.TabIndex = 21;
@@ -233,7 +235,7 @@
             // CreateEmailtext
             // 
             this.CreateEmailtext.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.CreateEmailtext.Location = new System.Drawing.Point(179, 12);
+            this.CreateEmailtext.Location = new System.Drawing.Point(186, 64);
             this.CreateEmailtext.Multiline = true;
             this.CreateEmailtext.Name = "CreateEmailtext";
             this.CreateEmailtext.Size = new System.Drawing.Size(159, 31);
@@ -243,12 +245,22 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // CreateNametext
+            // 
+            this.CreateNametext.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.CreateNametext.Location = new System.Drawing.Point(412, 250);
+            this.CreateNametext.Multiline = true;
+            this.CreateNametext.Name = "CreateNametext";
+            this.CreateNametext.Size = new System.Drawing.Size(159, 31);
+            this.CreateNametext.TabIndex = 35;
+            // 
             // CreateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(621, 379);
+            this.ClientSize = new System.Drawing.Size(614, 462);
+            this.Controls.Add(this.CreateNametext);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PWMlabel);
             this.Controls.Add(this.button3);
@@ -298,5 +310,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox CreateEmailtext;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox CreateNametext;
     }
 }

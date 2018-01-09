@@ -17,19 +17,20 @@ namespace WindowsForms個人專題
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            this.Recipe = new HashSet<Recipe>();
+            this.Recipes = new HashSet<Recipes>();
         }
     
         public int UserID { get; set; }
-        public string Email { get; set; }
-        public string PassWord { get; set; }
-        public string Gender { get; set; }
+        public string UserName { get; set; }
+        public string UserPassword { get; set; }
+        public string UserEmail { get; set; }
+        public string UserSex { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public byte[] Photo { get; set; }
-        public string LineID { get; set; }
+        public string UserImage { get; set; }
+        public string UserLineID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Recipe> Recipe { get; set; }
+        public virtual ICollection<Recipes> Recipes { get; set; }
     }
 }

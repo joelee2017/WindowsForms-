@@ -19,8 +19,8 @@ namespace WindowsForms個人專題
             InitializeComponent();
         }
         FileDialog of1 = new OpenFileDialog();
-        DrEntities1 dr = new DrEntities1();
-        Recipe rp = new Recipe();
+        DeliciousFoodEntities DeliciousFood = new DeliciousFoodEntities();
+        Recipes rp =new Recipes();
         User ur = new User();
 
         #region 打開圖片
@@ -39,26 +39,25 @@ namespace WindowsForms個人專題
         //建立食譜
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            var query = dr.User.Where(d => d.Email == textEmail.Text).Select(s => s.UserID).First();
+            var query = DeliciousFood.User.Where(d => d.UserEmail == textEmail.Text).Select(s => s.UserID).First();
 
             using (MemoryStream ms = new MemoryStream())
-            //using(Bitmap pic =new Bitmap(pBRecipe.Image))
+            using(Bitmap pic =new Bitmap(pBRecipe.Image))
             {
                 //pic.Save(ms, ImageFormat.Jpeg);
                 //rp.Photo = pic.ToString();
                 pBRecipe.Image.Save(ms, ImageFormat.Jpeg);
-                rp.Photo = ms.ToArray();
+                //rp.RecipeImage = ms.ToArray();
             }
 
             rp.UserID = query;
-            rp.FoodName = textFoodName.Text;
-            rp.Description = textDescription.Text;
+            rp.RecipeName = textFoodName.Text;
+            rp.Introduction = textDescription.Text;
             rp.CookingTime = int.Parse(textCookingTime.Text);
             rp.Amount = int.Parse(textAmount.Text);
-            rp.Tips = textTips.Text;
 
-            dr.Recipe.Add(rp);
-            dr.SaveChanges();
+            DeliciousFood.Recipes.Add(rp);
+            DeliciousFood.SaveChanges();
             MessageBox.Show("OK");
             
         }
@@ -91,12 +90,12 @@ namespace WindowsForms個人專題
             }
             else if(textEmailMdFind.Text !="")
             {
-                var query = from s in dr.User
-                            join c in dr.Recipe on s.UserID equals c.UserID
-                            where s.Email == textEmailMdFind.Text
+                var query = from s in DeliciousFood.User
+                            join c in DeliciousFood.Recipes on s.UserID equals c.UserID
+                            where s.UserEmail == textEmailMdFind.Text
                             select new
                             {
-                                  c.FoodName,
+                                  c.RecipeName,
                             };
                 dataGridViewMd.DataSource = query.ToArray();
             }

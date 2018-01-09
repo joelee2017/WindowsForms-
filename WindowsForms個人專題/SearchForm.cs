@@ -22,9 +22,9 @@ namespace WindowsForms個人專題
 
         }
 
-        DrEntities1 dr = new DrEntities1();
+        DeliciousFoodEntities DeliciousFood = new DeliciousFoodEntities();
         User NwUser = new User();// user資料表建立實體  
-        Recipe rp = new Recipe();// recipe資料表建立實體
+        Recipes rp = new Recipes();// recipe資料表建立實體
         OpenFileDialog od = new OpenFileDialog();
 
         #region Logout登出
@@ -60,15 +60,15 @@ namespace WindowsForms個人專題
         {            
             dGridViewSearchUser.DataSource = null;
 
-                dGridViewSearchUser.DataSource = dr.User.Select(user => new
+                dGridViewSearchUser.DataSource = DeliciousFood.User.Select(user => new
                 {
                     編號 = user.UserID,
-                           user.Email,
-                    性別 = user.Gender,
+                           user.UserEmail,
+                    性別 = user.UserSex,
                     姓 = user.FirstName,
                     名 = user.LastName,
-                    照片 = user.Photo,
-                           user.LineID,
+                    照片 = user.UserImage,
+                           user.UserLineID,
 
                 }).ToList();
 
@@ -88,16 +88,15 @@ namespace WindowsForms個人專題
         private void DGViSearchRecipe_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             int userid = Convert.ToInt32(dGridViewSearchUser.Rows[e.RowIndex].Cells[0].Value);
-            DGViSearchRecipe.DataSource = dr.Recipe.Where(u => u.UserID == userid).Select(s => new
+            DGViSearchRecipe.DataSource = DeliciousFood.Recipes.Where(u => u.UserID == userid).Select(s => new
             {
-                s.RecipeID,
+                s.RecipeId,
                 s.UserID,
-                s.FoodName,
-                s.Description,
+                s.RecipeName,
+                s.Introduction,
                 s.CookingTime,
                 s.Amount,
-                s.Photo,
-                s.Tips
+                s.RecipeImage,
             }).ToArray();
 
             for (int i = 0; i < DGViSearchRecipe.Columns.Count; i++)//調整DataGridView圖片顯示
@@ -133,16 +132,16 @@ namespace WindowsForms個人專題
             dGridViewSearchUser.DataSource = null;
             try
             {
-                dataGridViewModify.DataSource = dr.User.Select(user => new
+                dataGridViewModify.DataSource = DeliciousFood.User.Select(user => new
                 {
                     編號 = user.UserID,
-                    Email = user.Email,
-                    密碼 = user.PassWord,
-                    性別 = user.Gender,
+                    Email = user.UserEmail,
+                    密碼 = user.UserPassword,
+                    性別 = user.UserSex,
                     姓 = user.FirstName,
                     名 = user.LastName,
-                    照片 = user.Photo,
-                    LineID = user.LineID,
+                    照片 = user.UserImage,
+                    LineID = user.UserLineID,
                 }).ToList();
 
             }
@@ -201,13 +200,13 @@ namespace WindowsForms個人專題
                     hashString += data[i].ToString("x2").ToUpperInvariant();
                 }
 
-                User userUpdate = dr.User.Find(int.Parse(labelNMfID.Text));
-                userUpdate.Email = textEmail.Text;
-                userUpdate.PassWord = hashString;
-                userUpdate.Gender = textGender.Text;
+                User userUpdate = DeliciousFood.User.Find(int.Parse(labelNMfID.Text));
+                userUpdate.UserEmail = textEmail.Text;
+                userUpdate.UserPassword = hashString;
+                userUpdate.UserSex = textGender.Text;
                 userUpdate.FirstName = textFirstName.Text;
                 userUpdate.LastName = textLastName.Text;
-                userUpdate.LineID = textLineID.Text;
+                userUpdate.UserLineID = textLineID.Text;
 
                 //picturebox無法直接儲存，所以需要另建一個bitmap包起來save
                 using (MemoryStream ms = new MemoryStream())
@@ -219,8 +218,8 @@ namespace WindowsForms個人專題
 
                 }
 
-                dr.Entry(userUpdate).State = EntityState.Modified;//修改記錄
-                dr.SaveChanges();
+                DeliciousFood.Entry(userUpdate).State = EntityState.Modified;//修改記錄
+                DeliciousFood.SaveChanges();
                 MessageBox.Show("ok");
                 btnModifyFind_Click(sender, e);
             }
@@ -273,16 +272,16 @@ namespace WindowsForms個人專題
             dGridViewSearchUser.DataSource = null;
             try
             {
-                dataGridViewAD.DataSource = dr.User.Select(user => new
+                dataGridViewAD.DataSource = DeliciousFood.User.Select(user => new
                 {
                     編號 = user.UserID,
-                    Email = user.Email,
-                    密碼 = user.PassWord,
-                    性別 = user.Gender,
+                    Email = user.UserEmail,
+                    密碼 = user.UserPassword,
+                    性別 = user.UserSex,
                     姓 = user.FirstName,
                     名 = user.LastName,
-                    照片 = user.Photo,
-                    LineID = user.LineID,
+                    照片 = user.UserImage,
+                    LineID = user.UserLineID,
                 }).ToList();
 
             }
@@ -298,18 +297,18 @@ namespace WindowsForms個人專題
             using (var ms = new MemoryStream())
             {
                 UserPhoto2.Image.Save(ms, ImageFormat.Jpeg);
-                NwUser.Photo = ms.ToArray();
+                //NwUser.Photo = ms.ToArray();
             }
 
-            NwUser.Email = textEmail1.Text;
-            NwUser.PassWord = textPassWord1.Text;
-            NwUser.Gender = textGender1.Text;
+            NwUser.UserEmail = textEmail1.Text;
+            NwUser.UserPassword = textPassWord1.Text;
+            NwUser.UserSex = textGender1.Text;
             NwUser.FirstName = textFirstName1.Text;
             NwUser.LastName = textLastName1.Text;
-            NwUser.LineID = textLineID1.Text;
+            NwUser.UserLineID = textLineID1.Text;
 
-            dr.User.Add(NwUser);
-            dr.SaveChanges();
+            DeliciousFood.User.Add(NwUser);
+            DeliciousFood.SaveChanges();
             MessageBox.Show("ok");
             btnADFind_Click(sender, e);
         }
@@ -386,15 +385,15 @@ namespace WindowsForms個人專題
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
 
-                User UserDelete = dr.User.Find(int.Parse(labelNADID.Text));
+                User UserDelete = DeliciousFood.User.Find(int.Parse(labelNADID.Text));
                 if (UserDelete == null)
                 {
                     MessageBox.Show($"無  {textEmail.Text}  記錄");
                 }
                 else
                 {
-                    dr.User.Remove(UserDelete);
-                    dr.SaveChanges();
+                    DeliciousFood.User.Remove(UserDelete);
+                    DeliciousFood.SaveChanges();
                     MessageBox.Show("刪除成功");
                     btnADFind_Click(sender, e);
                 }

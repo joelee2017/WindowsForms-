@@ -13,10 +13,10 @@ namespace WindowsForms個人專題
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DrEntities1 : DbContext
+    public partial class DeliciousFoodEntities : DbContext
     {
-        public DrEntities1()
-            : base("name=DrEntities1")
+        public DeliciousFoodEntities()
+            : base("name=DeliciousFoodEntities")
         {
         }
     
@@ -26,7 +26,6 @@ namespace WindowsForms個人專題
         }
     
         public virtual DbSet<User> User { get; set; }
-        public virtual DbSet<Recipe> Recipe { get; set; }
-        public virtual DbSet<RecipeFoddList> RecipeFoddList { get; set; }
+        public virtual DbSet<Recipes> Recipes { get; set; }
     }
 }

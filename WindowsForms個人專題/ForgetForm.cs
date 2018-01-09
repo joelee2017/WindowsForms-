@@ -16,8 +16,7 @@ namespace WindowsForms個人專題
         {
             InitializeComponent();
         }
-
-        DrEntities1 dr = new DrEntities1();
+        
 
         //Return返迴登入頁面
         private void btnreturn_Click(object sender, EventArgs e)
@@ -43,12 +42,14 @@ namespace WindowsForms個人專題
         //Forget查詢密碼
         private void btnForget_Click(object sender, EventArgs e)
         {
+            DeliciousFoodEntities DeliciousFood = new DeliciousFoodEntities();
+
             try
             {                
-                if (dr.User.Any(u => u.Email == textemail.Text && u.LineID == textlineid.Text))
+                if (DeliciousFood.User.Any(u => u.UserEmail == textemail.Text && u.UserLineID == textlineid.Text))
                 {
-                    labelpassword.Text =(Convert.ToString(dr.User.Where
-                     (u => u.Email == textemail.Text && u.LineID == textlineid.Text).Select(s => s.PassWord).First()));
+                    labelpassword.Text =(Convert.ToString(DeliciousFood.User.Where
+                     (u => u.UserEmail == textemail.Text && u.UserLineID == textlineid.Text).Select(s => s.UserPassword).First()));
                 }
                 else
                 {

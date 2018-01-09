@@ -60,20 +60,20 @@
     <Compile Include="CreateForm.Designer.cs">
       <DependentUpon>CreateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DrModel.Context.cs">
+    <Compile Include="DeliciousFoodModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DrModel.Context.tt</DependentUpon>
+      <DependentUpon>DeliciousFoodModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DrModel.cs">
+    <Compile Include="DeliciousFoodModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DrModel.tt</DependentUpon>
+      <DependentUpon>DeliciousFoodModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DrModel.Designer.cs">
+    <Compile Include="DeliciousFoodModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DrModel.edmx</DependentUpon>
+      <DependentUpon>DeliciousFoodModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="ForgetForm.cs">
       <SubType>Form</SubType>
@@ -87,17 +87,14 @@
     <Compile Include="LogonForm.Designer.cs">
       <DependentUpon>LogonForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Recipe.cs">
-      <DependentUpon>DrModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="RecipeC.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RecipeC.Designer.cs">
       <DependentUpon>RecipeC.cs</DependentUpon>
     </Compile>
-    <Compile Include="RecipeFoddList.cs">
-      <DependentUpon>DrModel.tt</DependentUpon>
+    <Compile Include="Recipes.cs">
+      <DependentUpon>DeliciousFoodModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SearchForm.cs">
       <SubType>Form</SubType>
@@ -108,7 +105,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs">
-      <DependentUpon>DrModel.tt</DependentUpon>
+      <DependentUpon>DeliciousFoodModel.tt</DependentUpon>
     </Compile>
     <Compile Include="UserControlRecipeIngredientsText.cs">
       <SubType>UserControl</SubType>
@@ -144,14 +141,14 @@
     <EmbeddedResource Include="UserControlRecipeIngredientsText.resx">
       <DependentUpon>UserControlRecipeIngredientsText.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="DrModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DrModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
-    <None Include="DrModel.edmx.diagram">
-      <DependentUpon>DrModel.edmx</DependentUpon>
+    <EntityDeploy Include="DeliciousFoodModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DeliciousFoodModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DeliciousFoodModel.edmx.diagram">
+      <DependentUpon>DeliciousFoodModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\User.datasource" />
@@ -172,16 +169,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DrModel.Context.tt">
+    <Content Include="DeliciousFoodModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DrModel.edmx</DependentUpon>
-      <LastGenOutput>DrModel.Context.cs</LastGenOutput>
+      <DependentUpon>DeliciousFoodModel.edmx</DependentUpon>
+      <LastGenOutput>DeliciousFoodModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DrModel.edmx.sql" />
-    <Content Include="DrModel.tt">
+    <Content Include="DeliciousFoodModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DrModel.edmx</DependentUpon>
-      <LastGenOutput>DrModel.cs</LastGenOutput>
+      <DependentUpon>DeliciousFoodModel.edmx</DependentUpon>
+      <LastGenOutput>DeliciousFoodModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

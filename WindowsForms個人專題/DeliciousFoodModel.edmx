@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DeliciousFoodModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Recipes">
+          <Key>
+            <PropertyRef Name="RecipeId" />
+          </Key>
+          <Property Name="RecipeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="RecipeName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Introduction" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RecipeImage" Type="nvarchar(max)" />
+          <Property Name="CookingTime" Type="int" />
+          <Property Name="Amount" Type="int" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="UserPassword" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UserEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserSex" Type="nchar" MaxLength="10" />
+          <Property Name="FirstName" Type="nchar" MaxLength="10" />
+          <Property Name="LastName" Type="nchar" MaxLength="10" />
+          <Property Name="UserImage" Type="nvarchar(max)" />
+          <Property Name="UserLineID" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_食譜_user">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Recipes" Type="Self.Recipes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Recipes">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DeliciousFoodModelStoreContainer">
+          <EntitySet Name="Recipes" EntityType="Self.Recipes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_食譜_user" Association="Self.FK_食譜_user">
+            <End Role="User" EntitySet="User" />
+            <End Role="Recipes" EntitySet="Recipes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DeliciousFoodModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserSex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="UserImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserLineID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Recipes" Relationship="DeliciousFoodModel.FK_食譜_user" FromRole="User" ToRole="Recipes" />
+        </EntityType>
+        <EntityContainer Name="DeliciousFoodEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="Recipes" EntityType="DeliciousFoodModel.Recipes" />
+          <AssociationSet Name="FK_食譜_user" Association="DeliciousFoodModel.FK_食譜_user">
+            <End Role="User" EntitySet="User" />
+            <End Role="Recipes" EntitySet="Recipes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Recipes">
+          <Key>
+            <PropertyRef Name="RecipeId" />
+          </Key>
+          <Property Name="RecipeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="RecipeName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Introduction" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RecipeImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CookingTime" Type="Int32" />
+          <Property Name="Amount" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="DeliciousFoodModel.FK_食譜_user" FromRole="Recipes" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_食譜_user">
+          <End Type="DeliciousFoodModel.User" Role="User" Multiplicity="1" />
+          <End Type="DeliciousFoodModel.Recipes" Role="Recipes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Recipes">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DeliciousFoodModelStoreContainer" CdmEntityContainer="DeliciousFoodEntities">
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="DeliciousFoodModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+                <ScalarProperty Name="UserSex" ColumnName="UserSex" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+                <ScalarProperty Name="UserLineID" ColumnName="UserLineID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Recipes">
+            <EntityTypeMapping TypeName="DeliciousFoodModel.Recipes">
+              <MappingFragment StoreEntitySet="Recipes">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="CookingTime" ColumnName="CookingTime" />
+                <ScalarProperty Name="RecipeImage" ColumnName="RecipeImage" />
+                <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+                <ScalarProperty Name="RecipeName" ColumnName="RecipeName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

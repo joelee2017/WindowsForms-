@@ -12,25 +12,16 @@ namespace WindowsForms個人專題
     using System;
     using System.Collections.Generic;
     
-    public partial class Recipe
+    public partial class Recipes
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Recipe()
-        {
-            this.RecipeFoddList = new HashSet<RecipeFoddList>();
-        }
-    
-        public int RecipeID { get; set; }
+        public int RecipeId { get; set; }
         public int UserID { get; set; }
-        public string FoodName { get; set; }
-        public string Description { get; set; }
+        public string RecipeName { get; set; }
+        public string Introduction { get; set; }
+        public string RecipeImage { get; set; }
         public Nullable<int> CookingTime { get; set; }
         public Nullable<int> Amount { get; set; }
-        public byte[] Photo { get; set; }
-        public string Tips { get; set; }
     
         public virtual User User { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RecipeFoddList> RecipeFoddList { get; set; }
     }
 }

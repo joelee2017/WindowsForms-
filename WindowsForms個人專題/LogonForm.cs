@@ -17,10 +17,7 @@ namespace WindowsForms個人專題
         {
             InitializeComponent();
         }
-        
 
-
-        DrEntities1 dr = new DrEntities1();        
 
         private void btnCancel_Click(object sender, EventArgs e)
         {

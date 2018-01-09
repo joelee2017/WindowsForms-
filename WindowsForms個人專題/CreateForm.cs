@@ -19,10 +19,7 @@ namespace WindowsForms個人專題
         {
             InitializeComponent();
         }
-
-             
-
-
+                    
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
@@ -31,21 +28,10 @@ namespace WindowsForms個人專題
             lf1.Show(); this.Hide();
             
         }
+
         private void Lf1_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
-        }
-
-
-        
-        private void UserPhoto_Click(object sender, EventArgs e)
-        {
-            var openDialog = new OpenFileDialog();
-
-            if (openDialog.ShowDialog() == DialogResult.OK)
-            {
-                pbUserPhoto.Image = Image.FromStream(openDialog.OpenFile());
-            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -59,11 +45,19 @@ namespace WindowsForms個人專題
             CreateGendertext.Text = null;
         }
 
+        private void pbUserPhoto_Click(object sender, EventArgs e)
+        {
+            var openDialog = new OpenFileDialog();
 
-        
+            if (openDialog.ShowDialog() == DialogResult.OK)
+            {
+                pbUserPhoto.Image = Image.FromStream(openDialog.OpenFile());
+            }
+        }
+
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            var dr = new DrEntities1();
+            DeliciousFoodEntities DeliciousFood = new DeliciousFoodEntities();
             var Usertable = new User();
             var userInfo = new UserInformation();
 
@@ -75,31 +69,22 @@ namespace WindowsForms個人專題
             }
                              
             else
-            {                
+            {
 
-                SHA256 sHA256 = SHA256.Create();
-                byte[] data = sHA256.ComputeHash(Encoding.UTF8.GetBytes(CreatePassWordtext.Text));
-                string hashString = "";
-                for (int i = 0; i < data.Length; i++)
+                var result= userInfo.CreateUser(CreateNametext.Text, CreateEmailtext.Text, CreatePassWordtext.Text,
+                    CreateGendertext.Text, CreateFirstNametext.Text, CreateLastNametext.Text, 
+                    CreateLineIDtext.Text, pbUserPhoto.Image);
+
+
+                if (result != null)
                 {
-                    hashString += data[i].ToString("x2").ToUpperInvariant();
+                    MessageBox.Show("ok");
+                }
+                else
+                {
+                    MessageBox.Show("建置失敗");
                 }
 
-
-                using (var ms = new MemoryStream())
-                {
-                    pbUserPhoto.Image.Save(ms, ImageFormat.Jpeg);
-                    Usertable.Photo = ms.ToArray();
-                }
-                Usertable.Email = CreateEmailtext.Text;
-                Usertable.PassWord = hashString;//已加密過後
-                Usertable.Gender = CreateGendertext.Text;
-                Usertable.FirstName = CreateFirstNametext.Text;
-                Usertable.LastName = CreateLastNametext.Text;
-                Usertable.LineID = CreateLineIDtext.Text;
-                dr.User.Add(Usertable);
-                dr.SaveChanges();
-                MessageBox.Show("ok");
             }
         }
 
@@ -127,5 +112,7 @@ namespace WindowsForms個人專題
                 CreateGendertext.Text = null;
             }
         }
+
+
     }
 }

@@ -12,22 +12,10 @@ namespace WindowsForms個人專題
 {
     public class UserInformation
     {
-        DrEntities1 dr = new DrEntities1();
 
-        private string useremail, userpassword, usergender, userfirsnName, userlastname, userlineid, userPhoto;
+        DeliciousFoodEntities DeliciousFood = new DeliciousFoodEntities();
 
-        //private string userInfo;
-        //public string UserInfo
-        //{
-        //    get
-        //    {
-        //        return userInfo;
-        //    }
-        //    set
-        //    {
-        //        userInfo = value;
-        //    }
-        //}
+        private string userename, useremail, userpassword, usergender, userfirsnName, userlastname, userlineid, userPhoto;
 
 
         public bool Logon(string useremail, string userpassword)
@@ -42,7 +30,7 @@ namespace WindowsForms個人專題
                 hashpassword += data[i].ToString("x2").ToUpperInvariant();
             }
 
-            var LogonInfo = dr.User.Any(us => us.Email == useremail && us.PassWord == hashpassword);
+            var LogonInfo = DeliciousFood.User.Any(us => us.UserEmail == useremail && us.UserPassword == hashpassword);
 
             return LogonInfo;
         }
@@ -53,15 +41,15 @@ namespace WindowsForms個人專題
         {
             var userInfo = new UserInformation();
 
-            var Verifyacount = dr.User.Any(u => u.Email == useremil);
+            var Verifyacount = DeliciousFood.User.Any(u => u.UserEmail == useremil);
 
             return Verifyacount;
         }
-        
 
-        public bool CreateUser(string useremail, string userpassword, string usergender, string userfirsnName, string userlastname, string userlineid, string userPhoto)
+
+        public string CreateUser(string username, string useremail, string userpassword, string usergender, string userfirsnName, string userlastname, string userlineid,Image userPhoto)
         {
-            var dr = new DrEntities1();
+
             var Usertable = new User();
             var encryptor = SHA256.Create();
 
@@ -72,24 +60,26 @@ namespace WindowsForms個人專題
                 hashpassword += data[i].ToString("x2").ToUpperInvariant();
             }
             
-            using (var ms = new MemoryStream())
+            using(var ms =new MemoryStream())
             using(var userpic = new Bitmap(userPhoto))
             {
-                userpic.Save(ms, ImageFormat.Jpeg);
-                
+                //userpic.Save(ms, ImageFormat.Jpeg);
+                Usertable.UserImage = ms;
             }
 
-            Usertable.Email = useremail;
-            Usertable.PassWord = hashpassword;
-            Usertable.Gender = usergender;
+            Usertable.UserName = username;
+            Usertable.UserEmail = useremail;
+            Usertable.UserPassword = hashpassword;
+            Usertable.UserSex = usergender;
             Usertable.FirstName = userfirsnName;
             Usertable.LastName = userlastname;
-            Usertable.LineID = userlineid;
-            dr.User.Add(Usertable);
-            dr.SaveChanges();
+            Usertable.UserLineID = userlineid;
+            DeliciousFood.User.Add(Usertable);
+            DeliciousFood.SaveChanges();
 
-           
-            return 
+
+
+            return DeliciousFood.ToString();
         }
     }
 }
