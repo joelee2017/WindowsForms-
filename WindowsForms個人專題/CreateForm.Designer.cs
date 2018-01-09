@@ -34,20 +34,20 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.PWMlabel = new System.Windows.Forms.Label();
-            this.textGender = new System.Windows.Forms.TextBox();
+            this.CreateGendertext = new System.Windows.Forms.TextBox();
             this.radioFemale = new System.Windows.Forms.RadioButton();
             this.radioMan = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.textLineID = new System.Windows.Forms.TextBox();
+            this.CreateLineIDtext = new System.Windows.Forms.TextBox();
             this.pbUserPhoto = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textLastName = new System.Windows.Forms.TextBox();
+            this.CreateLastNametext = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textFirstName = new System.Windows.Forms.TextBox();
+            this.CreateFirstNametext = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textPassWord = new System.Windows.Forms.TextBox();
+            this.CreatePassWordtext = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textEmail = new System.Windows.Forms.TextBox();
+            this.CreateEmailtext = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbUserPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -96,14 +96,14 @@
             this.PWMlabel.Size = new System.Drawing.Size(0, 22);
             this.PWMlabel.TabIndex = 34;
             // 
-            // textGender
+            // CreateGendertext
             // 
-            this.textGender.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textGender.Location = new System.Drawing.Point(179, 255);
-            this.textGender.Multiline = true;
-            this.textGender.Name = "textGender";
-            this.textGender.Size = new System.Drawing.Size(159, 31);
-            this.textGender.TabIndex = 33;
+            this.CreateGendertext.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.CreateGendertext.Location = new System.Drawing.Point(179, 255);
+            this.CreateGendertext.Multiline = true;
+            this.CreateGendertext.Name = "CreateGendertext";
+            this.CreateGendertext.Size = new System.Drawing.Size(159, 31);
+            this.CreateGendertext.TabIndex = 33;
             // 
             // radioFemale
             // 
@@ -141,14 +141,14 @@
             this.label6.TabIndex = 30;
             this.label6.Text = "LineID";
             // 
-            // textLineID
+            // CreateLineIDtext
             // 
-            this.textLineID.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textLineID.Location = new System.Drawing.Point(179, 204);
-            this.textLineID.Multiline = true;
-            this.textLineID.Name = "textLineID";
-            this.textLineID.Size = new System.Drawing.Size(159, 31);
-            this.textLineID.TabIndex = 29;
+            this.CreateLineIDtext.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.CreateLineIDtext.Location = new System.Drawing.Point(179, 204);
+            this.CreateLineIDtext.Multiline = true;
+            this.CreateLineIDtext.Name = "CreateLineIDtext";
+            this.CreateLineIDtext.Size = new System.Drawing.Size(159, 31);
+            this.CreateLineIDtext.TabIndex = 29;
             // 
             // pbUserPhoto
             // 
@@ -171,14 +171,14 @@
             this.label4.TabIndex = 27;
             this.label4.Text = "LastName";
             // 
-            // textLastName
+            // CreateLastNametext
             // 
-            this.textLastName.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textLastName.Location = new System.Drawing.Point(179, 153);
-            this.textLastName.Multiline = true;
-            this.textLastName.Name = "textLastName";
-            this.textLastName.Size = new System.Drawing.Size(159, 31);
-            this.textLastName.TabIndex = 26;
+            this.CreateLastNametext.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.CreateLastNametext.Location = new System.Drawing.Point(179, 153);
+            this.CreateLastNametext.Multiline = true;
+            this.CreateLastNametext.Name = "CreateLastNametext";
+            this.CreateLastNametext.Size = new System.Drawing.Size(159, 31);
+            this.CreateLastNametext.TabIndex = 26;
             // 
             // label3
             // 
@@ -190,14 +190,14 @@
             this.label3.TabIndex = 25;
             this.label3.Text = "FirstName";
             // 
-            // textFirstName
+            // CreateFirstNametext
             // 
-            this.textFirstName.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textFirstName.Location = new System.Drawing.Point(179, 105);
-            this.textFirstName.Multiline = true;
-            this.textFirstName.Name = "textFirstName";
-            this.textFirstName.Size = new System.Drawing.Size(159, 31);
-            this.textFirstName.TabIndex = 24;
+            this.CreateFirstNametext.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.CreateFirstNametext.Location = new System.Drawing.Point(179, 105);
+            this.CreateFirstNametext.Multiline = true;
+            this.CreateFirstNametext.Name = "CreateFirstNametext";
+            this.CreateFirstNametext.Size = new System.Drawing.Size(159, 31);
+            this.CreateFirstNametext.TabIndex = 24;
             // 
             // label2
             // 
@@ -209,16 +209,16 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "PassWord";
             // 
-            // textPassWord
+            // CreatePassWordtext
             // 
-            this.textPassWord.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textPassWord.Location = new System.Drawing.Point(179, 58);
-            this.textPassWord.MaxLength = 12;
-            this.textPassWord.Multiline = true;
-            this.textPassWord.Name = "textPassWord";
-            this.textPassWord.PasswordChar = '*';
-            this.textPassWord.Size = new System.Drawing.Size(159, 31);
-            this.textPassWord.TabIndex = 22;
+            this.CreatePassWordtext.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.CreatePassWordtext.Location = new System.Drawing.Point(179, 58);
+            this.CreatePassWordtext.MaxLength = 12;
+            this.CreatePassWordtext.Multiline = true;
+            this.CreatePassWordtext.Name = "CreatePassWordtext";
+            this.CreatePassWordtext.PasswordChar = '*';
+            this.CreatePassWordtext.Size = new System.Drawing.Size(159, 31);
+            this.CreatePassWordtext.TabIndex = 22;
             // 
             // label1
             // 
@@ -230,14 +230,14 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Email";
             // 
-            // textEmail
+            // CreateEmailtext
             // 
-            this.textEmail.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textEmail.Location = new System.Drawing.Point(179, 12);
-            this.textEmail.Multiline = true;
-            this.textEmail.Name = "textEmail";
-            this.textEmail.Size = new System.Drawing.Size(159, 31);
-            this.textEmail.TabIndex = 20;
+            this.CreateEmailtext.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.CreateEmailtext.Location = new System.Drawing.Point(179, 12);
+            this.CreateEmailtext.Multiline = true;
+            this.CreateEmailtext.Name = "CreateEmailtext";
+            this.CreateEmailtext.Size = new System.Drawing.Size(159, 31);
+            this.CreateEmailtext.TabIndex = 20;
             // 
             // errorProvider1
             // 
@@ -253,20 +253,20 @@
             this.Controls.Add(this.PWMlabel);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textGender);
+            this.Controls.Add(this.CreateGendertext);
             this.Controls.Add(this.radioFemale);
             this.Controls.Add(this.radioMan);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textLineID);
+            this.Controls.Add(this.CreateLineIDtext);
             this.Controls.Add(this.pbUserPhoto);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textLastName);
+            this.Controls.Add(this.CreateLastNametext);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textFirstName);
+            this.Controls.Add(this.CreateFirstNametext);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textPassWord);
+            this.Controls.Add(this.CreatePassWordtext);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textEmail);
+            this.Controls.Add(this.CreateEmailtext);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CreateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -283,20 +283,20 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label PWMlabel;
-        private System.Windows.Forms.TextBox textGender;
+        private System.Windows.Forms.TextBox CreateGendertext;
         private System.Windows.Forms.RadioButton radioFemale;
         private System.Windows.Forms.RadioButton radioMan;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textLineID;
+        private System.Windows.Forms.TextBox CreateLineIDtext;
         private System.Windows.Forms.PictureBox pbUserPhoto;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textLastName;
+        private System.Windows.Forms.TextBox CreateLastNametext;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textFirstName;
+        private System.Windows.Forms.TextBox CreateFirstNametext;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textPassWord;
+        private System.Windows.Forms.TextBox CreatePassWordtext;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textEmail;
+        private System.Windows.Forms.TextBox CreateEmailtext;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

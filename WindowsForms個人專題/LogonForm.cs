@@ -55,9 +55,11 @@ namespace WindowsForms個人專題
         }
 
 
-        UserInformation userIf = new UserInformation();
+       
         private void btnLogon_Click(object sender, EventArgs e)
-        { 
+        {
+            var userIf = new UserInformation();
+
             var sf = new SearchForm();
 
             var reuslt = userIf.Logon(logonEmailtext.Text, logonPasswordtext.Text);

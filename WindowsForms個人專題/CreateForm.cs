@@ -20,8 +20,7 @@ namespace WindowsForms個人專題
             InitializeComponent();
         }
 
-        DrEntities1 dr = new DrEntities1();
-        User NwUser = new User();     
+             
 
 
 
@@ -38,66 +37,67 @@ namespace WindowsForms個人專題
         }
 
 
-        OpenFileDialog od = new OpenFileDialog();
+        
         private void UserPhoto_Click(object sender, EventArgs e)
         {
-            if (od.ShowDialog() == DialogResult.OK)
+            var openDialog = new OpenFileDialog();
+
+            if (openDialog.ShowDialog() == DialogResult.OK)
             {
-                pbUserPhoto.Image = Image.FromStream(od.OpenFile());
+                pbUserPhoto.Image = Image.FromStream(openDialog.OpenFile());
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textEmail.Text = null;
-            textPassWord.Text = null;
-            textFirstName.Text = null;
-            textLastName.Text = null;
-            textLineID.Text = null;
+            CreateEmailtext.Text = null;
+            CreatePassWordtext.Text = null;
+            CreateFirstNametext.Text = null;
+            CreateLastNametext.Text = null;
+            CreateLineIDtext.Text = null;
             pbUserPhoto.Image = null;
-            textGender.Text = null;
+            CreateGendertext.Text = null;
         }
 
 
+        
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            var dr = new DrEntities1();
+            var NwUser = new User();
+            var userIf = new UserInformation();
 
+            var reuslt = userIf.Verifyaccount(CreateEmailtext.Text);
 
-            if (dr.User.Any(u => u.Email == textEmail.Text))
+            if (reuslt == true)
             {
-                MessageBox.Show($"{textEmail.Text} 已註冊過。");
+                MessageBox.Show($"{CreateEmailtext.Text} 已註冊過。");
             }
                              
             else
             {
-                #region 雜湊方法(一)
-                //SHA256 sha256 = new SHA256CryptoServiceProvider();//建立SHA256
-                //byte[] source = Encoding.Default.GetBytes(PassWordtext.Text);//字串轉為byte[]
-                //byte[] crypto = sha256.ComputeHash(source);//進行SHA256加密
-                //string resultpa = Convert.ToBase64String(crypto);//把加密後的字串從Byte[]轉為字串
-                #endregion
+                
 
-                #region 雜湊方法(二)
                 SHA256 sHA256 = SHA256.Create();
-                byte[] data = sHA256.ComputeHash(Encoding.UTF8.GetBytes(textPassWord.Text));
+                byte[] data = sHA256.ComputeHash(Encoding.UTF8.GetBytes(CreatePassWordtext.Text));
                 string hashString = "";
                 for (int i = 0; i < data.Length; i++)
                 {
                     hashString += data[i].ToString("x2").ToUpperInvariant();
                 }
-                #endregion
+
 
                 using (var ms = new MemoryStream())
                 {
                     pbUserPhoto.Image.Save(ms, ImageFormat.Jpeg);
                     NwUser.Photo = ms.ToArray();
                 }
-                NwUser.Email = textEmail.Text;
+                NwUser.Email = CreateEmailtext.Text;
                 NwUser.PassWord = hashString;//已加密過後
-                NwUser.Gender = textGender.Text;
-                NwUser.FirstName = textFirstName.Text;
-                NwUser.LastName = textLastName.Text;
-                NwUser.LineID = textLineID.Text;
+                NwUser.Gender = CreateGendertext.Text;
+                NwUser.FirstName = CreateFirstNametext.Text;
+                NwUser.LastName = CreateLastNametext.Text;
+                NwUser.LineID = CreateLineIDtext.Text;
                 dr.User.Add(NwUser);
                 dr.SaveChanges();
                 MessageBox.Show("ok");
@@ -109,11 +109,11 @@ namespace WindowsForms個人專題
         {
             if (radioMan.Checked == true)
             {
-                textGender.Text = "M";
+                CreateGendertext.Text = "M";
             }
             else
             {
-                textGender.Text = null;
+                CreateGendertext.Text = null;
             }
         }
 
@@ -121,11 +121,11 @@ namespace WindowsForms個人專題
         {
             if (radioFemale.Checked == true)
             {
-                textGender.Text = "F";
+                CreateGendertext.Text = "F";
             }
             else
             {
-                textGender.Text = null;
+                CreateGendertext.Text = null;
             }
         }
     }
