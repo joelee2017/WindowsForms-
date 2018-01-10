@@ -13,7 +13,7 @@
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="RecipeName" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Introduction" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="RecipeImage" Type="nvarchar(max)" />
+          <Property Name="RecipeImage" Type="varbinary(max)" />
           <Property Name="CookingTime" Type="int" />
           <Property Name="Amount" Type="int" />
         </EntityType>
@@ -28,7 +28,7 @@
           <Property Name="UserSex" Type="nchar" MaxLength="10" />
           <Property Name="FirstName" Type="nchar" MaxLength="10" />
           <Property Name="LastName" Type="nchar" MaxLength="10" />
-          <Property Name="UserImage" Type="nvarchar(max)" />
+          <Property Name="UserImage" Type="varbinary(max)" />
           <Property Name="UserLineID" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_食譜_user">
@@ -55,24 +55,9 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DeliciousFoodModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="User">
-          <Key>
-            <PropertyRef Name="UserID" />
-          </Key>
-          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="UserPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="UserEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UserSex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="FirstName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="LastName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="UserImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="UserLineID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Recipes" Relationship="DeliciousFoodModel.FK_食譜_user" FromRole="User" ToRole="Recipes" />
-        </EntityType>
         <EntityContainer Name="DeliciousFoodEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="User" EntityType="Self.User" />
           <EntitySet Name="Recipes" EntityType="DeliciousFoodModel.Recipes" />
+          <EntitySet Name="User" EntityType="DeliciousFoodModel.User" />
           <AssociationSet Name="FK_食譜_user" Association="DeliciousFoodModel.FK_食譜_user">
             <End Role="User" EntitySet="User" />
             <End Role="Recipes" EntitySet="Recipes" />
@@ -86,10 +71,25 @@
           <Property Name="UserID" Type="Int32" Nullable="false" />
           <Property Name="RecipeName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Introduction" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="RecipeImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RecipeImage" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="CookingTime" Type="Int32" />
           <Property Name="Amount" Type="Int32" />
           <NavigationProperty Name="User" Relationship="DeliciousFoodModel.FK_食譜_user" FromRole="Recipes" ToRole="User" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="UserPassword" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserSex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="UserImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="UserLineID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Recipes" Relationship="DeliciousFoodModel.FK_食譜_user" FromRole="User" ToRole="Recipes" />
         </EntityType>
         <Association Name="FK_食譜_user">
           <End Type="DeliciousFoodModel.User" Role="User" Multiplicity="1" />
@@ -109,21 +109,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DeliciousFoodModelStoreContainer" CdmEntityContainer="DeliciousFoodEntities">
-          <EntitySetMapping Name="User">
-            <EntityTypeMapping TypeName="DeliciousFoodModel.User">
-              <MappingFragment StoreEntitySet="User">
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
-                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
-                <ScalarProperty Name="UserSex" ColumnName="UserSex" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="UserImage" ColumnName="UserImage" />
-                <ScalarProperty Name="UserLineID" ColumnName="UserLineID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Recipes">
             <EntityTypeMapping TypeName="DeliciousFoodModel.Recipes">
               <MappingFragment StoreEntitySet="Recipes">
@@ -134,6 +119,21 @@
                 <ScalarProperty Name="RecipeName" ColumnName="RecipeName" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="DeliciousFoodModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserLineID" ColumnName="UserLineID" />
+                <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UserSex" ColumnName="UserSex" />
+                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

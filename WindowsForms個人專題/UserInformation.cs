@@ -11,11 +11,14 @@ using System.Threading.Tasks;
 namespace WindowsForms個人專題
 {
     public class UserInformation
-    {
-
+    {        
         DeliciousFoodEntities DeliciousFood = new DeliciousFoodEntities();
 
-        private string userename, useremail, userpassword, usergender, userfirsnName, userlastname, userlineid, userPhoto;
+        //Logon
+        //Verifyaccount
+        //CreateUser
+        //ForgetVerify
+        //ReturnPassword
 
 
         public bool Logon(string useremail, string userpassword)
@@ -34,7 +37,6 @@ namespace WindowsForms個人專題
 
             return LogonInfo;
         }
-
 
 
         public bool Verifyaccount(string useremil)
@@ -64,7 +66,7 @@ namespace WindowsForms個人專題
             using(var userpic = new Bitmap(userPhoto))
             {
                 //userpic.Save(ms, ImageFormat.Jpeg);
-                Usertable.UserImage = ms;
+                //Usertable.UserImage = ms.ToArray;
             }
 
             Usertable.UserName = username;
@@ -76,10 +78,28 @@ namespace WindowsForms個人專題
             Usertable.UserLineID = userlineid;
             DeliciousFood.User.Add(Usertable);
             DeliciousFood.SaveChanges();
-
-
-
+            
             return DeliciousFood.ToString();
+        }
+              
+
+        public bool ForgetVerify(string useremail, string userlineid)
+        {
+            var ForgetVerify = (DeliciousFood.User.Any(u => u.UserEmail == useremail && u.UserLineID == userlineid));
+
+            return ForgetVerify;
+        }
+
+
+        public string ReturnPassword(string useremail, string userlineid)
+        {
+
+            var ReturnPassword = (Convert.ToString(DeliciousFood.User.Where
+                (u => u.UserEmail == useremail && u.UserLineID == userlineid).Select(s => s.UserPassword).First()));
+            
+
+            return ReturnPassword;
+
         }
     }
 }

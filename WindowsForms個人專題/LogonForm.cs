@@ -57,14 +57,14 @@ namespace WindowsForms個人專題
         {
             var userInfo = new UserInformation();
 
-            var sf = new SearchForm();
+            var searchform = new SearchForm();
 
             var reuslt = userInfo.Logon(logonEmailtext.Text, logonPasswordtext.Text);
 
             if (reuslt == true)
             {
-                sf.Show();
-                sf.FormClosed += Sf_FormClosed;
+                searchform.Show();
+                searchform.FormClosed += Sf_FormClosed;
 
                 this.Hide();
 

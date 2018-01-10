@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelpassword = new System.Windows.Forms.Label();
+            this.forgetpasswordlabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textlineid = new System.Windows.Forms.TextBox();
+            this.forgetlineidtext = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textemail = new System.Windows.Forms.TextBox();
+            this.forgetemiltext = new System.Windows.Forms.TextBox();
             this.btnreturn = new System.Windows.Forms.Button();
             this.btnForget = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // labelpassword
+            // forgetpasswordlabel
             // 
-            this.labelpassword.AutoSize = true;
-            this.labelpassword.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelpassword.Location = new System.Drawing.Point(162, 147);
-            this.labelpassword.Name = "labelpassword";
-            this.labelpassword.Size = new System.Drawing.Size(90, 22);
-            this.labelpassword.TabIndex = 7;
-            this.labelpassword.Text = "Password";
+            this.forgetpasswordlabel.AutoSize = true;
+            this.forgetpasswordlabel.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forgetpasswordlabel.Location = new System.Drawing.Point(154, 213);
+            this.forgetpasswordlabel.Name = "forgetpasswordlabel";
+            this.forgetpasswordlabel.Size = new System.Drawing.Size(90, 22);
+            this.forgetpasswordlabel.TabIndex = 7;
+            this.forgetpasswordlabel.Text = "Password";
             // 
             // label2
             // 
@@ -58,13 +58,13 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "LINEID";
             // 
-            // textlineid
+            // forgetlineidtext
             // 
-            this.textlineid.Location = new System.Drawing.Point(186, 86);
-            this.textlineid.Multiline = true;
-            this.textlineid.Name = "textlineid";
-            this.textlineid.Size = new System.Drawing.Size(191, 31);
-            this.textlineid.TabIndex = 5;
+            this.forgetlineidtext.Location = new System.Drawing.Point(186, 86);
+            this.forgetlineidtext.Multiline = true;
+            this.forgetlineidtext.Name = "forgetlineidtext";
+            this.forgetlineidtext.Size = new System.Drawing.Size(191, 31);
+            this.forgetlineidtext.TabIndex = 5;
             // 
             // label1
             // 
@@ -76,18 +76,18 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Account(Email)";
             // 
-            // textemail
+            // forgetemiltext
             // 
-            this.textemail.Location = new System.Drawing.Point(186, 32);
-            this.textemail.Multiline = true;
-            this.textemail.Name = "textemail";
-            this.textemail.Size = new System.Drawing.Size(191, 31);
-            this.textemail.TabIndex = 3;
+            this.forgetemiltext.Location = new System.Drawing.Point(186, 32);
+            this.forgetemiltext.Multiline = true;
+            this.forgetemiltext.Name = "forgetemiltext";
+            this.forgetemiltext.Size = new System.Drawing.Size(191, 31);
+            this.forgetemiltext.TabIndex = 3;
             // 
             // btnreturn
             // 
             this.btnreturn.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreturn.Location = new System.Drawing.Point(260, 196);
+            this.btnreturn.Location = new System.Drawing.Point(252, 268);
             this.btnreturn.Name = "btnreturn";
             this.btnreturn.Size = new System.Drawing.Size(90, 39);
             this.btnreturn.TabIndex = 9;
@@ -98,7 +98,7 @@
             // btnForget
             // 
             this.btnForget.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnForget.Location = new System.Drawing.Point(64, 196);
+            this.btnForget.Location = new System.Drawing.Point(56, 268);
             this.btnForget.Name = "btnForget";
             this.btnForget.Size = new System.Drawing.Size(90, 39);
             this.btnForget.TabIndex = 8;
@@ -109,7 +109,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(162, 196);
+            this.btnCancel.Location = new System.Drawing.Point(154, 268);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(90, 39);
             this.btnCancel.TabIndex = 7;
@@ -122,14 +122,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(404, 276);
+            this.ClientSize = new System.Drawing.Size(407, 384);
             this.Controls.Add(this.btnreturn);
-            this.Controls.Add(this.labelpassword);
+            this.Controls.Add(this.forgetpasswordlabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnForget);
-            this.Controls.Add(this.textemail);
+            this.Controls.Add(this.forgetemiltext);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.textlineid);
+            this.Controls.Add(this.forgetlineidtext);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ForgetForm";
@@ -142,12 +142,12 @@
 
         #endregion
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textlineid;
+        private System.Windows.Forms.TextBox forgetlineidtext;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textemail;
+        private System.Windows.Forms.TextBox forgetemiltext;
         private System.Windows.Forms.Button btnForget;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnreturn;
-        private System.Windows.Forms.Label labelpassword;
+        private System.Windows.Forms.Label forgetpasswordlabel;
     }
 }

@@ -18,48 +18,46 @@ namespace WindowsForms個人專題
         }
         
 
-        //Return返迴登入頁面
         private void btnreturn_Click(object sender, EventArgs e)
         {
             LogonForm l1 = new LogonForm();
             l1.FormClosed += L1_FormClosed;
             l1.Show();this.Hide();
         }
-        //Return關閉隱藏畫面
+
         private void L1_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
         }
 
 
-        //Cancel清除輸入內容值
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            textemail.Text = null;
-            textlineid.Text = null;
+            forgetemiltext.Text = null;
+            forgetlineidtext.Text = null;
         }
 
-        //Forget查詢密碼
+
         private void btnForget_Click(object sender, EventArgs e)
         {
             DeliciousFoodEntities DeliciousFood = new DeliciousFoodEntities();
 
-            try
-            {                
-                if (DeliciousFood.User.Any(u => u.UserEmail == textemail.Text && u.UserLineID == textlineid.Text))
+            var userInfo = new UserInformation();
+
+            var Verifyresult = userInfo.ForgetVerify(forgetemiltext.Text, forgetlineidtext.Text);
+
+            var returnresult = userInfo.ReturnPassword(forgetemiltext.Text, forgetlineidtext.Text);
+
+
+                if (Verifyresult == true)
                 {
-                    labelpassword.Text =(Convert.ToString(DeliciousFood.User.Where
-                     (u => u.UserEmail == textemail.Text && u.UserLineID == textlineid.Text).Select(s => s.UserPassword).First()));
+                    forgetpasswordlabel.Text = returnresult;
                 }
                 else
                 {
-                    MessageBox.Show($"請確認 {textemail.Text} 和 {textlineid.Text} 是否有誤");
+                    MessageBox.Show($"請確認 {forgetemiltext.Text} 和 {forgetlineidtext.Text} 是否有誤");
                 }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
             
         }
 

@@ -27,7 +27,7 @@ namespace WindowsForms個人專題
         public string UserSex { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string UserImage { get; set; }
+        public byte[] UserImage { get; set; }
         public string UserLineID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

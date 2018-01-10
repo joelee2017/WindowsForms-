@@ -18,7 +18,7 @@ namespace WindowsForms個人專題
         public int UserID { get; set; }
         public string RecipeName { get; set; }
         public string Introduction { get; set; }
-        public string RecipeImage { get; set; }
+        public byte[] RecipeImage { get; set; }
         public Nullable<int> CookingTime { get; set; }
         public Nullable<int> Amount { get; set; }
     
