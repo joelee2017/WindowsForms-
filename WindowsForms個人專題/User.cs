@@ -29,8 +29,6 @@ namespace WindowsForms個人專題
         public string LastName { get; set; }
         public byte[] UserImage { get; set; }
         public string UserLineID { get; set; }
-        public System.DateTime CreationDate { get; set; }
-        public System.DateTime ChangePassWorddate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Recipes> Recipes { get; set; }
