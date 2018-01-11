@@ -30,6 +30,8 @@
           <Property Name="LastName" Type="nchar" MaxLength="10" />
           <Property Name="UserImage" Type="varbinary(max)" />
           <Property Name="UserLineID" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreationDate" Type="date" Nullable="false" />
+          <Property Name="ChangePassWorddate" Type="date" Nullable="false" />
         </EntityType>
         <Association Name="FK_食譜_user">
           <End Role="User" Type="Self.User" Multiplicity="1" />
@@ -90,6 +92,8 @@
           <Property Name="UserImage" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="UserLineID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Recipes" Relationship="DeliciousFoodModel.FK_食譜_user" FromRole="User" ToRole="Recipes" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ChangePassWorddate" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <Association Name="FK_食譜_user">
           <End Type="DeliciousFoodModel.User" Role="User" Multiplicity="1" />
@@ -125,6 +129,8 @@
           <EntitySetMapping Name="User">
             <EntityTypeMapping TypeName="DeliciousFoodModel.User">
               <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="ChangePassWorddate" ColumnName="ChangePassWorddate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
                 <ScalarProperty Name="UserLineID" ColumnName="UserLineID" />
                 <ScalarProperty Name="UserImage" ColumnName="UserImage" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
