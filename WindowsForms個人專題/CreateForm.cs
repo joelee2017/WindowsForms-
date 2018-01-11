@@ -73,7 +73,7 @@ namespace WindowsForms個人專題
 
                 var result= userInfo.CreateUser(CreateNametext.Text, CreateEmailtext.Text, CreatePassWordtext.Text,
                     CreateGendertext.Text, CreateFirstNametext.Text, CreateLastNametext.Text, 
-                    CreateLineIDtext.Text, pbUserPhoto.Image);
+                    CreateLineIDtext.Text, pbUserPhoto.Image,DateTime.Now,DateTime.Now);
 
 
                 if (result != null)

@@ -49,7 +49,7 @@ namespace WindowsForms個人專題
         }
 
 
-        public string CreateUser(string username, string useremail, string userpassword, string usergender, string userfirsnName, string userlastname, string userlineid,Image userPhoto)
+        public string CreateUser(string username, string useremail, string userpassword, string usergender, string userfirsnName, string userlastname, string userlineid,Image userPhoto,DateTime creationdate,DateTime changepassworddate)
         {
 
             var Usertable = new User();
@@ -65,8 +65,8 @@ namespace WindowsForms個人專題
             using(var ms =new MemoryStream())
             using(var userpic = new Bitmap(userPhoto))
             {
-                //userpic.Save(ms, ImageFormat.Jpeg);
-                //Usertable.UserImage = ms.ToArray;
+                userpic.Save(ms, ImageFormat.Jpeg);
+                Usertable.UserImage = ms.ToArray();
             }
 
             Usertable.UserName = username;
@@ -76,6 +76,9 @@ namespace WindowsForms個人專題
             Usertable.FirstName = userfirsnName;
             Usertable.LastName = userlastname;
             Usertable.UserLineID = userlineid;
+            Usertable.CreationDate = creationdate;
+            Usertable.ChangePassWorddate = changepassworddate;
+
             DeliciousFood.User.Add(Usertable);
             DeliciousFood.SaveChanges();
             
