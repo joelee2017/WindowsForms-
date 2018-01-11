@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -49,7 +50,7 @@ namespace WindowsForms個人專題
         }
 
 
-        public string CreateUser(string username, string useremail, string userpassword, string usergender, string userfirsnName, string userlastname, string userlineid,Image userPhoto,DateTime creationdate,DateTime changepassworddate)
+        public bool CreateUser(string username, string useremail, string userpassword, string usergender, string userfirsnName, string userlastname, string userlineid,Image userPhoto,DateTime creationdate,DateTime changepassworddate)
         {
 
             var Usertable = new User();
@@ -81,8 +82,9 @@ namespace WindowsForms個人專題
 
             DeliciousFood.User.Add(Usertable);
             DeliciousFood.SaveChanges();
+
+            return true;
             
-            return DeliciousFood.ToString();
         }
               
 
@@ -94,15 +96,33 @@ namespace WindowsForms個人專題
         }
 
 
-        public string ReturnPassword(string useremail, string userlineid)
+        public bool  ModifyPassword(string Useremail, string userpassword,DateTime changepassworddate)
         {
 
-            var ReturnPassword = (Convert.ToString(DeliciousFood.User.Where
-                (u => u.UserEmail == useremail && u.UserLineID == userlineid).Select(s => s.UserPassword).First()));
-            
 
-            return ReturnPassword;
+            var Usertable = new User();
+            var encryptor = SHA256.Create();
 
+            var resultuserid = DeliciousFood.User.Where(u => u.UserEmail == Useremail).Select(s => s.UserID).SingleOrDefault();
+
+            byte[] data = encryptor.ComputeHash(Encoding.UTF8.GetBytes(userpassword));
+            string hashpassword = "";
+            for (int i = 0; i < data.Length; i++)
+            {
+                hashpassword += data[i].ToString("x2").ToUpperInvariant();
+            }
+
+            Usertable = DeliciousFood.User.Find(resultuserid);
+            Usertable.UserPassword = hashpassword;
+            Usertable.ChangePassWorddate = changepassworddate;
+
+
+            DeliciousFood.Entry(Usertable).State = EntityState.Modified;
+            DeliciousFood.SaveChanges();
+
+
+
+            return true;
         }
     }
 }

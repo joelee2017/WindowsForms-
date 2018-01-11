@@ -191,7 +191,6 @@ namespace WindowsForms個人專題
             try
             {
 
-
                 SHA256 sHA256 = SHA256.Create();
                 byte[] data = sHA256.ComputeHash(Encoding.UTF8.GetBytes(textPassWord.Text));
                 string hashString = "";

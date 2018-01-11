@@ -28,25 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.forgetpasswordlabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.forgetlineidtext = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.forgetemiltext = new System.Windows.Forms.TextBox();
             this.btnreturn = new System.Windows.Forms.Button();
-            this.btnForget = new System.Windows.Forms.Button();
+            this.btnCHeck = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.forgetlnewpasswordtext = new System.Windows.Forms.TextBox();
+            this.forgetlcheckpasswordtext = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnPassWoardModify = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // forgetpasswordlabel
-            // 
-            this.forgetpasswordlabel.AutoSize = true;
-            this.forgetpasswordlabel.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.forgetpasswordlabel.Location = new System.Drawing.Point(154, 213);
-            this.forgetpasswordlabel.Name = "forgetpasswordlabel";
-            this.forgetpasswordlabel.Size = new System.Drawing.Size(90, 22);
-            this.forgetpasswordlabel.TabIndex = 7;
-            this.forgetpasswordlabel.Text = "Password";
             // 
             // label2
             // 
@@ -87,7 +81,7 @@
             // btnreturn
             // 
             this.btnreturn.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreturn.Location = new System.Drawing.Point(252, 268);
+            this.btnreturn.Location = new System.Drawing.Point(305, 268);
             this.btnreturn.Name = "btnreturn";
             this.btnreturn.Size = new System.Drawing.Size(90, 39);
             this.btnreturn.TabIndex = 9;
@@ -95,21 +89,21 @@
             this.btnreturn.UseVisualStyleBackColor = true;
             this.btnreturn.Click += new System.EventHandler(this.btnreturn_Click);
             // 
-            // btnForget
+            // btnCHeck
             // 
-            this.btnForget.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnForget.Location = new System.Drawing.Point(56, 268);
-            this.btnForget.Name = "btnForget";
-            this.btnForget.Size = new System.Drawing.Size(90, 39);
-            this.btnForget.TabIndex = 8;
-            this.btnForget.Text = "Forget";
-            this.btnForget.UseVisualStyleBackColor = true;
-            this.btnForget.Click += new System.EventHandler(this.btnForget_Click);
+            this.btnCHeck.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCHeck.Location = new System.Drawing.Point(12, 268);
+            this.btnCHeck.Name = "btnCHeck";
+            this.btnCHeck.Size = new System.Drawing.Size(90, 39);
+            this.btnCHeck.TabIndex = 8;
+            this.btnCHeck.Text = "Check";
+            this.btnCHeck.UseVisualStyleBackColor = true;
+            this.btnCHeck.Click += new System.EventHandler(this.btnForget_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(154, 268);
+            this.btnCancel.Location = new System.Drawing.Point(209, 268);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(90, 39);
             this.btnCancel.TabIndex = 7;
@@ -117,16 +111,71 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // forgetlnewpasswordtext
+            // 
+            this.forgetlnewpasswordtext.Enabled = false;
+            this.forgetlnewpasswordtext.Location = new System.Drawing.Point(186, 134);
+            this.forgetlnewpasswordtext.Multiline = true;
+            this.forgetlnewpasswordtext.Name = "forgetlnewpasswordtext";
+            this.forgetlnewpasswordtext.PasswordChar = '*';
+            this.forgetlnewpasswordtext.Size = new System.Drawing.Size(191, 31);
+            this.forgetlnewpasswordtext.TabIndex = 10;
+            // 
+            // forgetlcheckpasswordtext
+            // 
+            this.forgetlcheckpasswordtext.Enabled = false;
+            this.forgetlcheckpasswordtext.Location = new System.Drawing.Point(186, 190);
+            this.forgetlcheckpasswordtext.Multiline = true;
+            this.forgetlcheckpasswordtext.Name = "forgetlcheckpasswordtext";
+            this.forgetlcheckpasswordtext.PasswordChar = '*';
+            this.forgetlcheckpasswordtext.Size = new System.Drawing.Size(191, 31);
+            this.forgetlcheckpasswordtext.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(52, 143);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 22);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "NewPassWord";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(32, 190);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(140, 22);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "CheckPassWord";
+            // 
+            // btnPassWoardModify
+            // 
+            this.btnPassWoardModify.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPassWoardModify.Location = new System.Drawing.Point(113, 268);
+            this.btnPassWoardModify.Name = "btnPassWoardModify";
+            this.btnPassWoardModify.Size = new System.Drawing.Size(90, 39);
+            this.btnPassWoardModify.TabIndex = 14;
+            this.btnPassWoardModify.Text = "Push";
+            this.btnPassWoardModify.UseVisualStyleBackColor = true;
+            this.btnPassWoardModify.Click += new System.EventHandler(this.btnPassWoardModify_Click);
+            // 
             // ForgetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(407, 384);
+            this.Controls.Add(this.btnPassWoardModify);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.forgetlcheckpasswordtext);
+            this.Controls.Add(this.forgetlnewpasswordtext);
             this.Controls.Add(this.btnreturn);
-            this.Controls.Add(this.forgetpasswordlabel);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnForget);
+            this.Controls.Add(this.btnCHeck);
             this.Controls.Add(this.forgetemiltext);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.forgetlineidtext);
@@ -145,9 +194,13 @@
         private System.Windows.Forms.TextBox forgetlineidtext;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox forgetemiltext;
-        private System.Windows.Forms.Button btnForget;
+        private System.Windows.Forms.Button btnCHeck;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnreturn;
-        private System.Windows.Forms.Label forgetpasswordlabel;
+        private System.Windows.Forms.TextBox forgetlnewpasswordtext;
+        private System.Windows.Forms.TextBox forgetlcheckpasswordtext;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnPassWoardModify;
     }
 }

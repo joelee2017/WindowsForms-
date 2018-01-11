@@ -76,7 +76,7 @@ namespace WindowsForms個人專題
                     CreateLineIDtext.Text, pbUserPhoto.Image,DateTime.Now,DateTime.Now);
 
 
-                if (result != null)
+                if (result ==true)
                 {
                     MessageBox.Show("ok");
                 }

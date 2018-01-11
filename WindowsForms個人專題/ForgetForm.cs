@@ -16,7 +16,8 @@ namespace WindowsForms個人專題
         {
             InitializeComponent();
         }
-        
+
+        UserInformation userInfo = new UserInformation();
 
         private void btnreturn_Click(object sender, EventArgs e)
         {
@@ -40,26 +41,40 @@ namespace WindowsForms個人專題
 
         private void btnForget_Click(object sender, EventArgs e)
         {
-            DeliciousFoodEntities DeliciousFood = new DeliciousFoodEntities();
-
-            var userInfo = new UserInformation();
 
             var Verifyresult = userInfo.ForgetVerify(forgetemiltext.Text, forgetlineidtext.Text);
-
-            var returnresult = userInfo.ReturnPassword(forgetemiltext.Text, forgetlineidtext.Text);
-
-
+            
                 if (Verifyresult == true)
                 {
-                    forgetpasswordlabel.Text = returnresult;
+                    forgetlnewpasswordtext.Enabled = true;
+                    forgetlcheckpasswordtext.Enabled = true;
                 }
                 else
                 {
                     MessageBox.Show($"請確認 {forgetemiltext.Text} 和 {forgetlineidtext.Text} 是否有誤");
-                }
-            
+                }           
             
         }
 
+        private void btnPassWoardModify_Click(object sender, EventArgs e)
+        {
+            if(forgetlnewpasswordtext.Text== forgetlcheckpasswordtext.Text)
+            {
+                var result = userInfo.ModifyPassword(forgetemiltext.Text, forgetlcheckpasswordtext.Text,DateTime.Now);
+
+                if (result == true)
+                {
+                    MessageBox.Show("OK");
+                }
+                else
+                {
+                    MessageBox.Show("失敗");
+                }
+            }
+            else
+            {
+                MessageBox.Show("輸入的密碼需一致");
+            }
+        }
     }
 }
