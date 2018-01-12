@@ -84,6 +84,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.UserName = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -120,13 +121,12 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Location = new System.Drawing.Point(0, 31);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1193, 641);
+            this.tabControl1.Size = new System.Drawing.Size(1194, 610);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -138,7 +138,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage1.Size = new System.Drawing.Size(1185, 609);
+            this.tabPage1.Size = new System.Drawing.Size(1186, 578);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Search";
             // 
@@ -157,7 +157,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.pBSearch);
             this.splitContainer2.Panel2.Controls.Add(this.btnRC);
             this.splitContainer2.Panel2.Controls.Add(this.btnSeaFind);
-            this.splitContainer2.Size = new System.Drawing.Size(1177, 599);
+            this.splitContainer2.Size = new System.Drawing.Size(1178, 568);
             this.splitContainer2.SplitterDistance = 915;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -175,8 +175,8 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.DataGridViewSearchRecipe);
-            this.splitContainer5.Size = new System.Drawing.Size(915, 599);
-            this.splitContainer5.SplitterDistance = 352;
+            this.splitContainer5.Size = new System.Drawing.Size(915, 568);
+            this.splitContainer5.SplitterDistance = 333;
             this.splitContainer5.TabIndex = 0;
             // 
             // DataGridViewFindUser
@@ -188,7 +188,7 @@
             this.DataGridViewFindUser.Location = new System.Drawing.Point(0, 0);
             this.DataGridViewFindUser.Name = "DataGridViewFindUser";
             this.DataGridViewFindUser.RowTemplate.Height = 60;
-            this.DataGridViewFindUser.Size = new System.Drawing.Size(915, 352);
+            this.DataGridViewFindUser.Size = new System.Drawing.Size(915, 333);
             this.DataGridViewFindUser.TabIndex = 3;
             this.DataGridViewFindUser.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewSearchRecipe_RowEnter);
             // 
@@ -200,7 +200,7 @@
             this.DataGridViewSearchRecipe.Location = new System.Drawing.Point(0, 0);
             this.DataGridViewSearchRecipe.Name = "DataGridViewSearchRecipe";
             this.DataGridViewSearchRecipe.RowTemplate.Height = 60;
-            this.DataGridViewSearchRecipe.Size = new System.Drawing.Size(915, 243);
+            this.DataGridViewSearchRecipe.Size = new System.Drawing.Size(915, 231);
             this.DataGridViewSearchRecipe.TabIndex = 0;
             this.DataGridViewSearchRecipe.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridViewSearchRecipe_RowEnter);
             // 
@@ -246,7 +246,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage2.Size = new System.Drawing.Size(1185, 609);
+            this.tabPage2.Size = new System.Drawing.Size(1186, 578);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Modify";
             // 
@@ -280,7 +280,7 @@
             this.splitContainer4.Panel2.Controls.Add(this.textPassWord);
             this.splitContainer4.Panel2.Controls.Add(this.label1);
             this.splitContainer4.Panel2.Controls.Add(this.textEmail);
-            this.splitContainer4.Size = new System.Drawing.Size(1177, 599);
+            this.splitContainer4.Size = new System.Drawing.Size(1178, 568);
             this.splitContainer4.SplitterDistance = 739;
             this.splitContainer4.TabIndex = 0;
             // 
@@ -297,7 +297,7 @@
             this.dataGridViewModify.RowTemplate.DividerHeight = 2;
             this.dataGridViewModify.RowTemplate.Height = 24;
             this.dataGridViewModify.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewModify.Size = new System.Drawing.Size(739, 599);
+            this.dataGridViewModify.Size = new System.Drawing.Size(739, 568);
             this.dataGridViewModify.TabIndex = 3;
             this.dataGridViewModify.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewModify_RowEnter);
             // 
@@ -489,7 +489,7 @@
             this.tabPage3.Controls.Add(this.splitContainer3);
             this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1185, 609);
+            this.tabPage3.Size = new System.Drawing.Size(1186, 578);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Add&Delete";
             // 
@@ -525,7 +525,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.label15);
             this.splitContainer3.Panel2.Controls.Add(this.textEmail1);
             this.splitContainer3.Panel2.Controls.Add(this.btnAdd);
-            this.splitContainer3.Size = new System.Drawing.Size(1185, 609);
+            this.splitContainer3.Size = new System.Drawing.Size(1186, 578);
             this.splitContainer3.SplitterDistance = 801;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -537,7 +537,7 @@
             this.dataGridViewAD.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewAD.Name = "dataGridViewAD";
             this.dataGridViewAD.RowTemplate.Height = 24;
-            this.dataGridViewAD.Size = new System.Drawing.Size(801, 609);
+            this.dataGridViewAD.Size = new System.Drawing.Size(801, 578);
             this.dataGridViewAD.TabIndex = 3;
             this.dataGridViewAD.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAD_RowEnter);
             // 
@@ -751,7 +751,7 @@
             this.tabPage5.Controls.Add(this.btnLogOut);
             this.tabPage5.Location = new System.Drawing.Point(4, 28);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1185, 609);
+            this.tabPage5.Size = new System.Drawing.Size(1186, 578);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Logout";
             // 
@@ -766,12 +766,23 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // UserName
+            // 
+            this.UserName.AutoSize = true;
+            this.UserName.Font = new System.Drawing.Font("Consolas", 14.25F);
+            this.UserName.Location = new System.Drawing.Point(429, 9);
+            this.UserName.Name = "UserName";
+            this.UserName.Size = new System.Drawing.Size(30, 22);
+            this.UserName.TabIndex = 1;
+            this.UserName.Text = "00";
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1193, 641);
+            this.Controls.Add(this.UserName);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -810,6 +821,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.UserPhoto2)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -870,6 +882,7 @@
         private System.Windows.Forms.PictureBox pBSearch;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label UserName;
     }
 }
 

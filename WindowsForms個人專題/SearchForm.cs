@@ -20,6 +20,9 @@ namespace WindowsForms個人專題
         {
             InitializeComponent();
 
+
+            UserName.Text = UserInformation.UserName;
+
         }
 
          
@@ -109,11 +112,11 @@ namespace WindowsForms個人專題
             }
         }
 
-        #endregion
 
-        #region Modify修改資料查詢
         private void btnModifyFind_Click(object sender, EventArgs e)
         {
+            var DeliciousFood = new DeliciousFoodEntities();
+
             DataGridViewFindUser.DataSource = null;
             try
             {
@@ -136,16 +139,17 @@ namespace WindowsForms個人專題
             }
         }
 
-        //Modify修改圖片
+
         private void UserPhoto_Click(object sender, EventArgs e)
         {
-            if (od.ShowDialog() == DialogResult.OK)
+            var open = new OpenFileDialog();
+
+            if (open.ShowDialog() == DialogResult.OK)
             {
-                UserPhoto.Image = Image.FromStream(od.OpenFile());
+                UserPhoto.Image = Image.FromStream(open.OpenFile());
             }
         }
         
-        //Modify聯動欄位資料顯示
         private void dataGridViewModify_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -173,12 +177,16 @@ namespace WindowsForms個人專題
         //Modify修改上傳
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            var DeliciousFood = new DeliciousFoodEntities();
+
             try
             {
-
                 SHA256 sHA256 = SHA256.Create();
+
                 byte[] data = sHA256.ComputeHash(Encoding.UTF8.GetBytes(textPassWord.Text));
+
                 string hashString = "";
+
                 for (int i = 0; i < data.Length; i++)
                 {
                     hashString += data[i].ToString("x2").ToUpperInvariant();
@@ -239,21 +247,26 @@ namespace WindowsForms個人專題
                 textGender.Text = null;
             }
         }
-        #endregion
 
-        #region Add&Delete加入圖片        
+    
         private void UserPhoto2_Click(object sender, EventArgs e)
         {
-            if (od.ShowDialog() == DialogResult.OK)
+            var open = new OpenFileDialog();
+
+            if (open.ShowDialog() == DialogResult.OK)
             {
-                UserPhoto2.Image = Image.FromStream(od.OpenFile());
+                UserPhoto2.Image = Image.FromStream(open.OpenFile());
             }
         }
 
-        //Add&Delete查詢
+
+
         private void btnADFind_Click(object sender, EventArgs e)
         {
+            var DeliciousFood = new DeliciousFoodEntities();
+
             DataGridViewFindUser.DataSource = null;
+
             try
             {
                 dataGridViewAD.DataSource = DeliciousFood.User.Select(user => new
@@ -278,20 +291,26 @@ namespace WindowsForms個人專題
         //Add&Delete新增帳號資料
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            var DeliciousFood = new DeliciousFoodEntities();
+
+            var userinfo = new User();
+
             using (var ms = new MemoryStream())
             {
                 UserPhoto2.Image.Save(ms, ImageFormat.Jpeg);
-                //NwUser.Photo = ms.ToArray();
+                userinfo.UserImage = ms.ToArray();
             }
 
-            NwUser.UserEmail = textEmail1.Text;
-            NwUser.UserPassword = textPassWord1.Text;
-            NwUser.UserSex = textGender1.Text;
-            NwUser.FirstName = textFirstName1.Text;
-            NwUser.LastName = textLastName1.Text;
-            NwUser.UserLineID = textLineID1.Text;
+            userinfo.UserEmail = textEmail1.Text;
+            userinfo.UserPassword = textPassWord1.Text;
+            userinfo.UserSex = textGender1.Text;
+            userinfo.FirstName = textFirstName1.Text;
+            userinfo.LastName = textLastName1.Text;
+            userinfo.UserLineID = textLineID1.Text;
+            userinfo.CreationDate = DateTime.Now;
+            userinfo.ChangePassWorddate = DateTime.Now;
 
-            DeliciousFood.User.Add(NwUser);
+            DeliciousFood.User.Add(userinfo);
             DeliciousFood.SaveChanges();
             MessageBox.Show("ok");
             btnADFind_Click(sender, e);
@@ -365,6 +384,8 @@ namespace WindowsForms個人專題
         //Add&Delete刪除
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            var DeliciousFood = new DeliciousFoodEntities();
+
             if (MessageBox.Show("確定刪除嗎?", "刪除確認",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -383,9 +404,6 @@ namespace WindowsForms個人專題
                 }
             }
         }
-
-
-        #endregion
 
 
     }

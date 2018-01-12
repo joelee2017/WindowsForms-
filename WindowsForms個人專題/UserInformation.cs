@@ -41,6 +41,8 @@ namespace WindowsForms個人專題
 
             var LogonInfo = DeliciousFood.User.Any(us => us.UserEmail == useremail && us.UserPassword == hashpassword);
 
+            var UserName = DeliciousFood.User.Where(us => us.UserEmail == useremail).Select(s => s.UserName).Single();
+
             return LogonInfo;
         }
 
