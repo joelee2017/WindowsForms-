@@ -20,8 +20,9 @@ namespace WindowsForms個人專題
         {
             InitializeComponent();
 
+            UserInformation userinfo = new UserInformation();
 
-            UserName.Text = UserInformation.UserName;
+            UserName.Text = userinfo.UserName;
 
         }
 

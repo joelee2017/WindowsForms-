@@ -72,6 +72,7 @@ namespace WindowsForms個人專題
             {
                 MessageBox.Show("請確認帳號密碼");
             }
+         
         }
 
         private void Sf_FormClosed(object sender, FormClosedEventArgs e)
