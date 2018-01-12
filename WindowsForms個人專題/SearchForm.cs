@@ -15,19 +15,20 @@ namespace WindowsForms個人專題
 {
     public partial class SearchForm : Form
     {
-
+        public string user { get; set; }
+        //public static string user { get; set; }
         public SearchForm()
         {
             InitializeComponent();
-
-            UserInformation userinfo = new UserInformation();
-
-            UserName.Text = userinfo.UserName;
+                       
 
         }
 
-         
-        
+        private void SearchForm_Load(object sender, EventArgs e)
+        {
+            UserName.Text = user;
+        }
+
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {

@@ -24,11 +24,17 @@ namespace WindowsForms個人專題
         //FinUser
         //FindUserRecipe
 
-        string m_username;
-        public string UserName { get => m_username; set => m_username = value; }
+        class userInfo
+        {
+            
+            string username { };
+        }
+
+        private string m_username;
+        public static string UserName { get; set; }
 
         
-        public bool Logon(string useremail, string userpassword)
+        public string Logon(string useremail, string userpassword)
         {
             var encryptor = SHA256.Create();
             var data = encryptor.ComputeHash(Encoding.UTF8.GetBytes(userpassword));
@@ -42,9 +48,9 @@ namespace WindowsForms個人專題
 
             var LogonInfo = DeliciousFood.User.Any(us => us.UserEmail == useremail && us.UserPassword == hashpassword);
 
-            m_username = DeliciousFood.User.Where(us => us.UserEmail == useremail).Select(s => s.UserName).SingleOrDefault();
+            UserName = DeliciousFood.User.Where(us => us.UserEmail == useremail).Select(s => s.UserName).SingleOrDefault();
 
-            return LogonInfo;
+            return UserName;
         }
 
 

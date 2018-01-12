@@ -55,12 +55,14 @@ namespace WindowsForms個人專題
         {
             var userInfo = new UserInformation();
 
-            var searchform = new SearchForm();
+            SearchForm searchform = new SearchForm();
 
             var reuslt = userInfo.Logon(logonEmailtext.Text, logonPasswordtext.Text);
 
-            if (reuslt == true)
+            if (reuslt != "")
             {
+                searchform.user = reuslt;
+                //SearchForm.user = reuslt;
                 searchform.Show();
                 searchform.FormClosed += Sf_FormClosed;
 
@@ -72,7 +74,7 @@ namespace WindowsForms個人專題
             {
                 MessageBox.Show("請確認帳號密碼");
             }
-         
+            
         }
 
         private void Sf_FormClosed(object sender, FormClosedEventArgs e)

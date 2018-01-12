@@ -770,7 +770,7 @@
             // 
             this.UserName.AutoSize = true;
             this.UserName.Font = new System.Drawing.Font("Consolas", 14.25F);
-            this.UserName.Location = new System.Drawing.Point(429, 9);
+            this.UserName.Location = new System.Drawing.Point(450, 9);
             this.UserName.Name = "UserName";
             this.UserName.Size = new System.Drawing.Size(30, 22);
             this.UserName.TabIndex = 1;
@@ -790,6 +790,7 @@
             this.Name = "SearchForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "後臺管理 v1.0";
+            this.Load += new System.EventHandler(this.SearchForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
