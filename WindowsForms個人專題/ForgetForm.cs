@@ -36,6 +36,8 @@ namespace WindowsForms個人專題
         {
             forgetemiltext.Text = null;
             forgetlineidtext.Text = null;
+            forgetlnewpasswordtext.Text = null;
+            forgetlcheckpasswordtext.Text = null;
         }
 
 

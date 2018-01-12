@@ -57,8 +57,8 @@ namespace WindowsForms個人專題
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            DeliciousFoodEntities DeliciousFood = new DeliciousFoodEntities();
             var Usertable = new User();
+
             var userInfo = new UserInformation();
 
             var reuslt = userInfo.Verifyaccount(CreateEmailtext.Text);

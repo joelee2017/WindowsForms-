@@ -22,12 +22,9 @@ namespace WindowsForms個人專題
 
         }
 
-        DeliciousFoodEntities DeliciousFood = new DeliciousFoodEntities();
-        User NwUser = new User();// user資料表建立實體  
-        Recipes rp = new Recipes();// recipe資料表建立實體
-        OpenFileDialog od = new OpenFileDialog();
+         
+        
 
-        #region Logout登出
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             LogonForm lf3 = new LogonForm();
@@ -39,38 +36,28 @@ namespace WindowsForms個人專題
         {
             this.Close();
         }
-        #endregion
 
-        #region RecipeCreate
-        //RecipeCreate轉至建立食譜畫面
+
         private void btnRC_Click(object sender, EventArgs e)
         {
             RecipeC rc = new RecipeC();
             rc.FormClosed += Rc_FormClosed;
             rc.Show(); this.Hide();
         }
+
         private void Rc_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Close();
         }
-        #endregion
 
-        #region Search查詢
+
         private void btnFind_Click(object sender, EventArgs e)
-        {            
+        {
+           var DeliciousFood = new DeliciousFoodEntities();
+
             dGridViewSearchUser.DataSource = null;
 
-                dGridViewSearchUser.DataSource = DeliciousFood.User.Select(user => new
-                {
-                    編號 = user.UserID,
-                           user.UserEmail,
-                    性別 = user.UserSex,
-                    姓 = user.FirstName,
-                    名 = user.LastName,
-                    照片 = user.UserImage,
-                           user.UserLineID,
-
-                }).ToList();
+                dGridViewSearchUser.DataSource =  
 
                 for(int i=0; i < dGridViewSearchUser.Columns.Count; i++)
                 if(dGridViewSearchUser.Columns[i] is DataGridViewImageColumn)

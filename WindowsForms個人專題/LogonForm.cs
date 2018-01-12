@@ -50,9 +50,7 @@ namespace WindowsForms個人專題
         {
             this.Close();
         }
-
-
-       
+               
         private void btnLogon_Click(object sender, EventArgs e)
         {
             var userInfo = new UserInformation();

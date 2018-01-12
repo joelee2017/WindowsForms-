@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Drawing;
@@ -19,7 +20,11 @@ namespace WindowsForms個人專題
         //Verifyaccount
         //CreateUser
         //ForgetVerify
-        //ReturnPassword
+        //ModifyPassword
+        //FinUser
+        //FindUserRecipe
+
+        public static string UserName { get; set; }
 
 
         public bool Logon(string useremail, string userpassword)
@@ -98,8 +103,6 @@ namespace WindowsForms個人專題
 
         public bool  ModifyPassword(string Useremail, string userpassword,DateTime changepassworddate)
         {
-
-
             var Usertable = new User();
             var encryptor = SHA256.Create();
 
@@ -124,5 +127,40 @@ namespace WindowsForms個人專題
 
             return true;
         }
+
+        public IEnumerable FinUser()
+        {
+           var result = DeliciousFood.User.Select(user => new
+                        {
+                            user.UserID,
+                            user.UserEmail,
+                            user.UserSex,
+                            user.FirstName,
+                            user.LastName,
+                            user.UserImage,
+                            user.UserLineID,
+
+                        }).ToArray();
+
+            return result;
+        }
+
+        public IEnumerable FindUserRecipe(int userid)
+        {
+            var result = DeliciousFood.Recipes.Where(u => u.UserID == userid).Select(s => new
+            {
+                s.RecipeId,
+                s.UserID,
+                s.RecipeName,
+                s.Introduction,
+                s.CookingTime,
+                s.Amount,
+                s.RecipeImage,
+
+            }).ToArray();
+
+            return result;
+        }
+
     }
 }
