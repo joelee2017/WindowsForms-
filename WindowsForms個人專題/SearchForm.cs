@@ -53,16 +53,18 @@ namespace WindowsForms個人專題
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-           var DeliciousFood = new DeliciousFoodEntities();
+            var userInfo = new UserInformation();
 
-            dGridViewSearchUser.DataSource = null;
+            var DeliciousFood = new DeliciousFoodEntities();
+            
+            DataGridViewFindUser.DataSource = null;
 
-                dGridViewSearchUser.DataSource =  
+            DataGridViewFindUser.DataSource = userInfo.FinUser();
 
-                for(int i=0; i < dGridViewSearchUser.Columns.Count; i++)
-                if(dGridViewSearchUser.Columns[i] is DataGridViewImageColumn)
+                for(int i=0; i < DataGridViewFindUser.Columns.Count; i++)
+                if(DataGridViewFindUser.Columns[i] is DataGridViewImageColumn)
                     {
-                        ((DataGridViewImageColumn)dGridViewSearchUser.Columns[i]).ImageLayout 
+                        ((DataGridViewImageColumn)DataGridViewFindUser.Columns[i]).ImageLayout 
                                             = DataGridViewImageCellLayout.Stretch;
                         break;
                     }
@@ -71,25 +73,21 @@ namespace WindowsForms個人專題
 
 
         }
-        //Search資料聯動 User &  Recipe
-        private void DGViSearchRecipe_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            int userid = Convert.ToInt32(dGridViewSearchUser.Rows[e.RowIndex].Cells[0].Value);
-            DGViSearchRecipe.DataSource = DeliciousFood.Recipes.Where(u => u.UserID == userid).Select(s => new
-            {
-                s.RecipeId,
-                s.UserID,
-                s.RecipeName,
-                s.Introduction,
-                s.CookingTime,
-                s.Amount,
-                s.RecipeImage,
-            }).ToArray();
 
-            for (int i = 0; i < DGViSearchRecipe.Columns.Count; i++)//調整DataGridView圖片顯示
-                if (DGViSearchRecipe.Columns[i] is DataGridViewImageColumn)
+        private void DataGridViewSearchRecipe_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            var DeliciousFood = new DeliciousFoodEntities();
+
+            var userInfo = new UserInformation();
+
+            int userid = Convert.ToInt32(DataGridViewFindUser.Rows[e.RowIndex].Cells[0].Value);
+
+            DataGridViewSearchRecipe.DataSource = userInfo.FindUserRecipe(userid);
+
+            for (int i = 0; i < DataGridViewSearchRecipe.Columns.Count; i++)//調整DataGridView圖片顯示
+                if (DataGridViewSearchRecipe.Columns[i] is DataGridViewImageColumn)
                 {
-                    ((DataGridViewImageColumn)DGViSearchRecipe.Columns[6]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                    ((DataGridViewImageColumn)DataGridViewSearchRecipe.Columns[6]).ImageLayout = DataGridViewImageCellLayout.Stretch;
                     break;
                 }
 
@@ -97,13 +95,13 @@ namespace WindowsForms個人專題
         //Search資料聯動 Recipe Picture
         private void dGridViewSearchRecipe_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-                if (DGViSearchRecipe.Rows[e.RowIndex].Cells[0].Value == null)
+                if (DataGridViewSearchRecipe.Rows[e.RowIndex].Cells[0].Value == null)
                 {
                     return;
                 }
                 else
                 {
-                byte[] g = (byte[])(DGViSearchRecipe.Rows[e.RowIndex].Cells[6].Value);
+                byte[] g = (byte[])(DataGridViewSearchRecipe.Rows[e.RowIndex].Cells[6].Value);
                 using (MemoryStream ms = new MemoryStream(g))//圖片取出
                 {
                     pBSearch.Image = Image.FromStream(ms);
@@ -116,7 +114,7 @@ namespace WindowsForms個人專題
         #region Modify修改資料查詢
         private void btnModifyFind_Click(object sender, EventArgs e)
         {
-            dGridViewSearchUser.DataSource = null;
+            DataGridViewFindUser.DataSource = null;
             try
             {
                 dataGridViewModify.DataSource = DeliciousFood.User.Select(user => new
@@ -255,7 +253,7 @@ namespace WindowsForms個人專題
         //Add&Delete查詢
         private void btnADFind_Click(object sender, EventArgs e)
         {
-            dGridViewSearchUser.DataSource = null;
+            DataGridViewFindUser.DataSource = null;
             try
             {
                 dataGridViewAD.DataSource = DeliciousFood.User.Select(user => new

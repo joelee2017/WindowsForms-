@@ -33,8 +33,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.dGridViewSearchUser = new System.Windows.Forms.DataGridView();
-            this.DGViSearchRecipe = new System.Windows.Forms.DataGridView();
+            this.DataGridViewFindUser = new System.Windows.Forms.DataGridView();
+            this.DataGridViewSearchRecipe = new System.Windows.Forms.DataGridView();
             this.pBSearch = new System.Windows.Forms.PictureBox();
             this.btnRC = new System.Windows.Forms.Button();
             this.btnSeaFind = new System.Windows.Forms.Button();
@@ -94,8 +94,8 @@
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGridViewSearchUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGViSearchRecipe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewFindUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewSearchRecipe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSearch)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
@@ -170,39 +170,39 @@
             // 
             // splitContainer5.Panel1
             // 
-            this.splitContainer5.Panel1.Controls.Add(this.dGridViewSearchUser);
+            this.splitContainer5.Panel1.Controls.Add(this.DataGridViewFindUser);
             // 
             // splitContainer5.Panel2
             // 
-            this.splitContainer5.Panel2.Controls.Add(this.DGViSearchRecipe);
+            this.splitContainer5.Panel2.Controls.Add(this.DataGridViewSearchRecipe);
             this.splitContainer5.Size = new System.Drawing.Size(915, 599);
             this.splitContainer5.SplitterDistance = 352;
             this.splitContainer5.TabIndex = 0;
             // 
-            // dGridViewSearchUser
+            // DataGridViewFindUser
             // 
-            this.dGridViewSearchUser.AllowUserToOrderColumns = true;
-            this.dGridViewSearchUser.BackgroundColor = System.Drawing.Color.Moccasin;
-            this.dGridViewSearchUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGridViewSearchUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGridViewSearchUser.Location = new System.Drawing.Point(0, 0);
-            this.dGridViewSearchUser.Name = "dGridViewSearchUser";
-            this.dGridViewSearchUser.RowTemplate.Height = 60;
-            this.dGridViewSearchUser.Size = new System.Drawing.Size(915, 352);
-            this.dGridViewSearchUser.TabIndex = 3;
-            this.dGridViewSearchUser.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGViSearchRecipe_RowEnter);
+            this.DataGridViewFindUser.AllowUserToOrderColumns = true;
+            this.DataGridViewFindUser.BackgroundColor = System.Drawing.Color.Moccasin;
+            this.DataGridViewFindUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewFindUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DataGridViewFindUser.Location = new System.Drawing.Point(0, 0);
+            this.DataGridViewFindUser.Name = "DataGridViewFindUser";
+            this.DataGridViewFindUser.RowTemplate.Height = 60;
+            this.DataGridViewFindUser.Size = new System.Drawing.Size(915, 352);
+            this.DataGridViewFindUser.TabIndex = 3;
+            this.DataGridViewFindUser.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewSearchRecipe_RowEnter);
             // 
-            // DGViSearchRecipe
+            // DataGridViewSearchRecipe
             // 
-            this.DGViSearchRecipe.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.DGViSearchRecipe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGViSearchRecipe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGViSearchRecipe.Location = new System.Drawing.Point(0, 0);
-            this.DGViSearchRecipe.Name = "DGViSearchRecipe";
-            this.DGViSearchRecipe.RowTemplate.Height = 60;
-            this.DGViSearchRecipe.Size = new System.Drawing.Size(915, 243);
-            this.DGViSearchRecipe.TabIndex = 0;
-            this.DGViSearchRecipe.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridViewSearchRecipe_RowEnter);
+            this.DataGridViewSearchRecipe.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataGridViewSearchRecipe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewSearchRecipe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DataGridViewSearchRecipe.Location = new System.Drawing.Point(0, 0);
+            this.DataGridViewSearchRecipe.Name = "DataGridViewSearchRecipe";
+            this.DataGridViewSearchRecipe.RowTemplate.Height = 60;
+            this.DataGridViewSearchRecipe.Size = new System.Drawing.Size(915, 243);
+            this.DataGridViewSearchRecipe.TabIndex = 0;
+            this.DataGridViewSearchRecipe.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridViewSearchRecipe_RowEnter);
             // 
             // pBSearch
             // 
@@ -789,8 +789,8 @@
             this.splitContainer5.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
             this.splitContainer5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dGridViewSearchUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGViSearchRecipe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewFindUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewSearchRecipe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBSearch)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
@@ -858,8 +858,8 @@
         private System.Windows.Forms.RadioButton radioMfFemale;
         private System.Windows.Forms.RadioButton radioMfMan;
         private System.Windows.Forms.SplitContainer splitContainer5;
-        private System.Windows.Forms.DataGridView dGridViewSearchUser;
-        private System.Windows.Forms.DataGridView DGViSearchRecipe;
+        private System.Windows.Forms.DataGridView DataGridViewFindUser;
+        private System.Windows.Forms.DataGridView DataGridViewSearchRecipe;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSeaFind;
         private System.Windows.Forms.Button btnADFind;
